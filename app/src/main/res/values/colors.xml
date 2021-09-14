@@ -22,6 +22,9 @@
     <!-- Couleur pour les champs -->
     <color name="dark_gray">#75D6D3D3</color>
 
+    <!-- Couleur pour l'appbar et la bottom navigation -->
+    <color name="lite_gray">#F9F7F7</color>
+
     <!-- Couleur pour le probleme de la fil de discussion -->
     <color name="light_orange">#59FF8A00</color>
 
@@ -33,7 +36,6 @@
 
     <!-- Couleur pour le boutton pour le boutton de connexion via facebook -->
     <color name="blue">#0A75D8</color>
-
 
 
 </resources>
