@@ -7,4 +7,35 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    
+
+    <!-- Couleur primaire -->
+    <color name="orange">#FF8A00</color>
+
+    <!-- Couleur pour l'arriere-plan -->
+    <color name="light_gray">#EEEEEE</color>
+
+    <!-- Couleur pour les textes gris-->
+    <color name="gray">#707070</color>
+
+    <!-- Couleur pour les champs -->
+    <color name="dark_gray">#75D6D3D3</color>
+
+    <!-- Couleur pour l'appbar et la bottom navigation -->
+    <color name="lite_gray">#F9F7F7</color>
+
+    <!-- Couleur pour le probleme de la fil de discussion -->
+    <color name="light_orange">#59FF8A00</color>
+
+    <!-- Couleur pour les reponses de la fil de discussion -->
+    <color name="light_green">#59E0FFE3</color>
+
+    <!-- Couleur rouge pour le boutton de connexion via google -->
+    <color name="red">#E5180B</color>
+
+    <!-- Couleur pour le boutton pour le boutton de connexion via facebook -->
+    <color name="blue">#0A75D8</color>
+
+
 </resources>
