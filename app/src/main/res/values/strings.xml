@@ -1,15 +1,32 @@
 <resources>
     <string name="app_name">JCCL_Network_Project</string>
+
     <string name="required">Veuillez remplir tous les champs</string>
     <string name="hint_name">Nom d\'utilisateur</string>
     <string name="hint_email">Email</string>
     <string name="title_activity_inscription">InscriptionActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <!-- page d'acceuil  -->
+    <string name="home_page_user_name">Junior Temgoua</string>
+    <string name="home_page_profession">Enseignant de mathematique</string>
+    <string name="home_page_localisation">Douala</string>
+    <string name="home_page_message_no_contain">Douala</string>
+    <string name="home_page_follow">s\'abonner</string>
+    <string name="home_page_follow_count">(1300 abonnees)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- page de connexion  -->
+
+
+    <!-- page d\'inscription -->
+
+
+    <!-- page de forum  -->
+
+
+    <!-- page de fil de discussion -->
+
+
 </resources>
