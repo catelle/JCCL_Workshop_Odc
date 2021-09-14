@@ -8,6 +8,8 @@
     <string name="home_page_message_no_contain">Douala</string>
     <string name="home_page_follow">s\'abonner</string>
     <string name="home_page_follow_count">(1300 abonnees)</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- page de connexion  -->
 
@@ -19,8 +21,6 @@
 
 
     <!-- page de fil de discussion -->
-
-
 
 
 </resources>
