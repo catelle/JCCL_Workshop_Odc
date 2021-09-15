@@ -11,6 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TableLayout;
 
+import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
+import com.google.android.material.tabs.TabLayout;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link Profil_fragment#newInstance} factory method to
@@ -23,12 +26,14 @@ public class Profil_fragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-
-
-
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    // ********************* Declarations variables **********************//
+    TabLayout tabLayout;
+    ViewPager2 viewPager2;
+
 
     public Profil_fragment() {
         // Required empty public constructor
@@ -56,8 +61,6 @@ public class Profil_fragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
@@ -68,6 +71,45 @@ public class Profil_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profil_fragment, container, false);
+       View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
+        tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
+        viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
+
+        FragmentManager fm = getActivity().getSupportFragmentManager();
+        Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
+        viewPager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Historique"));
+        tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
+        tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
+        tabLayout.addTab(tabLayout.newTab().setText("A propos"));
+        tabLayout.addOnTabSelectedListener(tabSelectedListener);
+        viewPager2.registerOnPageChangeCallback(pageChangeCallback);
+        return view ;
     }
+
+    private TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+            viewPager2.setCurrentItem(tab.getPosition());
+        }
+
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+
+        }
+    };
+
+    private ViewPager2.OnPageChangeCallback pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
+        @Override
+        public void onPageSelected(int position) {
+            tabLayout.selectTab(tabLayout.getTabAt(position));
+        }
+    };
+
 }

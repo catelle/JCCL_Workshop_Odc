@@ -31,12 +31,17 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     TextView continuer_button;
 
 
+
     BottomNavigationView bottomNavigation;
     private ActionBar tabLayout;
     private Spinner viewPager2, viewPager1;
     private String email,nomUtilisateur, status;
 
 
+
+
+    //********** Declaration des variables *************//
+     private BottomNavigationView bottomNavigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,11 +68,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
         getSupportActionBar().hide();
 
-
-        bottomNavigation = findViewById(R.id.bottom_navigation);
-        bottomNavigation.setOnNavigationItemSelectedListener( navigationItemSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container , new Home_fragment()).commit();
-
         FragmentManager fm = getSupportFragmentManager();
         Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
         viewPager2.setAdapter((SpinnerAdapter) adapter);
@@ -84,8 +84,11 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         adapterStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapterStatus);
         spinner.setOnItemSelectedListener(this);
+
     }
 
+    // Declaration du navigationItemSelectedListener pour la gestion des click
+    // des click sur la bottom navigation
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -111,6 +114,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                     return true;
                 }
             };
+
 
     private TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {
         @Override
@@ -151,3 +155,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     }
 }
+
+   }
+
