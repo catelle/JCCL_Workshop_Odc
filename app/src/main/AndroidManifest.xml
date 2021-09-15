@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JCCL_Network_Project" >
+<<<<<<< HEAD
         <activity android:name=".MainActivity" >
+=======
+        <activity
+            android:name=".InscriptionActivity"
+            android:exported="true"
+            android:label="@string/title_activity_inscription"
+            android:theme="@style/Theme.JCCL_Network_Project" />
+        <activity android:name=".MainActivity">
+>>>>>>> 8f0df26bf195aee52ede04914f9b07446b807a29
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
