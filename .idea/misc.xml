@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
         <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_forum.xml" value="0.19375" />
@@ -13,10 +14,10 @@
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_wave.xml" value="0.33" />
         <entry key="app/src/main/res/drawable/img_inscription.xml" value="0.5" />
+        <entry key="app/src/main/res/drawable/img_no_historique.xml" value="0.3255208333333333" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_forum_fragment.xml" value="0.2713541666666667" />
-        <entry key="app/src/main/res/layout/fragment_home_fragment.xml" value="0.2713541666666667" />
-        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_profil_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2864583333333333" />
       </map>
     </option>
   </component>

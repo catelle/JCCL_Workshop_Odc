@@ -14,6 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
+
     <!-- creer le composant pour les champs de texte -->
     <style name="placeholder">
         <item name="android:textColor">@color/dark_gray</item>
@@ -57,5 +58,14 @@
         <item name="android:fontFamily">@font/poppins_regular</item>
     </style>
 
+<<<<<<< HEAD
+=======
+    <!-- Creer le composant pour les petits textes gris -->
+    <style name="appbar_title">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/poppins_medium</item>
+    </style>
+>>>>>>> 8f0df26bf195aee52ede04914f9b07446b807a29
 
 </resources>

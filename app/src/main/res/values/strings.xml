@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">JCCL_Network_Project</string>
 
+
     <!-- page d'acceuil  -->
     <string name="home_page_user_name">Junior Temgoua</string>
     <string name="home_page_profession">Enseignant de mathematique</string>
@@ -11,6 +12,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_inscription">Inscription</string>
 
 
     <!-- page de connexion  -->
@@ -30,7 +32,29 @@
     </string-array>
 
     <!-- page d\'inscription -->
+    <string name="required">Veuillez remplir tous les champs</string>
+    <string name="hint_name">Nom d\'utilisateur</string>
+    <string name="hint_email">Email</string>
+    <string name="title_activity_inscription">InscriptionActivity</string>
+    <string name="description_content_banner">clear_icon</string>
+    <string name="img_banner">img_banner</string>
+    <string name="profession_fili_re">Profession/Filière</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="continuer">Continuer</string>
+    <string name="other_way_signup">Ou via les réseaux sociaux</string>
+    <string name="facebook_image">facebook_image</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="google_img">google_img</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="votre_statut">Votre Statut</string>
 
+    <string-array name="labels_array">
+        <item>Enseignant</item>
+        <item>Encardreur</item>
+        <item>Etudiant</item>
+        <item>Elève</item>
+    </string-array>
 
     <!-- page de forum  -->
 
