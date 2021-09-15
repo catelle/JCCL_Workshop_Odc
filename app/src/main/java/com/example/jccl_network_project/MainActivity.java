@@ -17,35 +17,22 @@ import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    BottomNavigationView bottomNavigation;
-    TabLayout tabLayout;
-    ViewPager2 viewPager2;
+    //********** Declaration des variables *************//
+     private BottomNavigationView bottomNavigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().hide();
 
-        tabLayout =  findViewById(R.id.tabLayout);
-        viewPager2 = findViewById(R.id.viewpager2);
-
         bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener( navigationItemSelectedListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container , new Home_fragment()).commit();
 
-        FragmentManager fm = getSupportFragmentManager();
-        Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
-        viewPager2.setAdapter(adapter);
-
-        tabLayout.addTab(tabLayout.newTab().setText("Historique"));
-        tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
-        tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
-        tabLayout.addTab(tabLayout.newTab().setText("A propos"));
-        tabLayout.addOnTabSelectedListener(tabSelectedListener);
-        viewPager2.registerOnPageChangeCallback(pageChangeCallback);
-
     }
 
+    // Declaration du navigationItemSelectedListener pour la gestion des click
+    // des click sur la bottom navigation
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -72,27 +59,4 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
-    private TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {
-        @Override
-        public void onTabSelected(TabLayout.Tab tab) {
-            viewPager2.setCurrentItem(tab.getPosition());
-        }
-
-        @Override
-        public void onTabUnselected(TabLayout.Tab tab) {
-
-        }
-
-        @Override
-        public void onTabReselected(TabLayout.Tab tab) {
-
-        }
-    };
-
-    private ViewPager2.OnPageChangeCallback pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
-        @Override
-        public void onPageSelected(int position) {
-            tabLayout.selectTab(tabLayout.getTabAt(position));
-        }
-    };
-}
+   }

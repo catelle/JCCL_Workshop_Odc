@@ -1,12 +1,11 @@
 package com.example.jccl_network_project.tab_home_page;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.jccl_network_project.R;
 
@@ -61,6 +60,7 @@ public class Favoris extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_favoris, container, false);
+        View view = inflater.inflate(R.layout.fragment_favoris, container, false);
+        return view;
     }
 }
