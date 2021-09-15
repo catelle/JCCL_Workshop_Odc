@@ -139,6 +139,7 @@
                     android:layout_height="match_parent"
                     android:background="@color/background_text_card"
                     android:ems="10"
+
                     android:paddingStart="@dimen/paddingLeft_text_card"
                     android:paddingTop="@dimen/paddingLeft_text_card"
                     android:paddingBottom="@dimen/marginTop_required_text"
@@ -149,10 +150,12 @@
                     android:id="@+id/label_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:minHeight="@dimen/minHeight" />
             </androidx.cardview.widget.CardView>
 
             <!--  ************   fin champ d'utilisateur   *******************-->
+
 
             <!--  ************   Confirmation continuer l'inscription   *******************-->
             <androidx.cardview.widget.CardView
