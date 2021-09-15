@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">JCCL_Network_Project</string>
 
+    <string name="required">Veuillez remplir tous les champs</string>
+    <string name="hint_name">Nom d\'utilisateur</string>
+    <string name="hint_email">Email</string>
+    <string name="title_activity_inscription">InscriptionActivity</string>
+
+
     <!-- page d'acceuil  -->
     <string name="home_page_user_name">Junior Temgoua</string>
     <string name="home_page_profession">Enseignant de mathematique</string>
