@@ -4,21 +4,28 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentContainer;
+import androidx.fragment.app.FragmentManager;
+import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.view.MenuItem;
+<<<<<<< HEAD
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+=======
+import android.widget.TableLayout;
+>>>>>>> b7262bbd158701c51bd57cf90df240706bcb0d5e
 
+import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity  {
 
     BottomNavigationView bottomNavigation;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +37,18 @@ public class MainActivity extends AppCompatActivity  {
         bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener( navigationItemSelectedListener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container , new Home_fragment()).commit();
+
+        FragmentManager fm = getSupportFragmentManager();
+        Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
+        viewPager2.setAdapter(adapter);
+
+        tabLayout.addTab(tabLayout.newTab().setText("Historique"));
+        tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
+        tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
+        tabLayout.addTab(tabLayout.newTab().setText("A propos"));
+        tabLayout.addOnTabSelectedListener(tabSelectedListener);
+        viewPager2.registerOnPageChangeCallback(pageChangeCallback);
+
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -58,5 +77,31 @@ public class MainActivity extends AppCompatActivity  {
                 }
             };
 
+<<<<<<< HEAD
 
+=======
+    private TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+            viewPager2.setCurrentItem(tab.getPosition());
+        }
+
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+
+        }
+    };
+
+    private ViewPager2.OnPageChangeCallback pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
+        @Override
+        public void onPageSelected(int position) {
+            tabLayout.selectTab(tabLayout.getTabAt(position));
+        }
+    };
+>>>>>>> b7262bbd158701c51bd57cf90df240706bcb0d5e
 }
