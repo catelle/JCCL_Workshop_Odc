@@ -10,23 +10,57 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.app.ActionBar;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
+import android.widget.TextView;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity  {
+public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+
+    EditText nomUtilisateurEditText;
+    EditText emailEditText ;
+    Spinner spinner ;
+    TextView continuer_button;
+
 
     BottomNavigationView bottomNavigation;
     private ActionBar tabLayout;
-    private Spinner viewPager2;
+    private Spinner viewPager2, viewPager1;
+    private String email,nomUtilisateur, status;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+// instanciation des éléments de la vue d'inscription
+
+        EditText nomUtilisateurEditText = findViewById(R.id.nomutilisateureditText);
+        EditText emaileditText = findViewById(R.id.emaileditText);
+        Spinner spinner = findViewById(R.id.label_spinner);
+        TextView continuer_button = findViewById(R.id.continue_bouton);
+
+        //clic sur le bouton continué
+
+        continuer_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                email= emailEditText.getText().toString();
+                nomUtilisateur = nomUtilisateurEditText.getText().toString();
+
+            }
+        });
+
         getSupportActionBar().hide();
 
 
@@ -42,9 +76,14 @@ public class MainActivity extends AppCompatActivity  {
         tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
         tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
         tabLayout.addTab(tabLayout.newTab().setText("A propos"));
-       // tabLayout.addOnTabSelectedListener(tabSelectedListener);
+       //tabLayout.addOnTabSelectedListener(tabSelectedListener);
        // viewPager2.registerOnPageChangeCallback(pageChangeCallback);
 
+
+        ArrayAdapter<CharSequence> adapterStatus = ArrayAdapter.createFromResource(this, R.array.status_utilisateur, android.R.layout.simple_spinner_item);
+        adapterStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapterStatus);
+        spinner.setOnItemSelectedListener(this);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -97,4 +136,18 @@ public class MainActivity extends AppCompatActivity  {
         }
     };
 
+
+
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+        status= adapterView.getSelectedItem().toString();
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
+    }
 }

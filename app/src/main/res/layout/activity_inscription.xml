@@ -82,7 +82,7 @@
 
 
                 <EditText
-                    android:id="@+id/name"
+                    android:id="@+id/nomutilisateureditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/background_text_card"
@@ -108,7 +108,7 @@
                 app:cardElevation="@dimen/card_elevation">
 
                 <EditText
-                    android:id="@+id/email"
+                    android:id="@+id/emaileditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/background_text_card"
@@ -165,7 +165,7 @@
                 app:cardElevation="@dimen/card_elevation_value">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/continue_bouton"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/bacgroung_text_continuerr"
