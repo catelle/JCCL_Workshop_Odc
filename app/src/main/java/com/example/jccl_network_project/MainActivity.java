@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
 
 
-    BottomNavigationView bottomNavigation;
+    //BottomNavigationView bottomNavigation;
     private ActionBar tabLayout;
     private Spinner viewPager2, viewPager1;
     private String email,nomUtilisateur, status;
@@ -156,5 +156,5 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 }
 
-   }
+
 

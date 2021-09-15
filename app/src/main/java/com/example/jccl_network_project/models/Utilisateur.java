@@ -4,9 +4,7 @@ import java.util.List;
 import java.util.Map;
 
 public class Utilisateur {
-<<<<<<< HEAD
 
-=======
     private String id_user;
     private String id_classe_virtuelle;
     private String avatar;
@@ -160,6 +158,6 @@ public class Utilisateur {
     public void setPublication(List<Publication> publication) {
         this.publication = publication;
     }
->>>>>>> a6f0d8593df1f58abf98a34d48e280633771bc06
+
 }
 
