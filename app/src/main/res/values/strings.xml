@@ -8,11 +8,26 @@
     <string name="home_page_message_no_contain">Douala</string>
     <string name="home_page_follow">s\'abonner</string>
     <string name="home_page_follow_count">(1300 abonnees)</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <!-- page de connexion  -->
 
+    <!-- page de connexion  -->
+    <string name="Entrer_country_code_phone">Selectionner country code et entrez \n votre numero de telephone</string>
+    <string name="bienvenu_sur_appname">Bienvenu sur appName</string>
+    <string name="connexion_page_title">Connexion</string>
+    <string name="Facebook">Facebook</string>
+    <string-array name="country_names">
+        <item>Cameroun</item>
+        <item>Congo</item>
+        <item>Gabon</item>
+        <item>Togo</item>
+        <item>France</item>
+        <item>USA</item>
+        <item>Allemagne</item>
+        <item>Suisse</item>
+    </string-array>
 
     <!-- page d\'inscription -->
 
