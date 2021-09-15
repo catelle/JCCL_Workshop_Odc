@@ -33,14 +33,12 @@
             android:theme="@style/Theme.JCCL_Network_Project" />
 
         <activity android:name=".MainActivity">
-=======
-            android:theme="@style/Theme.JCCL_Network_Project" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
->>>>>>> a6f0d8593df1f58abf98a34d48e280633771bc06
 
-        </activity>
-        <activity android:name=".MainActivity">
+
+
+                <action android:name="android.intent.action.MAIN" />
+
+
 
         </activity>
     </application>
