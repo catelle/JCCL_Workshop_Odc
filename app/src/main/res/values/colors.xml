@@ -38,6 +38,8 @@
 
     <!-- Couleur pour le boutton pour le boutton de connexion via facebook -->
     <color name="blue">#0A75D8</color>
+    <color name="background_toolbar">#F9F7F7</color>
+    <color name="bacgroung_text_continuerr">#E3871B</color>
 
 
 </resources>
