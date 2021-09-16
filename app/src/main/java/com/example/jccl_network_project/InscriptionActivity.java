@@ -22,6 +22,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
+<<<<<<< HEAD
     EditText nomUtilisateurEditText,emailEditText;
     Spinner mspinner;
     TextView continuerTextClickable;
@@ -29,6 +30,8 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
 
     private String mstatus,emailText,nom_utilisateur;
 
+=======
+>>>>>>> e4256762901980983af03e43acbce1847dd81e3e
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
