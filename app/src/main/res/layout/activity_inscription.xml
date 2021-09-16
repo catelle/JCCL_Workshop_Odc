@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar inscription -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_toolbar"
+        app:cardElevation="@dimen/card_elevation_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/inscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTop_inscription"
+            android:gravity="center_horizontal"
+            android:text="@string/name_inscription"
+            android:textSize="@dimen/text_size_inscription_bar"
+            android:textColor="@color/black" />
+
+        <ImageView
+            android:id="@+id/icon_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="@dimen/margin_end_iconclear"
+            android:layout_marginTop="@dimen/marginTop_icon_clear"
+            android:contentDescription="@string/description_content_banner"
+            app:srcCompat="@drawable/ic_baseline_clear_24" />
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTop_linearLayout"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/img_banner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/img_banner"
+                app:srcCompat="@drawable/ic_img_signup" />
+
+            <TextView
+                android:id="@+id/requirement_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTop_required_text"
+                android:text="@string/required"
+                android:textSize="@dimen/text_size_required" />
+
+            <!--   ***************   Full field inscription  ***********                -->
+
+            <!--  ************   Nom d'utilisateur   *******************-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTop_cardView"
+                android:layout_marginRight="@dimen/marginLeft"
+                app:cardElevation="@dimen/card_elevation">
+
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_text_card"
+                    android:ems="10"
+                    android:hint="@string/hint_name"
+                    android:textColorHint="@color/text_color_hint"
+                    android:inputType="textPersonName"
+                    android:minHeight="@dimen/minHeight"
+                    android:paddingStart="@dimen/paddingLeft_text_card"
+                    android:paddingTop="@dimen/paddingTop_text_card"
+                    android:paddingBottom="@dimen/paddingTop_text_card"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_card" />
+            </androidx.cardview.widget.CardView>
+
+            <!--  ************   Email d'utilisateur   *******************-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTop_cardView"
+                android:layout_marginRight="@dimen/marginLeft"
+                app:cardElevation="@dimen/card_elevation">
+
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/background_text_card"
+                    android:ems="10"
+                    android:hint="@string/hint_email"
+                    android:textColorHint="@color/text_color_hint"
+                    android:inputType="textWebEmailAddress|textEmailAddress"
+                    android:minHeight="@dimen/minHeight"
+                    android:paddingStart="@dimen/paddingLeft_text_card"
+                    android:paddingTop="@dimen/marginTop_required_text"
+                    android:paddingBottom="@dimen/marginTop_required_text"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_card" />
+            </androidx.cardview.widget.CardView>
+
+            <!--  ************   Staut d'utilisateur   *******************-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/margin_end_iconclear"
+                android:layout_marginRight="@dimen/marginLeft"
+                app:cardElevation="@dimen/card_elevation_value">
+
+                <TextView
+                    android:id="@+id/statut_user"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background_text_card"
+                    android:ems="10"
+
+                    android:paddingStart="@dimen/paddingLeft_text_card"
+                    android:paddingTop="@dimen/paddingLeft_text_card"
+                    android:paddingBottom="@dimen/marginTop_required_text"
+                    android:text="@string/votre_statut"
+                    android:textSize="@dimen/text_size_card" />
+
+                <Spinner
+                    android:id="@+id/label_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="@dimen/minHeight" />
+            </androidx.cardview.widget.CardView>
+
+            <!--  ************   fin champ d'utilisateur   *******************-->
+
+
+            <!--  ************   Confirmation continuer l'inscription   *******************-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTop_cardView"
+                android:layout_marginRight="@dimen/marginLeft"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_value">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bacgroung_text_continuerr"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/marginTop_required_text"
+                    android:paddingBottom="@dimen/marginTop_required_text"
+                    android:text="@string/continuer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_continuer"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+            <!--  ************   Autres moyens d'inscription   *******************-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:id="@+id/divider2"
+                    android:layout_width="@dimen/layout_width_divider"
+                    android:layout_height="@dimen/layout_width_divider"
+                    android:layout_marginStart="@dimen/margin_start_divider"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_end_divider"
+                    android:layout_weight="2"
+                    android:background="@color/black" />
+
+                <TextView
+                    android:id="@+id/text_to_choose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.3"
+                    android:gravity="center"
+                    android:paddingStart="0dp"
+                    android:paddingEnd="1dp"
+                    android:text="@string/other_way_signup" />
+
+                <View
+                    android:id="@+id/divider3"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="@dimen/margin_start_divider"
+                    android:layout_weight="2"
+                    android:background="@color/black" />
+            </LinearLayout>
+
+            <!--  ************   Les inscriptions par google et facebook   *******************-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--  ************   inscription par facebook  *******************-->
+
+                <androidx.cardview.widget.CardView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="30dp"
+                    app:cardElevation="8dp">
+
+                    <TextView
+                        android:id="@+id/facebook"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/facebook"
+                        android:textColor="#0A75D8"
+                        android:background="@drawable/shape_facebook_button"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="105dp"
+                        android:contentDescription="@string/facebook_image"
+                        app:srcCompat="@drawable/ic_baseline_facebook" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!--  ************   inscription par google  *******************-->
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="8dp">
+
+                    <TextView
+                        android:id="@+id/google"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="10dp"
+                        android:text="@string/google"
+                        android:textColor="#E5180B"
+                        android:textSize="15sp"
+                        android:background="@drawable/shape_google_button"
+                        android:textStyle="bold" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="110dp"
+                        android:contentDescription="@string/google_img"
+                        app:srcCompat="@drawable/ic_flat_google" />
+
+
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+            <!--  ************   Se connecter *******************-->
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/se_connecter"
+                android:textColor="#E3871B"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
