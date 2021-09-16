@@ -9,6 +9,7 @@ import android.widget.Spinner;
 
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
