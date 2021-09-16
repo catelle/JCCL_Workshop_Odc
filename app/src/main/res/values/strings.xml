@@ -35,6 +35,7 @@
     <string name="votre_statut">Votre Statut</string>
 
     <string-array name="labels_array">
+        <item>Votre Statut</item>
         <item>Enseignant</item>
         <item>Encardreur</item>
         <item>Etudiant</item>
