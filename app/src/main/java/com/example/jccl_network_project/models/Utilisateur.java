@@ -21,7 +21,9 @@ public class Utilisateur {
     private List<Publication> favoris;
     private List<Publication> publication;
 
-    public Utilisateur(String id_user, String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication) {
+    //user constructor doesn't taka id as a parameter
+
+    public Utilisateur(String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication) {
         this.id_user = id_user;
         this.id_classe_virtuelle = id_classe_virtuelle;
         this.avatar = avatar;

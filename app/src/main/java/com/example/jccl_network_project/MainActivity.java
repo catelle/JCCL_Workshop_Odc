@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
        // viewPager2.registerOnPageChangeCallback(pageChangeCallback);
 
 
-        ArrayAdapter<CharSequence> adapterStatus = ArrayAdapter.createFromResource(this, R.array.status_utilisateur, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterStatus = ArrayAdapter.createFromResource(this, R.array.labels_array, android.R.layout.simple_spinner_item);
         adapterStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapterStatus);
         spinner.setOnItemSelectedListener(this);

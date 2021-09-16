@@ -17,15 +17,7 @@
 
 
     <!-- page d\'inscription -->
-<<<<<<< HEAD
 
-    <string-array name="status_utilisateur">
-        <item>Enseignant</item>
-        <item>Etudiant</item>
-        <item>Eleve</item>
-        <item>Professionnel</item>
-
-=======
     <string name="required">Veuillez remplir tous les champs</string>
     <string name="hint_name">Nom d\'utilisateur</string>
     <string name="hint_email">Email</string>
@@ -48,7 +40,7 @@
         <item>Encardreur</item>
         <item>Etudiant</item>
         <item>Elève</item>
->>>>>>> 8f0df26bf195aee52ede04914f9b07446b807a29
+
     </string-array>
 
     <!-- page de forum  -->

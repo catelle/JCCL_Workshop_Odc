@@ -8,37 +8,36 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
+
         android:theme="@style/Theme.JCCL_Network_Project" >
-<<<<<<< HEAD
+
         <activity android:name=".MainActivity" >
-=======
-=======
-        android:theme="@style/Theme.JCCL_Network_Project">
-        <activity
-            android:name=".EditActivity"
-            android:exported="true" />
->>>>>>> a6f0d8593df1f58abf98a34d48e280633771bc06
-        <activity
-            android:name=".InscriptionActivity"
-            android:exported="true"
-            android:label="@string/title_activity_inscription"
-<<<<<<< HEAD
-            android:theme="@style/Theme.JCCL_Network_Project" />
-        <activity android:name=".MainActivity">
->>>>>>> 8f0df26bf195aee52ede04914f9b07446b807a29
-=======
-            android:theme="@style/Theme.JCCL_Network_Project" >
->>>>>>> a6f0d8593df1f58abf98a34d48e280633771bc06
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity android:name=".MainActivity">
 
         </activity>
+
+        <activity
+            android:name=".EditActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".InscriptionActivity"
+            android:exported="true"
+            android:label="@string/title_activity_inscription"
+
+            android:theme="@style/Theme.JCCL_Network_Project" >
+
+    </activity>
+
+
+
+
+
+
     </application>
 
 </manifest>
