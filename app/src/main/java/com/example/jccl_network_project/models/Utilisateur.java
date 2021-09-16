@@ -19,8 +19,11 @@ public class Utilisateur {
     private List<Formation> formation;
     private List<Publication> favoris;
     private List<Publication> publication;
+    private List<DocumentsFournis> documentsFournis;
 
-    public Utilisateur(String id_user, String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication) {
+// added Documents fournis to this constructor
+
+    public Utilisateur(String id_user, String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication,List<DocumentsFournis> documentsFournis) {
         this.id_user = id_user;
         this.id_classe_virtuelle = id_classe_virtuelle;
         this.avatar = avatar;
@@ -36,8 +39,46 @@ public class Utilisateur {
         this.formation = formation;
         this.favoris = favoris;
         this.publication = publication;
+        this.documentsFournis=documentsFournis;
     }
 
+    //constructor used for user registration
+
+    public Utilisateur(String nom, String email,String status){
+        this.nom=nom;
+        this.email=email;
+        this.profession=status;
+        this.id_user = "ITTAE";
+        this.id_classe_virtuelle = null;
+        this.avatar = null;
+        this.categorie = null;
+        this.description_profil = null;
+
+        this.prenom = null;
+
+        this.telephone = 0;
+
+        this.validation = null;
+        this.fil_discussion = null;
+        this.formation = null;
+        this.favoris = null;
+        this.publication = null;
+        this.documentsFournis=null;
+
+    }
+
+
+    //add documents fournis getters and setters
+
+    public void setDocumentsFournis(DocumentsFournis doc){
+        this.documentsFournis.add(doc);
+
+    }
+
+    public List<DocumentsFournis> getDocumentFournis(){
+
+        return this.documentsFournis;
+    }
     public String getId_user() {
         return id_user;
     }

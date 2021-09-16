@@ -168,13 +168,14 @@
                 app:cardElevation="@dimen/card_elevation_value">
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/continue_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/bacgroung_text_continuerr"
+                    android:clickable="true"
                     android:gravity="center"
-                    android:paddingTop="@dimen/marginTop_required_text"
                     android:paddingBottom="@dimen/marginTop_required_text"
+                    android:paddingTop="@dimen/marginTop_required_text"
                     android:text="@string/continuer"
                     android:textColor="@color/white"
                     android:textSize="@dimen/text_size_continuer"

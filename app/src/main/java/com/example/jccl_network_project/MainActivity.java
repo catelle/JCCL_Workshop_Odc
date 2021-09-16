@@ -18,6 +18,18 @@ import com.google.android.material.tabs.TabLayout;
 public class MainActivity extends AppCompatActivity {
 
     //********** Declaration des variables *************//
+
+    //edit profile variables
+
+    public static final String TAGprofession="profession";
+    public static final String TAGusername="username";
+    public static final String TAGlocalisation="localisation";
+    public static final String TAGprofile_image="profile_image";
+    public static final String TAGabonnee="abonnees";
+    public static final String TAGfavoris="favoris";
+    public static final String TAGApropos="Apropos";
+
+
      private BottomNavigationView bottomNavigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -13,11 +13,7 @@
         android:theme="@style/Theme.JCCL_Network_Project">
         <activity android:name=".OTPActivity"></activity>
         <activity android:name=".LoginActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
 
 
@@ -30,13 +26,20 @@
             android:exported="true"
             android:label="@string/title_activity_inscription"
 
-            android:theme="@style/Theme.JCCL_Network_Project" />
+            android:theme="@style/Theme.JCCL_Network_Project" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-        <activity android:name=".MainActivity">
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+    </activity>
+
+
+    <activity android:name=".MainActivity">
 
 
 
-                <action android:name="android.intent.action.MAIN" />
+
 
 
 
