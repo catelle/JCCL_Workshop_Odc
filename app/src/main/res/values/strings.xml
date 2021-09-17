@@ -51,6 +51,7 @@
     <string name="code_verification">Code verification</string>
 
     <string-array name="labels_array">
+        <item>Votre Statut</item>
         <item>Enseignant</item>
         <item>Professionnel</item>
         <item>Etudiant</item>
