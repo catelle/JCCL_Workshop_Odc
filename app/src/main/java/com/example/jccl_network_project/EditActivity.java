@@ -23,6 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import static com.example.jccl_network_project.Profil_fragment.TAGlocalisation;
 import static com.example.jccl_network_project.Profil_fragment.TAGnom;
 import static com.example.jccl_network_project.Profil_fragment.TAGprofession;
 
@@ -71,8 +72,10 @@ public class EditActivity extends AppCompatActivity implements OnviewHolderCallb
        add_formation_button=findViewById(R.id.btn_add_formation);
        emailET=findViewById(R.id.edit_email);
        villeET=findViewById(R.id.edit_ville);
-
+       villeET.setText(data.getStringExtra(TAGlocalisation));
        nomET.setText(data.getStringExtra(TAGnom));
+       professionET.setText(data.getStringExtra(TAGprofession));
+
        professionET.setText(data.getStringExtra(TAGprofession));
 
        validation.setOnClickListener(new View.OnClickListener() {

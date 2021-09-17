@@ -30,7 +30,8 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
-import static com.example.jccl_network_project.InscriptionActivity.TAGuserid;
+import static com.example.jccl_network_project.InscriptionActivity.TAGuid;
+
 
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
     private FirebaseAuth mAuth;
     Spinner spinner;
     String country_code;
+   private  Intent data;
     // ...
 // Initialize Firebase Auth
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
@@ -55,13 +57,13 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
         act.setBackgroundDrawable(cd);
 
-        Intent data=getIntent();
+         data=getIntent();
 
         phone=(EditText)findViewById(R.id.phone_number);
 
         con=findViewById(R.id.continue_button);
         mAuth = FirebaseAuth.getInstance();
-        mAuth.setTenantId(data.getStringExtra(TAGuserid));
+
         spinner=findViewById(R.id.spinner_country_code);
 
 
@@ -122,6 +124,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                         Toast.makeText(LoginActivity.this,"OTP code has been send",Toast.LENGTH_LONG).show();
                         Intent otpIntent =new Intent(LoginActivity.this,OTPActivity.class);
                         otpIntent.putExtra("auth",s);
+
                         startActivity(otpIntent);
                     }
 
@@ -137,7 +140,12 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         FirebaseUser user=mAuth.getCurrentUser();
 
         if(user!=null){
-            sendTomain();
+            if(user.equals(data.getStringExtra(TAGuid))){
+
+            }else{
+                sendTomain();
+            }
+
         }
     }
 

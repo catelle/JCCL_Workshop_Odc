@@ -52,7 +52,7 @@
 
     <string-array name="labels_array">
         <item>Enseignant</item>
-        <item>Encardreur</item>
+        <item>Professionnel</item>
         <item>Etudiant</item>
         <item>Elève</item>
     </string-array>

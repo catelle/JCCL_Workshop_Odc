@@ -18,6 +18,8 @@ import android.widget.Toast;
 import com.example.jccl_network_project.models.Utilisateur;
 import com.example.jccl_network_project.utils.FirebaseUtils;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.auth.User;
 
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -27,7 +29,7 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
    Boolean validation;
 
    TextView continue_button;
-   public static final String TAGuserid="uid";
+   public static final String TAGuid ="uid";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,11 +61,11 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
                         emailEditText.setError("Entrez une email de la forme toto@gmail.com");
 
                     }else{
-                         Utilisateur user=new Utilisateur(FirebaseAuth.getInstance().getUid(),nom,statut_utilisateur,email,validation);
+                         Utilisateur user=new Utilisateur(FirebaseAuth.getInstance().getCurrentUser().toString(),nom,statut_utilisateur,email,validation);
                          FirebaseUtils.addTask(user);
                         Toast.makeText(InscriptionActivity.this,"Vous etes desormais utilisateur",Toast.LENGTH_LONG).show();
                         Intent intent=new Intent(InscriptionActivity.this,LoginActivity.class);
-                        intent.putExtra(TAGuserid,FirebaseAuth.getInstance().getUid());
+                        intent.putExtra(TAGuid,FirebaseAuth.getInstance().getCurrentUser());
                         startActivity(intent);
                         finish();
                     }

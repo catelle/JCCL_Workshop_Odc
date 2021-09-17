@@ -46,7 +46,7 @@ public class OTPActivity extends AppCompatActivity {
         continuebutton=findViewById(R.id.continue_button);
         msendcodeEditText=findViewById(R.id.phone_number);
         mAuth=FirebaseAuth.getInstance();
-        OTP=getIntent().getStringExtra("auth");
+        (OTP=getIntent().getStringExtra("auth");
         continuebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
