@@ -16,7 +16,7 @@ public class Utilisateur {
     private String nom;
     private String prenom;
     private String profession;
-    private int telephone;
+    private String telephone;
     private String email;
     private Boolean validation;
     private List<Fil_discussion> fil_discussion;
@@ -26,7 +26,7 @@ public class Utilisateur {
     private List<DocumentsFournis> DocumentsFournis;
 
 
-    public Utilisateur(String id_user, String nom, String profession, String email,Boolean validation) {
+    public Utilisateur(String id_user, String nom,String phone_number, String profession, String email,Boolean validation) {
         this.id_user = id_user;
         this.id_classe_virtuelle = null;
         this.avatar = null;
@@ -35,7 +35,7 @@ public class Utilisateur {
         this.nom = nom;
         this.prenom = null;
         this.profession = profession;
-        this.telephone = telephone;
+        this.telephone = phone_number;
         this.email = email;
         this.validation = validation;
         this.fil_discussion =null;
@@ -121,11 +121,11 @@ public class Utilisateur {
         this.profession = profession;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 

@@ -28,8 +28,14 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
    String nom, email, statut_utilisateur;
    Boolean validation;
 
+    private FirebaseAuth mAuth;
+
    TextView continue_button;
    public static final String TAGuid ="uid";
+    public static final String TAGusername ="username";
+    public static final String TAGstatus ="userstatus";
+    public static final String TAGemail ="email";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,11 +67,14 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
                         emailEditText.setError("Entrez une email de la forme toto@gmail.com");
 
                     }else{
-                         Utilisateur user=new Utilisateur(FirebaseAuth.getInstance().getCurrentUser().toString(),nom,statut_utilisateur,email,validation);
-                         FirebaseUtils.addTask(user);
+
                         Toast.makeText(InscriptionActivity.this,"Vous etes desormais utilisateur",Toast.LENGTH_LONG).show();
                         Intent intent=new Intent(InscriptionActivity.this,LoginActivity.class);
                         intent.putExtra(TAGuid,FirebaseAuth.getInstance().getCurrentUser());
+                        intent.putExtra(TAGusername,nom);
+                        intent.putExtra(TAGstatus,statut_utilisateur);
+                        intent.putExtra(TAGemail,email);
+
                         startActivity(intent);
                         finish();
                     }
@@ -90,6 +99,20 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
     }
 
     @Override
+    protected void onStart() {
+        super.onStart();
+         mAuth=FirebaseAuth.getInstance();
+        FirebaseUser user=mAuth.getCurrentUser();
+
+        if(user!=null){
+
+        }else{
+            sendTomain();
+        }
+
+    }
+
+    @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
        statut_utilisateur=adapterView.getSelectedItem().toString();
@@ -104,5 +127,10 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public void sendTomain(){
+        startActivity(new Intent(InscriptionActivity.this,MainActivity.class));
+        finish();
     }
 }

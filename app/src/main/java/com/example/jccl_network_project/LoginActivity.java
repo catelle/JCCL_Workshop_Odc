@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jccl_network_project.models.Utilisateur;
+import com.example.jccl_network_project.utils.FirebaseUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
@@ -30,7 +32,11 @@ import com.google.firebase.auth.PhoneAuthProvider;
 
 import java.util.concurrent.TimeUnit;
 
+import static com.example.jccl_network_project.InscriptionActivity.TAGemail;
+import static com.example.jccl_network_project.InscriptionActivity.TAGstatus;
 import static com.example.jccl_network_project.InscriptionActivity.TAGuid;
+import static com.example.jccl_network_project.InscriptionActivity.TAGusername;
+
 
 
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -40,7 +46,15 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
     private FirebaseAuth mAuth;
     Spinner spinner;
     String country_code;
+
+  private  String userid;
+   private String nom;
+   private String statut_utilisateur;
+    private String email;
+    private Boolean valider;
    private  Intent data;
+   private String phoneNum;
+   public static final String TAGphonenumber="phone_number";
     // ...
 // Initialize Firebase Auth
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
@@ -58,6 +72,12 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         act.setBackgroundDrawable(cd);
 
          data=getIntent();
+
+
+        userid=data.getStringExtra(TAGuid);
+         nom=data.getStringExtra(TAGusername);
+         statut_utilisateur=data.getStringExtra(TAGstatus);
+         email=data.getStringExtra(TAGemail);
 
         phone=(EditText)findViewById(R.id.phone_number);
 
@@ -86,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                 String country_code="237";
                 //should be change to take the phone number from the edit text
                 String phoneT=phone.getText().toString();
-                String phoneNum="+"+country_code+phoneT;
+                phoneNum="+"+country_code+phoneT;
 
                 if(!country_code.isEmpty()){
                     if(!phoneT.isEmpty()){
@@ -124,7 +144,12 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                         Toast.makeText(LoginActivity.this,"OTP code has been send",Toast.LENGTH_LONG).show();
                         Intent otpIntent =new Intent(LoginActivity.this,OTPActivity.class);
                         otpIntent.putExtra("auth",s);
+                        otpIntent.putExtra(TAGuid,userid);
+                        otpIntent.putExtra(TAGusername,nom);
+                        otpIntent.putExtra(TAGemail,email);
+                        otpIntent.putExtra(TAGstatus,statut_utilisateur);
 
+                        otpIntent.putExtra(TAGphonenumber,phoneNum);
                         startActivity(otpIntent);
                     }
 
@@ -139,15 +164,16 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onStart();
         FirebaseUser user=mAuth.getCurrentUser();
 
-        if(user!=null){
-            if(user.equals(data.getStringExtra(TAGuid))){
+     //   if(user!=null){
+       //    if(user.equals(data.getStringExtra(TAGuid))){
 
-            }else{
-                sendTomain();
-            }
+          // }else{
+            //   sendTomain();
+           //}
 
-        }
-    }
+//        }
+}
+
 
 
     public void sendTomain(){
