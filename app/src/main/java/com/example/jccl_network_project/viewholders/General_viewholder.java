@@ -1,5 +1,7 @@
 package com.example.jccl_network_project.viewholders;
 
+import android.nfc.Tag;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -13,10 +15,10 @@ import java.util.List;
 
 public class General_viewholder extends RecyclerView.ViewHolder {
 
-    public List<View> list;
-    public EditText edit ;
-    public General_viewholder(@NonNull View itemView, OnviewHolderCallback activity) {
+    public EditText editFormation ;
+    public General_viewholder(@NonNull View itemView) {
         super(itemView);
-        this.list = activity.getViews();
+        editFormation = itemView.findViewById(R.id.edit_formation);
     }
+    public EditText getEditFormation(){ return editFormation; };
 }

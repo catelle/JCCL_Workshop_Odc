@@ -23,4 +23,6 @@
     <dimen name="margin_start_divider">50dp</dimen>
     <dimen name="layout_width_divider">1dp</dimen>
     <dimen name="margin_end_divider">5dp</dimen>
+    <dimen name="appbar_height">69dp</dimen>
+    <dimen name="margin_right_left">30dp</dimen>
 </resources>

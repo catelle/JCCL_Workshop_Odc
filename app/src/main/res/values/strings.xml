@@ -38,6 +38,11 @@
     <string name="edit_page_formation">Formation</string>
     <string name="edit_page_description">Description</string>
     <string name="edit_page_valider">Valider</string>
+    <string name="favaris_tab_item_title">"Livre de cuisine "</string>
+    <string name="favaris_tab_item_categorie">Cours</string>
+    <string name="favaris_tab_item_poster_name">Junior Temgoua</string>
+    <string name="detail_page_doc_title">Livre de mathematique</string>
+    <string name="detail_page_doc_description">Modelisation des bases de donnees NoSql , en  plusieurs collection</string>
 
     <string-array name="labels_array">
         <item>Enseignant</item>
