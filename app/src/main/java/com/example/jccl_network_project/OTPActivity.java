@@ -50,13 +50,7 @@ public class OTPActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_o_t_p);
 
-
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
-
-
-        act.setBackgroundDrawable(cd);
+        getSupportActionBar().hide();
         continuebutton=findViewById(R.id.continue_button);
         msendcodeEditText=findViewById(R.id.phone_number);
         mAuth=FirebaseAuth.getInstance();

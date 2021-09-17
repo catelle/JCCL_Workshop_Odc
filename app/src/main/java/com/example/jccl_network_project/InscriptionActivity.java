@@ -42,12 +42,7 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
-
-
-        act.setBackgroundDrawable(cd);
+        getSupportActionBar().hide();
 
         Spinner spinner = findViewById(R.id.spinner_country_code);
 
@@ -68,7 +63,7 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
 
                     }else{
 
-                        Toast.makeText(InscriptionActivity.this,"Vous etes desormais utilisateur",Toast.LENGTH_LONG).show();
+                        Toast.makeText(InscriptionActivity.this,"veuillez verifier votre numero",Toast.LENGTH_LONG).show();
                         Intent intent=new Intent(InscriptionActivity.this,LoginActivity.class);
                         intent.putExtra(TAGuid,FirebaseAuth.getInstance().getCurrentUser());
                         intent.putExtra(TAGusername,nom);
@@ -102,13 +97,7 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
     protected void onStart() {
         super.onStart();
          mAuth=FirebaseAuth.getInstance();
-        FirebaseUser user=mAuth.getCurrentUser();
 
-        if(user!=null){
-
-        }else{
-            sendTomain();
-        }
 
     }
 

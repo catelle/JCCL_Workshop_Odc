@@ -64,16 +64,10 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
-
-
-        act.setBackgroundDrawable(cd);
-
+        getSupportActionBar().hide();
          data=getIntent();
 
-
+        mAuth=FirebaseAuth.getInstance();
         userid=data.getStringExtra(TAGuid);
          nom=data.getStringExtra(TAGusername);
          statut_utilisateur=data.getStringExtra(TAGstatus);
@@ -164,16 +158,16 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onStart();
         FirebaseUser user=mAuth.getCurrentUser();
 
-     //   if(user!=null){
-       //    if(user.equals(data.getStringExtra(TAGuid))){
+       if(user==null){
 
-          // }else{
-            //   sendTomain();
-           //}
 
-//        }
+
+               sendTomain();
+           }
+
+
+
 }
-
 
 
     public void sendTomain(){
