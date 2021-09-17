@@ -9,6 +9,10 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+
+import android.util.Log;
+import android.view.LayoutInflater;
+
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,6 +26,9 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+
+import java.util.Date;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -30,7 +37,7 @@ import static com.example.jccl_network_project.Profil_fragment.TAGlocalisation;
 import static com.example.jccl_network_project.Profil_fragment.TAGnom;
 import static com.example.jccl_network_project.Profil_fragment.TAGprofession;
 
-public class EditActivity extends AppCompatActivity implements OnviewHolderCallback {
+public class EditActivity extends AppCompatActivity {
 
     List<Object> list;
     General_adapter adapter;
@@ -61,11 +68,15 @@ public class EditActivity extends AppCompatActivity implements OnviewHolderCallb
         list.add(new Formation("salut"));
         list.add(new Formation("yo"));
         list.add(new Formation("Hola"));
-        adapter = new General_adapter(this, this , list ,R.layout.formation_item);
+        adapter = new General_adapter(this, list ,R.layout.formation_item);
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this ,RecyclerView.VERTICAL , false);
         recycler.setLayoutManager(lm);
         recycler.setAdapter(adapter);
 
+
+
+        Date date_1 =  new Date("01/01/2001");
+        Log.d("***date" , date_1.getTime()+"" );
         Intent data=getIntent();
         getSupportActionBar().hide();
         nomET=findViewById(R.id.edit_nom);
@@ -105,25 +116,9 @@ public class EditActivity extends AppCompatActivity implements OnviewHolderCallb
        });
 
 
+
     }
 
-    @Override
-    public void setFavorisViewInformation(int position) {
-        EditText editText = findViewById(R.id.edit_formation);
-        String edit = ((Formation) list.get(position)).getIntitule();
-        editText.setText(edit);
-    }
-
-    @Override
-    public List<View> getViews() {
-        List<View> list = new ArrayList<>();
-        View view = View.inflate(this , R.layout.formation_item,null);
-        EditText edit = view.findViewById(R.id.edit_formation);
-        Spinner spinner = view.findViewById(R.id.spinner_formation);
-        list.add(edit);
-        list.add(spinner);
-        return list;
-    }
 
     public class  Formation{
         private String intitule;
