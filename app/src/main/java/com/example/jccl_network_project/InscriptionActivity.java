@@ -1,9 +1,12 @@
 package com.example.jccl_network_project;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,105 +17,75 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.jccl_network_project.models.Utilisateur;
+import com.example.jccl_network_project.utils.FirebaseUtils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
-
-
-    EditText nomUtilisateurEditText,emailEditText;
-    Spinner mspinner;
-    TextView continuerTextClickable;
+    EditText nomEditText,emailEditText;
+    String nom, email, statut_utilisateur;
     Boolean validation;
 
-    private String mstatus,emailText,nom_utilisateur;
-
+    TextView continue_button;
+    public static final String TAGuserid="uid";
+    public static final String TAGuid ="uid";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
-
-
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
-
-        emailEditText=findViewById(R.id.emaileditText);
-        nomUtilisateurEditText=findViewById(R.id.nomutilisateureditText);
-
-
-        Spinner spinner = findViewById(R.id.label_spinner);
-        if (spinner != null) {
-            spinner.setOnItemSelectedListener(this);
-        }
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.labels_array, android.R.layout.simple_spinner_item);
-
-        adapter.setDropDownViewResource
-                (android.R.layout.simple_spinner_dropdown_item);
-
-        continuerTextClickable.setOnClickListener(new View.OnClickListener() {
+        ActionBar act;
+        act=getSupportActionBar();
+        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
+        act.setBackgroundDrawable(cd);
+        Spinner spinner = findViewById(R.id.spinner_country_code);
+        nomEditText=findViewById(R.id.phone_number);
+        emailEditText=findViewById(R.id.email);
+        continue_button=findViewById(R.id.continue_button);
+        continue_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                emailText=emailEditText.getText().toString();
-                nom_utilisateur=nomUtilisateurEditText.getText().toString();
-                if(!(emailText).contains("@")||!(emailText).contains(".")||!(emailText).contains("gmail")){
-                    emailEditText.setError("vous devez entrer une email de la forme toto@gmail.com");
-                }else if(nom_utilisateur.length()<2){
-                    nomUtilisateurEditText.setError("Entrez un nom d'utilisateur valide");
+                String nom=nomEditText.getText().toString();
+                String email=emailEditText.getText().toString();
+                if (!(email.isEmpty())&&(!(email.contains("@"))||!(email.contains("."))||!(email.contains("com")))){
+                    emailEditText.setError("Entrez une email de la forme toto@gmail.com");
 
                 }else{
-
-                Utilisateur newUser  = new Utilisateur(null,null,mstatus,"",nom_utilisateur,"","",0,emailText,validation,null,null,null,null);
-
-                db.collection("Utilisateur")
-                        .add(newUser)
-                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                            @Override
-                            public void onSuccess(DocumentReference documentReference) {
-                                Toast.makeText(InscriptionActivity.this,"Inscription réussie",Toast.LENGTH_LONG).show();
-                           //startActivity(new Intent(InscriptionActivity.this,LoginActivity.class));
-                                finish();
-                            }
-                        })
-                  .addOnFailureListener(new OnFailureListener() {
-                      @Override
-                      public void onFailure(@NonNull Exception e) {
-                          Toast.makeText(InscriptionActivity.this,"Inscription échoué",Toast.LENGTH_LONG).show();
-
-                      }
-                  })      ;
-
+                    Utilisateur user=new Utilisateur(FirebaseAuth.getInstance().getUid(),nom,statut_utilisateur,email,validation);
+                    Utilisateur user =new Utilisateur(FirebaseAuth.getInstance().getCurrentUser().toString(),nom,statut_utilisateur,email,validation);
+                    FirebaseUtils.addTask(user);
+                    Toast.makeText(InscriptionActivity.this,"Vous etes desormais utilisateur",Toast.LENGTH_LONG).show();
+                    Intent intent=new Intent(InscriptionActivity.this,LoginActivity.class);
+                    intent.putExtra(TAGuserid,FirebaseAuth.getInstance().getUid());
+                    intent.putExtra(TAGuid,FirebaseAuth.getInstance().getCurrentUser());
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
-
         if (spinner != null) {
-            spinner.setAdapter(adapter);
+            spinner.setOnItemSelectedListener(this);
         }
-
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.labels_array, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource
+                (android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
     }
-
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-      mstatus = adapterView.getSelectedItem().toString();
-      if(mstatus=="Etudiant"){
-          this.validation=true;
-      }else{
-          this.validation=false;
-      }
+        statut_utilisateur=adapterView.getSelectedItem().toString();
+        if(statut_utilisateur=="Etudiant"||statut_utilisateur=="Eleve"){
+            validation=true;
+        }else{
+            validation=false;
+        }
     }
-
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
-
-    public void addUser(Utilisateur utilisateur){
-
     }
 }

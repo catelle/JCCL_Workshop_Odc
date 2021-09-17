@@ -1,7 +1,5 @@
 <resources>
     <string name="app_name">JCCL_Network_Project</string>
-
-
     <!-- page d'acceuil  -->
     <string name="home_page_user_name">Junior Temgoua</string>
     <string name="home_page_profession">Enseignant de mathematique</string>
@@ -12,12 +10,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name_inscription">Inscription</string>
-
     <!-- page de connexion  -->
-
-
+    <string-array name="country_codes">
+        <item>Cameroun</item>
+        <item>France</item>
+        <item>Congo</item>
+        <item>Allemagne</item>
+    </string-array>
     <!-- page d\'inscription -->
-
     <string name="required">Veuillez remplir tous les champs</string>
     <string name="hint_name">Nom d\'utilisateur</string>
     <string name="hint_email">Email</string>
@@ -39,16 +39,20 @@
     <string name="edit_page_formation">Formation</string>
     <string name="edit_page_description">Description</string>
     <string name="edit_page_valider">Valider</string>
+    <string name="edit_page_ville">Ville</string>
+    <string name="edit_page_email">Email</string>
+    <string name="connexion_title">Connexion</string>
+    <string name="numero_de_telephone">numero de telephone</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="code_verification">Code verification</string>
 
     <string-array name="labels_array">
         <item>Enseignant</item>
         <item>Encardreur</item>
+        <item>Professionnel</item>
         <item>Etudiant</item>
         <item>Elève</item>
-
     </string-array>
-
-
     <string-array name="spinner_formation">
         <item>2020</item>
         <item>2019</item>
@@ -72,11 +76,6 @@
         <item>2001</item>
         <item>2000</item>
     </string-array>
-
     <!-- page de forum  -->
-
-
     <!-- page de fil de discussion -->
-
-
 </resources>

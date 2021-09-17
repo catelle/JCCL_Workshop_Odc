@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.example.jccl_network_project.adapters.General_adapter;
 import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+import com.example.jccl_network_project.models.Formation;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,46 +36,29 @@ import com.google.firebase.firestore.Transaction;
 import org.w3c.dom.Document;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EditActivity extends AppCompatActivity implements OnviewHolderCallback {
-
     List<Object> list;
     General_adapter adapter;
     RecyclerView recycler;
-
-    EditText etnom,etProfession, etDescription;
-    Button btnValider;
-
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
-    //DatabaseReference reference;
-    DocumentReference documentReference;
-    private String currentuid;
+    FirebaseAuth mAuth;
+    FirebaseFirestore db;
+    EditText nomET,professionET,descriptionET,emailET,villeET;
+    Button validation;
+    String localisation, profession;
+    private View add_formation_button;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit);
 
-        etnom = findViewById(R.id.edit_nom);
-        etProfession = findViewById(R.id.edit_profession);
-        etDescription = findViewById(R.id.edit_description);
-        btnValider = findViewById(R.id.boutonValider);
-
         recycler = findViewById(R.id.recycler_formation);
-
-        FirebaseUser Utilisateur = FirebaseAuth.getInstance().getCurrentUser();
-        String currentuid = Utilisateur.getUid();
-
-        documentReference = db.collection("Utilisateur").document(currentuid);
-
-
-        btnValider.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                updateProfile();
-            }
-        });
+        mAuth=FirebaseAuth.getInstance();
+        db=FirebaseFirestore.getInstance();
 
         list = new ArrayList<>();
         list.add(new Formation("bonjour"));
@@ -82,115 +66,57 @@ public class EditActivity extends AppCompatActivity implements OnviewHolderCallb
         list.add(new Formation("salut"));
         list.add(new Formation("yo"));
         list.add(new Formation("Hola"));
+
         adapter = new General_adapter(this, this , list ,R.layout.formation_item);
+
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this ,RecyclerView.VERTICAL , false);
         recycler.setLayoutManager(lm);
         recycler.setAdapter(adapter);
+        Intent data=getIntent();
 
-    }
+        nomET=findViewById(R.id.edit_nom);
+        professionET=findViewById(R.id.edit_profession);
+        descriptionET=findViewById(R.id.edit_description);
+        validation=findViewById(R.id.save_info_button);
+        add_formation_button=findViewById(R.id.btn_add_formation);
+        emailET=findViewById(R.id.edit_email);
+        villeET=findViewById(R.id.edit_ville);
 
-    @Override
-    protected void onStart() {
-        super.onStart();
+        villeET.setText(data.getStringExtra(TAGlocalisation));
+        nomET.setText(data.getStringExtra(TAGnom));
+        professionET.setText(data.getStringExtra(TAGprofession));
 
+        professionET.setText(data.getStringExtra(TAGprofession));
 
-        documentReference.get()
-                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+        validation.setOnClickListener(new View.OnClickListener() {
 
-                        if (task.getResult().exists()){
-                            String nomResult = task.getResult().getString("Nom");
-                            String professionResult = task.getResult().getString("Profession");
-                            String descriptionResult = task.getResult().getString("Description");
-                            String formationResult = task.getResult().getString("Formation");
-
-                            //Picasso.get().load(url).into(imageView);
-                            etnom.setText(nomResult);
-                            etProfession.setText(professionResult);
-                            etDescription.setText(descriptionResult);
-                           // recycler.setTextAlignment(formationResult);
-                        }
-                        else{
-                            Toast.makeText(EditActivity.this,"Pas de Profil",Toast.LENGTH_LONG).show();
-                            //Intent intent = new Intent(getActivity(),EditActivity.class);
-                            //startActivity(intent);
-                        }
-
-                    }
-                });
-    }
-
-    private void updateProfile() {
-
-        String nom = etnom.getText().toString();
-        String profession = etProfession.getText().toString();
-        String description = etDescription.getText().toString();
-
-        final DocumentReference sDoc = db.collection("Utilisateur").document(currentuid);
-
-        db.runTransaction(new Transaction.Function<Double>() {
             @Override
-            public Double apply(Transaction transaction) throws FirebaseFirestoreException {
-               // DocumentSnapshot snapshot = transaction.get(sDoc);
-                //double newPopulation = snapshot.getDouble("population") + 1;
-                //if (newPopulation <= 1000000) {
-                    transaction.update(sDoc, "nom",nom);
-                    transaction.update(sDoc, "profession",profession);
-                    transaction.update(sDoc, "description",description);
-                    return null;
-               // } else {
-                 //   throw new FirebaseFirestoreException("Population too high",
-                           // FirebaseFirestoreException.Code.ABORTED);
-              //  }
-            }
-        }).addOnSuccessListener(new OnSuccessListener<Double>() {
-            @Override
-            public void onSuccess(Double result) {
-                Toast.makeText(EditActivity.this,"mise à jour",Toast.LENGTH_LONG).show();
-            }
-        })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(EditActivity.this, "échoué", Toast.LENGTH_LONG).show();
-                    }
-                });
+            public void onClick(View view) {
 
+                String nom=nomET.getText().toString();
+                String profession=professionET.getText().toString();
+                String description=descriptionET.getText().toString();
+                String email=emailET.getText().toString();
+                String ville=villeET.getText().toString();
+                DocumentReference  docref=db.collection("Utilisateur").document(mAuth.getUid());
+                Map<String,Object> edited=new HashMap<>();
+                edited.put("email",email);
+                edited.put("nom",nom);
+                edited.put("description",description);
+                edited.put("profession",profession);
+                edited.put("loclisation",ville);
+                Toast.makeText(EditActivity.this,"user information edited successfully",Toast.LENGTH_LONG).show();
+            }
+        });
     }
-
 
     @Override
     public void setFavorisViewInformation(int position) {
-        EditText editText = findViewById(R.id.edit_formation);
-        String edit = ((Formation) list.get(position)).getIntitule();
-        editText.setText(edit);
+
     }
 
     @Override
     public List<View> getViews() {
-        List<View> list = new ArrayList<>();
-        View view = View.inflate(this , R.layout.formation_item,null);
-        EditText edit = view.findViewById(R.id.edit_formation);
-        Spinner spinner = view.findViewById(R.id.spinner_formation);
-        list.add(edit);
-        list.add(spinner);
-        return list;
-    }
-
-    public class  Formation{
-        private String intitule;
-
-        public Formation(String intitule) {
-            this.intitule = intitule;
-        }
-
-        public String getIntitule() {
-            return intitule;
-        }
-
-        public void setIntitule(String intitule) {
-            this.intitule = intitule;
-        }
+        return null;
     }
 }
