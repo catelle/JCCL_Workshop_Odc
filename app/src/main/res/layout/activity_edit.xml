@@ -7,6 +7,8 @@
     tools:context=".EditActivity">
     
    <!-- Appbar -->
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
@@ -130,6 +132,48 @@
 
             </LinearLayout>
 
+            <!-- bloc localisation -->
+
+            <LinearLayout
+                android:id="@+id/linearLayoutlocalisation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/shape_card_border"
+                android:orientation="vertical"
+                android:padding="10dp"
+                app:layout_constraintEnd_toEndOf="@id/linearLayout2"
+
+                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+
+                <TextView
+                    android:id="@+id/text__ville"
+                    style="@style/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="@string/edit_page_ville"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edit_ville"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/shape_edit_text"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            </LinearLayout>
+
             <!-- bloc profession -->
             <LinearLayout
                 android:id="@+id/linearLayout3"
@@ -139,9 +183,9 @@
                 android:orientation="vertical"
                 android:padding="10dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout2"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout2"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+                app:layout_constraintEnd_toEndOf="@+id/linearLayoutlocalisation"
+                app:layout_constraintStart_toStartOf="@+id/linearLayoutlocalisation"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayoutlocalisation">
 
                 <TextView
                     android:id="@+id/text_profession"
@@ -154,7 +198,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/edit_prefession"
+                    android:id="@+id/edit_profession"
                     android:layout_width="match_parent"
                     android:layout_height="35dp"
                     android:layout_marginLeft="10dp"
@@ -202,7 +246,7 @@
 
             </LinearLayout>
 
-            <!-- bloc formation -->
+            <!-- bloc description -->
             <LinearLayout
                 android:id="@+id/linearLayout5"
                 android:layout_width="0dp"
@@ -211,9 +255,44 @@
                 android:orientation="vertical"
                 android:padding="10dp"
                 android:layout_marginTop="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/linearLayout4"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout4"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout4">
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout3"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+                <TextView
+                    android:id="@+id/text_email"
+                    style="@style/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/edit_page_email"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/edit_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/shape_edit_text"
+                    android:lines="5"
+                    app:layout_constraintEnd_toEndOf="@id/linearLayout4"
+                    app:layout_constraintStart_toStartOf="@id/linearLayout4"
+                    app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+            </LinearLayout>
+
+            <!-- bloc formation -->
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_card_border"
+                android:orientation="vertical"
+                android:padding="10dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout5"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout5"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
 
                 <TextView
                     android:id="@+id/text_formation"
@@ -243,16 +322,21 @@
 
             </LinearLayout>
 
+
+
+
             <Button
+                android:id="@+id/save_info_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
                 android:backgroundTint="@color/orange"
                 android:text="@string/edit_page_valider"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintRight_toRightOf="@id/linearLayout5"
                 app:layout_constraintTop_toBottomOf="@id/linearLayout5" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

@@ -15,7 +15,12 @@
 
     <!-- page de connexion  -->
 
-
+    <string-array name="country_codes">
+        <item>Cameroun</item>
+        <item>France</item>
+        <item>Congo</item>
+        <item>Allemagne</item>
+    </string-array>
     <!-- page d\'inscription -->
     <string name="required">Veuillez remplir tous les champs</string>
     <string name="hint_name">Nom d\'utilisateur</string>
@@ -38,6 +43,12 @@
     <string name="edit_page_formation">Formation</string>
     <string name="edit_page_description">Description</string>
     <string name="edit_page_valider">Valider</string>
+    <string name="edit_page_ville">Ville</string>
+    <string name="edit_page_email">Email</string>
+    <string name="connexion_title">Connexion</string>
+    <string name="numero_de_telephone">numero de telephone</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="code_verification">Code verification</string>
 
     <string-array name="labels_array">
         <item>Enseignant</item>

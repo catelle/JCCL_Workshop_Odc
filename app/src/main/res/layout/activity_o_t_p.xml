@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+
+    <!-- Toolbar inscription -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background_toolbar"
+        app:cardElevation="@dimen/card_elevation_value"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/inscription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTop_inscription"
+            android:gravity="center_horizontal"
+            android:text="Phone number verification"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_inscription_bar" />
+
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/marginTop_linearLayout"
+            android:orientation="vertical">
+
+
+
+            <TextView
+                android:id="@+id/text_to_choose"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:gravity="center"
+                android:paddingStart="0dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="24dp"
+                android:paddingEnd="1dp"
+                android:text="Veuillez entrer le code que vous avez recu par email"
+                android:layout_marginLeft="24dp"/>
+
+
+            <!--   ***************   Full field inscription  ***********                -->
+
+            <!--  ************   Nom d'utilisateur   *******************-->
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTop_cardView"
+                android:layout_marginRight="@dimen/marginLeft"
+                app:cardElevation="@dimen/card_elevation">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+
+                    <EditText
+                        android:id="@+id/phone_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background_text_card"
+                        android:ems="10"
+                        android:hint="@string/code_verification"
+                        android:inputType="number"
+                        android:minHeight="@dimen/minHeight"
+                        android:paddingBottom="@dimen/paddingTop_text_card"
+                        android:paddingStart="@dimen/paddingLeft_text_card"
+                        android:paddingTop="@dimen/paddingTop_text_card"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/text_color_hint"
+                        android:textSize="@dimen/text_size_card" />
+
+                </LinearLayout>
+
+                <!--  ************   Staut d'utilisateur   *******************-->
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <!--  ************   fin champ d'utilisateur   *******************-->
+
+
+            <!--  ************   Confirmation continuer l'inscription   *******************-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTop_cardView"
+                android:layout_marginRight="@dimen/marginLeft"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_value">
+
+                <TextView
+                    android:id="@+id/continue_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/bacgroung_text_continuerr"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/marginTop_required_text"
+                    android:paddingBottom="@dimen/marginTop_required_text"
+                    android:text="@string/continuer"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size_continuer"
+                    android:textStyle="bold" />
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!--  ************   inscription par facebook  *******************-->
+
+
+                <ImageView
+                    android:id="@+id/img_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/img_banner"
+                    app:srcCompat="@drawable/security_it_services_06_1" />
+
+            </LinearLayout>
+
+            <!--  ************   Se connecter *******************-->
+
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
