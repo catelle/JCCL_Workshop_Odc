@@ -145,7 +145,7 @@
                     android:orientation="horizontal">
 
                     <Spinner
-                        android:id="@+id/label_spinner"
+                        android:id="@+id/spinner_country_code"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="end|center"
@@ -257,7 +257,7 @@
                         android:background="@drawable/shape_facebook_button">
 
                         <ImageView
-                            android:id="@+id/facebook_img"
+                            android:id="@+id/facebook_image"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="start|center"

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="scrollView2" type="id">scrollView2</item>
+    <item name="requirement_field" type="id">requirement_fields_textV</item>
+    <item name="email" type="id">email</item>
+    <item name="facebook_image" type="id">facebook_image</item>
+</resources>
