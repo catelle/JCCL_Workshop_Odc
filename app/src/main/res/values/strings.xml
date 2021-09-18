@@ -15,14 +15,8 @@
 
     <!-- page de connexion  -->
 
-    <string-array name="country_codes">
-        <item>Cameroun</item>
-        <item>France</item>
-        <item>Congo</item>
-        <item>Allemagne</item>
-    </string-array>
-    <!-- page d\'inscription -->
     <string name="required">Veuillez remplir tous les champs</string>
+    <!-- page d\'inscription -->
     <string name="hint_name">Nom d\'utilisateur</string>
     <string name="hint_email">Email</string>
     <string name="title_activity_inscription">InscriptionActivity</string>
@@ -43,19 +37,25 @@
     <string name="edit_page_formation">Formation</string>
     <string name="edit_page_description">Description</string>
     <string name="edit_page_valider">Valider</string>
-
     <string name="favaris_tab_item_title">"Livre de cuisine "</string>
+
     <string name="favaris_tab_item_categorie">Cours</string>
     <string name="favaris_tab_item_poster_name">Junior Temgoua</string>
     <string name="detail_page_doc_title">Livre de mathematique</string>
     <string name="detail_page_doc_description">Modelisation des bases de donnees NoSql , en  plusieurs collection</string>
-
     <string name="edit_page_ville">Ville</string>
+
     <string name="edit_page_email">Email</string>
     <string name="connexion_title">Connexion</string>
     <string name="numero_de_telephone">numero de telephone</string>
     <string name="s_inscrire">S\'inscrire</string>
     <string name="code_verification">Code verification</string>
+    <string-array name="country_codes">
+        <item>Cameroun</item>
+        <item>France</item>
+        <item>Congo</item>
+        <item>Allemagne</item>
+    </string-array>
 
     <string-array name="labels_array">
         <item>Votre Statut</item>

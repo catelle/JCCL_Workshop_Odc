@@ -24,6 +24,7 @@ import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firestore.v1.UpdateDocumentRequest;
 
 import java.util.ArrayList;
 
@@ -116,6 +117,7 @@ public class EditActivity extends AppCompatActivity {
        });
 
 
+      
 
     }
 

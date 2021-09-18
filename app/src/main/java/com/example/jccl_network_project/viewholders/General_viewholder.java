@@ -20,5 +20,8 @@ public class General_viewholder extends RecyclerView.ViewHolder {
         super(itemView);
         editFormation = itemView.findViewById(R.id.edit_formation);
     }
+
+
+
     public EditText getEditFormation(){ return editFormation; };
 }

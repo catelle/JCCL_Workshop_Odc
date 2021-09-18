@@ -9,29 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JCCL_Network_Project">
-        <activity android:name=".OTPActivity"></activity>
+        <activity android:name=".viewholders.Apercu_Profil_Activity"></activity>
+        <activity android:name=".ViewOtherProfile" />
+        <activity android:name=".OTPActivity" />
         <activity android:name=".LoginActivity" />
         <activity
             android:name=".detail_pages.DetailPublication_doc"
             android:exported="true" />
         <activity
             android:name=".EditActivity"
-           android:exported="true"></activity>
-
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/title_activity_inscription"
-
             android:theme="@style/Theme.JCCL_Network_Project">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

@@ -157,6 +157,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
     protected void onStart() {
         super.onStart();
         FirebaseUser user=mAuth.getCurrentUser();
+        
 
        if(user==null){
 
