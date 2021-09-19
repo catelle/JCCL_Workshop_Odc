@@ -13,33 +13,53 @@ public class Utilisateur {
     private String nom;
     private String prenom;
     private String profession;
-    private int telephone;
+    private String telephone;
     private String email;
     private Boolean validation;
     private List<Fil_discussion> fil_discussion;
     private List<Formation> formation;
     private List<Publication> favoris;
     private List<Publication> publication;
+    private List<DocumentsFournis> DocumentsFournis;
+
+
 
     //user constructor doesn't take id as a parameter
 
-    public Utilisateur(String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication) {
+    //public Utilisateur(String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication) {
+
+    public Utilisateur(String id_user, String nom,String phone_number, String profession, String email,Boolean validation) {
+
         this.id_user = id_user;
-        this.id_classe_virtuelle = id_classe_virtuelle;
-        this.avatar = avatar;
-        this.categorie = categorie;
-        this.description_profil = description_profil;
+        this.id_classe_virtuelle = null;
+        this.avatar = null;
+        this.categorie = null;
+        this.description_profil = null;
         this.nom = nom;
-        this.prenom = prenom;
+        this.prenom = null;
         this.profession = profession;
-        this.telephone = telephone;
+        this.telephone = phone_number;
         this.email = email;
         this.validation = validation;
-        this.fil_discussion = fil_discussion;
-        this.formation = formation;
-        this.favoris = favoris;
-        this.publication = publication;
+        this.fil_discussion =null;
+        this.formation = null;
+        this.favoris = null;
+        this.publication = null;
+        this.DocumentsFournis=null;
     }
+
+    public Utilisateur(String id_user, String nom, String statut_utilisateur, String email, Boolean validation) {
+    }
+
+
+    public  List<DocumentsFournis>  get_documentsFournis() {
+        return DocumentsFournis;
+    }
+
+    public void set_DocumentFournis(DocumentsFournis doc) {
+        this.DocumentsFournis.add(doc);
+    }
+
 
     public String getId_user() {
         return id_user;
@@ -105,11 +125,11 @@ public class Utilisateur {
         this.profession = profession;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 

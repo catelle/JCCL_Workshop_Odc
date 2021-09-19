@@ -23,69 +23,37 @@ import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivity extends AppCompatActivity  {
 
-    EditText nomUtilisateurEditText;
-    EditText emailEditText ;
-    Spinner spinner ;
-    TextView continuer_button;
+   // EditText nomUtilisateurEditText;
+   // EditText emailEditText ;
+   // Spinner spinner ;
+   // TextView continuer_button;
 
 
 
-    //BottomNavigationView bottomNavigation;
-    private ActionBar tabLayout;
-    private Spinner viewPager2, viewPager1;
-    private String email,nomUtilisateur, status;
+    private BottomNavigationView bottomNavigation;
+  //  private ActionBar tabLayout;
+  //  private Spinner viewPager2, viewPager1;
+  //  private String email,nomUtilisateur, status;
 
 
 
 
     //********** Declaration des variables *************//
-     private BottomNavigationView bottomNavigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-// instanciation des éléments de la vue d'inscription
-
-        EditText nomUtilisateurEditText = findViewById(R.id.nomutilisateureditText);
-        EditText emaileditText = findViewById(R.id.emaileditText);
-        Spinner spinner = findViewById(R.id.label_spinner);
-        TextView continuer_button = findViewById(R.id.continue_bouton);
-
-        //clic sur le bouton continué
-
-        continuer_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                email= emailEditText.getText().toString();
-                nomUtilisateur = nomUtilisateurEditText.getText().toString();
-
-            }
-        });
-
         getSupportActionBar().hide();
 
-        FragmentManager fm = getSupportFragmentManager();
-        Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
-        viewPager2.setAdapter((SpinnerAdapter) adapter);
+        bottomNavigation = findViewById(R.id.bottom_navigation);
+        bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home_fragment()).commit();
 
-        tabLayout.addTab(tabLayout.newTab().setText("Historique"));
-        tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
-        tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
-        tabLayout.addTab(tabLayout.newTab().setText("A propos"));
-       //tabLayout.addOnTabSelectedListener(tabSelectedListener);
-       // viewPager2.registerOnPageChangeCallback(pageChangeCallback);
+        }
 
-
-        ArrayAdapter<CharSequence> adapterStatus = ArrayAdapter.createFromResource(this, R.array.labels_array, android.R.layout.simple_spinner_item);
-        adapterStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapterStatus);
-        spinner.setOnItemSelectedListener(this);
-
-    }
 
     // Declaration du navigationItemSelectedListener pour la gestion des click
     // des click sur la bottom navigation
@@ -116,44 +84,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             };
 
 
-    private TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {
-        @Override
-        public void onTabSelected(TabLayout.Tab tab) {
-           // viewPager2.setCurrentItem(tab.getPosition());
-        }
-
-        @Override
-        public void onTabUnselected(TabLayout.Tab tab) {
-
-        }
-
-        @Override
-        public void onTabReselected(TabLayout.Tab tab) {
-
-        }
-    };
-
-    private ViewPager2.OnPageChangeCallback pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
-        @Override
-        public void onPageSelected(int position) {
-            tabLayout.selectTab(tabLayout.getTabAt(position));
-        }
-    };
-
-
-
-
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-        status= adapterView.getSelectedItem().toString();
-
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }
 
 

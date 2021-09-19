@@ -10,18 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.JCCL_Network_Project">
         <activity
+            android:name=".Home_fragment"
+            android:exported="true" />
+        <activity
             android:name=".OTPActivity"
             android:exported="true" />
         <activity
             android:name=".LoginActivity"
             android:exported="true" />
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity
             android:name=".EditActivity"
             android:exported="true" />
@@ -37,6 +34,12 @@
             android:exported="true"
             android:label="@string/title_activity_inscription"
             android:theme="@style/Theme.JCCL_Network_Project" />
+
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
     </application>
 
 </manifest>
