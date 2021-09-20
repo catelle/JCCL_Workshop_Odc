@@ -1,29 +1,24 @@
 package com.example.jccl_network_project;
 
-import android.content.Intent;
-import android.os.Bundle;
-
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.tabs.TabLayout;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Profil_fragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Profil_fragment extends Fragment {
+import static com.google.android.material.internal.ContextUtils.getActivity;
 
+public class Apercu_Profil_Activity extends  Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -57,7 +52,7 @@ public class Profil_fragment extends Fragment {
 
 
 
-    public Profil_fragment() {
+    public Apercu_Profil_Activity() {
         // Required empty public constructor
     }
 
@@ -70,8 +65,8 @@ public class Profil_fragment extends Fragment {
      * @return A new instance of fragment profil_fragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static Profil_fragment newInstance(String param1, String param2) {
-        Profil_fragment fragment = new Profil_fragment();
+    public static Apercu_Profil_Activity newInstance(String param1, String param2) {
+        Apercu_Profil_Activity fragment = new Apercu_Profil_Activity();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -93,7 +88,7 @@ public class Profil_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
+        View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
         tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
         viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
 
@@ -103,13 +98,13 @@ public class Profil_fragment extends Fragment {
         professionTV=view.findViewById(R.id.profession);
         nomTV=view.findViewById(R.id.user_name);
         photo_profilIV=view.findViewById(R.id.user_picture);
-        iconeditIV=view.findViewById(R.id.icon_edit);
+
 
 
         iconeditIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),EditActivity.class);
+                Intent intent=new Intent(getActivity(), EditActivity.class);
                 intent.putExtra(TAGlocalisation,mlocalisationTV.getText().toString()
                 );
                 intent.putExtra(TAGprofession,professionTV.getText().toString());
@@ -124,8 +119,7 @@ public class Profil_fragment extends Fragment {
         Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
         viewPager2.setAdapter(adapter);
 
-        tabLayout.addTab(tabLayout.newTab().setText("Historique"));
-        tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
+
         tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
         tabLayout.addTab(tabLayout.newTab().setText("A propos"));
         tabLayout.addOnTabSelectedListener(tabSelectedListener);
@@ -156,8 +150,6 @@ public class Profil_fragment extends Fragment {
             tabLayout.selectTab(tabLayout.getTabAt(position));
         }
     };
-public void openApercu_Activity(){
-    startActivity(new Intent(getActivity(),Apercu_Profil_Activity.class));
 
-}
+
 }

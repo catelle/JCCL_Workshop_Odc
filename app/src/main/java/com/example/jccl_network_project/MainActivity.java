@@ -7,13 +7,17 @@ import androidx.fragment.app.FragmentContainer;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TableLayout;
+import android.widget.Toast;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -60,4 +64,17 @@ public class MainActivity extends AppCompatActivity {
                 }
             };
 
-   }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseAuth mAuth= FirebaseAuth.getInstance();
+        FirebaseUser user= mAuth.getCurrentUser();
+        if(user!=null){
+            Toast.makeText(MainActivity.this,"on start method",Toast.LENGTH_LONG).show();
+            Intent intent=new Intent(MainActivity.this,InscriptionActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
+    }
+}

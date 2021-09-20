@@ -9,7 +9,16 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-        <LinearLayout
+    <Button
+        android:id="@+id/openApercu_profil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="OpenApercu_Activity"
+        android:text="Button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="69dp"
