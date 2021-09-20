@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JCCL_Network_Project">
-
-
+        <activity android:name=".ViewProfileActivity"></activity>
+        <activity android:name=".OthersProfileActivvity" />
         <activity android:name=".OTPActivity" />
         <activity android:name=".LoginActivity" />
         <activity

@@ -10,6 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -40,7 +41,7 @@ public class Profil_fragment extends Fragment {
 
     //variables used for profile edition
 
-
+    Button mybutt;
     //********view componnents*****//
 
     TextView mlocalisationTV, nomTV, professionTV, villeTV;
@@ -96,6 +97,7 @@ public class Profil_fragment extends Fragment {
        View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
         tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
         viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
+        mybutt=view.findViewById(R.id.button_open_apercu);
 
         //liaison avec la vue
 
@@ -105,7 +107,12 @@ public class Profil_fragment extends Fragment {
         photo_profilIV=view.findViewById(R.id.user_picture);
         iconeditIV=view.findViewById(R.id.icon_edit);
 
-
+        mybutt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),ViewProfileActivity.class));
+            }
+        });
         iconeditIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,8 +163,5 @@ public class Profil_fragment extends Fragment {
             tabLayout.selectTab(tabLayout.getTabAt(position));
         }
     };
-public void openApercu_Activity(){
-    startActivity(new Intent(getActivity(),Apercu_Profil_Activity.class));
 
-}
 }
