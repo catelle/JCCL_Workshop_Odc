@@ -15,7 +15,7 @@ public class NoteCommentViewHolder extends RecyclerView.ViewHolder implements Vi
     private ImageView mStar;
     public NoteCommentViewHolder(@NonNull View view) {
         super(view);
-        mStar = view.findViewById(R.id.image_star_item);
+//        mStar = view.findViewById(R.id.image_star_item);
     }
 
     public static void setPopupNoteInformation(List<Float> list) {
