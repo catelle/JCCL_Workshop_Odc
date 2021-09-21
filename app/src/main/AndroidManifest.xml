@@ -14,8 +14,13 @@
             android:name=".PdfViewer"
             android:exported="true" />
         <activity
-            android:name=".detail_pages.DetailPublication_doc"
-            android:exported="true">
+
+            android:name=".detail_pages.ProductActivity"
+            android:exported="true"
+            android:label="@string/title_activity_inscription"
+            android:theme="@style/Theme.JCCL_Network_Project" />
+        <activity android:name=".InscriptionActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
