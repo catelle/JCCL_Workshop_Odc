@@ -1,11 +1,13 @@
 package com.example.jccl_network_project.models;
 
+
 import com.google.firebase.Timestamp;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Publication {
+
 
     private String publication_id;
     private String poster_id;
@@ -25,6 +27,7 @@ public class Publication {
     public Publication(){
     }
     public Publication(String publication_id, String poster_id, String categorie, String description, String destination, int duree, ArrayList<Integer> note, String emplacement_piece, String lien, String titre, String date_ajout, ArrayList<String> mot_cles, String niveau_scolaire, List<Commentaire> commentaire) {
+
         this.publication_id = publication_id;
         this.poster_id = poster_id;
         this.categorie = categorie;
@@ -94,6 +97,7 @@ public class Publication {
     }
 
     public void setNote(ArrayList<Integer> note) {
+
         this.note = note;
     }
 
@@ -134,6 +138,7 @@ public class Publication {
     }
 
     public void setMot_cles(ArrayList<String> mot_cles) {
+
         this.mot_cles = mot_cles;
     }
 
@@ -151,5 +156,6 @@ public class Publication {
 
     public void setCommentaires(List<Commentaire> commentaire) {
         this.commentaires = commentaire;
+
     }
 }

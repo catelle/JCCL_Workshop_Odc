@@ -40,7 +40,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
-
 public class DetailPublication_doc extends AppCompatActivity {
 
     public static final String EXTRA_PDF_NAME = "docName";
@@ -58,6 +57,7 @@ public class DetailPublication_doc extends AppCompatActivity {
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @RequiresApi(api = Build.VERSION_CODES.O)
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -149,5 +149,6 @@ public class DetailPublication_doc extends AppCompatActivity {
                 .addOnFailureListener(e -> {
                     Log.d("***echec", e + "");
                 });
+
     }
 }

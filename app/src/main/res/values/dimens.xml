@@ -9,15 +9,15 @@
     <dimen name="card_elevation">8dp</dimen>
     <dimen name="paddingLeft_text_card">15dp</dimen>
     <dimen name="paddingTop_text_card">10dp</dimen>
-    <dimen name="text_size_card">13sp</dimen>
+    <dimen name="text_size_card">15sp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="card_elevation_value">8dp</dimen>
     <dimen name="margin_end_iconclear">16dp</dimen>
-    <dimen name="marginTop_icon_clear">20dp</dimen>
+    <dimen name="marginTop_icon_clear">30dp</dimen>
     <dimen name="marginTop_linearLayout">70dp</dimen>
     <dimen name="minHeight">48dp</dimen>
-    <dimen name="marginTop_inscription">20dp</dimen>
-    <dimen name="text_size_inscription_bar">18sp</dimen>
+    <dimen name="marginTop_inscription">30dp</dimen>
+    <dimen name="text_size_inscription_bar">20sp</dimen>
     <dimen name="card_corner_radius">6dp</dimen>
     <dimen name="text_size_continuer">15sp</dimen>
     <dimen name="margin_start_divider">50dp</dimen>
@@ -25,7 +25,9 @@
     <dimen name="margin_end_divider">5dp</dimen>
     <dimen name="appbar_height">69dp</dimen>
     <dimen name="margin_right_left">30dp</dimen>
+
     <dimen name="btn_size">45dp</dimen>
     <dimen name="margin_top">10dp</dimen>
     <dimen name="margin_bottom">30dp</dimen>
+
 </resources>
