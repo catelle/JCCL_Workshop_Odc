@@ -14,20 +14,12 @@ import android.widget.Toast;
 import com.example.jccl_network_project.models.Utilisateur;
 import com.example.jccl_network_project.utils.FirebaseUtils;
 
-import java.security.Timestamp;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
     private EditText emailEditText, usernameEditText;
     TextView continuer_inscription;
     private String memail, muser_name,muser_status;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +28,7 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
 
      //view associations
 
-        Spinner spinner = findViewById(R.id.label_spinner);
+        Spinner spinner = findViewById(R.id.user_status);
         emailEditText=findViewById(R.id.email);
         usernameEditText=findViewById(R.id.name);
         continuer_inscription=findViewById(R.id.continue_button);

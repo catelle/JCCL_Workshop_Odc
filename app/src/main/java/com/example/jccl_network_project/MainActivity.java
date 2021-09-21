@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
     //********** Declaration des variables *************//
 
+
     //edit profile variables
 
     public static final String TAGprofession="profession";
@@ -28,7 +29,6 @@ public class MainActivity extends AppCompatActivity {
     public static final String TAGabonnee="abonnees";
     public static final String TAGfavoris="favoris";
     public static final String TAGApropos="Apropos";
-
 
      private BottomNavigationView bottomNavigation;
     @Override
