@@ -14,6 +14,7 @@ import android.os.Parcelable;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,17 +45,24 @@ public class DetailPublication_doc extends AppCompatActivity {
 
     public static final String EXTRA_PDF_NAME = "docName";
     private List<Commentaire> listComments = new ArrayList<>();
+    private String docName;
+    private int pageCount;
+    private Publication publication;
+    private String documentId ;
+
+
+    // Firebase config
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    // variables liees au layout
     private RecyclerView commentRecycler;
     private CommentaireAdapter adapter;
     private PDFView mPdfView;
-    private TextView mDownloadButton, mApercuButton, mPageCount;
+    private TextView mDownloadButton, mApercuButton, mPageCount , mDocDescription, mDocTitle , mDocPosterName , mDocCategorie ;
+    private ImageView mDocPosterPic ;
     private EditText mLeaveComment;
     private ImageButton mSendComment;
-    private String docName;
-    private int pageCount;
-    Publication publication;
 
-    private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     @RequiresApi(api = Build.VERSION_CODES.O)
 
@@ -65,7 +73,7 @@ public class DetailPublication_doc extends AppCompatActivity {
 
         /**va charger toutes les donnes relative a une publication dans la
          * variable @param {publication}*/
-        getPublication("DrxFvKTEbNWMjDuuOgQ7");
+        getPublication(documentId);
 
         commentRecycler = findViewById(R.id.recycler_comments);
         adapter = new CommentaireAdapter(this, listComments);
@@ -75,15 +83,23 @@ public class DetailPublication_doc extends AppCompatActivity {
         mPageCount = findViewById(R.id.text_page_count);
         mLeaveComment = findViewById(R.id.edit_comment);
         mSendComment = findViewById(R.id.btn_sent_comment);
+        mDocCategorie = findViewById(R.id.text_categorie);
+        mDocDescription = findViewById(R.id.description_doc);
+        mDocTitle = findViewById(R.id.title_doc);
+        mDocPosterName = findViewById(R.id.text_poster_name);
+        mDocPosterPic = findViewById(R.id.image_poster);
+
+        documentId ="DrxFvKTEbNWMjDuuOgQ7";
         docName = "fretocam.pdf";
 
-        //permet d'afficher l'image du pdf sur la page de detail du document
+        /**permet d'afficher l'image du pdf sur la page de detail du document*/
         pageCount = UtilFunctions.pdfReader(mPdfView, docName, 76);
         mPageCount.setText(pageCount + " pages");
 
+        /** fonction qui va permettre de fixer tous les informations liees au document*/
+        bindInformation();
 
-
-        //permet de creer le recyclerview
+        /**permet de creer le recyclerview*/
         createRecycler();
 
         // TODO : gestion du telechargement lors du click sur le button sur le boutton de telechargement
@@ -96,6 +112,22 @@ public class DetailPublication_doc extends AppCompatActivity {
         mSendComment.setOnClickListener(v -> onSendComment());
     }
 
+    private void bindInformation() {
+        mDocTitle.setText(publication.getTitre());
+        mDocDescription.setText(publication.getDescription());
+        mDocCategorie.setText(publication.getCategorie());
+        // Appel a firebase pour recupper le nom du poster du document
+        db.collection("Utilisateur")
+                .document(publication.getPoster_id())
+                .get()
+                .addOnSuccessListener( task -> {
+                    mDocPosterName.setText(task.getString("prenom") + " " + task.getString("nom") );
+                })
+                .addOnFailureListener( e -> {
+                    Log.d("Echec" , e + "");
+                });
+    }
+
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void onSendComment() {
@@ -105,8 +137,10 @@ public class DetailPublication_doc extends AppCompatActivity {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Commentaire commentaire = new Commentaire(formatter.format(new Date()),"32434edefsadf3",newComment,"3.5","img_user_picture");
         publication.getCommentaires().add(commentaire);
+
+
         db.collection("publication")
-                .document("DrxFvKTEbNWMjDuuOgQ7")
+                .document(documentId)
                 .set(publication)
                 .addOnSuccessListener( u -> {
                    Log.d("***insert" , publication+"");
@@ -149,6 +183,5 @@ public class DetailPublication_doc extends AppCompatActivity {
                 .addOnFailureListener(e -> {
                     Log.d("***echec", e + "");
                 });
-
     }
 }

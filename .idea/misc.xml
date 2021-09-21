@@ -26,7 +26,7 @@
         <entry key="app/src/main/res/drawable/shape_card_border.xml" value="0.34791666666666665" />
         <entry key="app/src/main/res/drawable/shape_download_btn.xml" value="0.2796296296296296" />
         <entry key="app/src/main/res/drawable/shape_edit_text.xml" value="0.34791666666666665" />
-        <entry key="app/src/main/res/layout/activity_detail_publication_doc.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_detail_publication_doc.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.30434782608695654" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />

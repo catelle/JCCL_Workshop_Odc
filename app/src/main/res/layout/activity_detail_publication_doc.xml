@@ -76,6 +76,7 @@
 
                 <!-- Description document -->
                 <TextView
+                    android:id="@+id/text_description"
                     style="@style/medium_description"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -359,7 +360,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginTop="5dp"
                 android:padding="@dimen/margin_top"
                 android:layout_marginBottom="@dimen/margin_top"
                 android:orientation="horizontal"
@@ -373,7 +374,6 @@
                     android:layout_marginStart="@dimen/margin_right_left"
                     android:background="@drawable/shape_edit_text"
                     android:hint="@string/text_leave_comment"
-                    android:lines="2"
                     android:padding="5dp"
                     android:layout_weight="2"
                      />
