@@ -1,23 +1,30 @@
 package com.example.jccl_network_project.models;
 
+import com.google.firebase.Timestamp;
+
+import java.util.ArrayList;
 import java.util.List;
 
 public class Publication {
+
     private String publication_id;
     private String poster_id;
     private String categorie;
     private String description;
     private String destination;
     private int duree;
-    private List<Integer> note;
+    private ArrayList<Integer> note;
     private String emplacement_piece ;
     private String lien;
     private String titre;
-    private List<String> mot_cles;
+    private String date_ajout ;
+    private ArrayList<String> mot_cles;
     private String niveau_scolaire;
-    private List<Commentaire> commentaire;
+    private List<Commentaire> commentaires;
 
-    public Publication(String publication_id, String poster_id, String categorie, String description, String destination, int duree, List<Integer> note, String emplacement_piece, String lien, String titre, List<String> mot_cles, String niveau_scolaire, List<Commentaire> commentaire) {
+    public Publication(){
+    }
+    public Publication(String publication_id, String poster_id, String categorie, String description, String destination, int duree, ArrayList<Integer> note, String emplacement_piece, String lien, String titre, String date_ajout, ArrayList<String> mot_cles, String niveau_scolaire, List<Commentaire> commentaire) {
         this.publication_id = publication_id;
         this.poster_id = poster_id;
         this.categorie = categorie;
@@ -28,9 +35,10 @@ public class Publication {
         this.emplacement_piece = emplacement_piece;
         this.lien = lien;
         this.titre = titre;
+        this.date_ajout = date_ajout;
         this.mot_cles = mot_cles;
         this.niveau_scolaire = niveau_scolaire;
-        this.commentaire = commentaire;
+        this.commentaires = commentaire;
     }
 
     public String getPublication_id() {
@@ -81,11 +89,11 @@ public class Publication {
         this.duree = duree;
     }
 
-    public List<Integer> getNote() {
+    public ArrayList<Integer> getNote() {
         return note;
     }
 
-    public void setNote(List<Integer> note) {
+    public void setNote(ArrayList<Integer> note) {
         this.note = note;
     }
 
@@ -113,11 +121,19 @@ public class Publication {
         this.titre = titre;
     }
 
-    public List<String> getMot_cles() {
+    public String getDate_ajout() {
+        return date_ajout;
+    }
+
+    public void setDate_ajout(String date_ajout) {
+        this.date_ajout = date_ajout;
+    }
+
+    public ArrayList<String> getMot_cles() {
         return mot_cles;
     }
 
-    public void setMot_cles(List<String> mot_cles) {
+    public void setMot_cles(ArrayList<String> mot_cles) {
         this.mot_cles = mot_cles;
     }
 
@@ -129,11 +145,11 @@ public class Publication {
         this.niveau_scolaire = niveau_scolaire;
     }
 
-    public List<Commentaire> getCommentaire() {
-        return commentaire;
+    public List<Commentaire> getCommentaires() {
+        return commentaires;
     }
 
-    public void setCommentaire(List<Commentaire> commentaire) {
-        this.commentaire = commentaire;
+    public void setCommentaires(List<Commentaire> commentaire) {
+        this.commentaires = commentaire;
     }
 }
