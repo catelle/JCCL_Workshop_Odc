@@ -45,12 +45,26 @@ public class ProductActivity extends AppCompatActivity{
 //                LinearLayoutManager.VERTICAL, false);
 //        recyclerViewDoc.setLayoutManager(gridLayoutDoc);
 
-        RecyclerView recyclerViewProfil = findViewById(R.id.recyclerview_grid);
-        ProfilAdapter profilAdapter = new ProfilAdapter(this, ProfilModel.getObjectList());
-        recyclerViewProfil.setAdapter(profilAdapter);
-        RecyclerView.LayoutManager gridLayoutProfil = new GridLayoutManager(this ,
-                2, LinearLayoutManager.VERTICAL, false);
-        recyclerViewProfil.setLayoutManager(gridLayoutProfil);
+        RecyclerView recyclerViewDoc = findViewById(R.id.recyclerview_grid);
+        DocumentAdapter docAdapter = new DocumentAdapter(this, DocumentModel.getObjectList());
+        recyclerViewDoc.setAdapter(docAdapter);
+        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(this ,
+                LinearLayoutManager.VERTICAL, false);
+        recyclerViewDoc.setLayoutManager(linearLayoutDoc);
+
+
+//        RecyclerView recyclerViewProfil = findViewById(R.id.recyclerview_grid);
+//        ProfilAdapter profilAdapter = new ProfilAdapter(this, ProfilModel.getObjectList());
+//        recyclerViewProfil.setAdapter(profilAdapter);
+//        RecyclerView.LayoutManager gridLayoutProfil = new GridLayoutManager(this ,
+//                2, LinearLayoutManager.VERTICAL, false);
+//        recyclerViewProfil.setLayoutManager(gridLayoutProfil);
+
+//        RecyclerView recyclerViewProfil = findViewById(R.id.recyclerview_grid);
+//        ProfilAdapter profilAdapter = new ProfilAdapter(this, ProfilModel.getObjectList());
+//        recyclerViewProfil.setAdapter(profilAdapter);
+//        RecyclerView.LayoutManager linearLayoutProfil = new LinearLayoutManager(this , LinearLayoutManager.VERTICAL, false);
+//        recyclerViewProfil.setLayoutManager(linearLayoutProfil);
 
 
     }

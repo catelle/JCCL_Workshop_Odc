@@ -3,11 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_inscription.xml" value="0.25" />
-        <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_product.xml" value="0.33" />
-        <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/document_item.xml" value="0.33" />
-        <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/teacher_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/word_category.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HP/Downloads/jccl_workshop/JCCL_Workshop_Odc/app/src/main/res/layout/activity_inscription.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HP/Downloads/jccl_workshop/JCCL_Workshop_Odc/app/src/main/res/layout/activity_paid.xml" value="0.33" />
+        <entry key="..\:/Users/HP/Downloads/jccl_workshop/JCCL_Workshop_Odc/app/src/main/res/layout/activity_product.xml" value="0.25" />
+        <entry key="..\:/Users/HP/Downloads/jccl_workshop/JCCL_Workshop_Odc/app/src/main/res/layout/document_item.xml" value="0.5" />
+        <entry key="..\:/Users/HP/Downloads/jccl_workshop/JCCL_Workshop_Odc/app/src/main/res/layout/teacher_item.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Downloads/jccl_workshop/JCCL_Workshop_Odc/app/src/main/res/mipmap-anydpi-v26/ic_orange_money_logo.xml" value="0.2203125" />
         <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_forum.xml" value="0.19375" />
