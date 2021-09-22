@@ -7,6 +7,7 @@
     tools:context=".MainActivity">
 
     <!-- Toolbar inscription -->
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -18,8 +19,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:background="@color/light_gray">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView5"
@@ -124,7 +125,6 @@
                             android:paddingTop="10dp"
                             android:paddingBottom="15dp"
                             android:fontFamily="@font/poppins_regular" />
-
 
                     </com.google.android.material.textfield.TextInputLayout>
 

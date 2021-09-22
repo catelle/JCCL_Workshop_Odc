@@ -1,0 +1,54 @@
+package com.example.jccl_network_project.utils;
+
+import com.github.barteksc.pdfviewer.PDFView;
+
+public class UtilFunctions {
+
+    public static int pdfReader(PDFView pdfView , String docName , int docNumber) {
+        switch (docNumber){
+            case 0 :
+                pdfView.fromAsset(docName)
+                        .pages(0) // all pages are displayed by default
+                        .enableSwipe(false) // allows to block changing pages using swipe
+                        .swipeHorizontal(false)
+                        .enableDoubletap(false)
+                        .defaultPage(0)
+                        .enableAnnotationRendering(false) // render annotations (such as comments, colors or forms)
+                        .password(null)
+                        .scrollHandle(null)
+                        .enableAntialiasing(true) // improve rendering a little bit on low-res screens
+                        // spacing between pages in dp. To define spacing color, set view background
+                        .spacing(3)
+                        .autoSpacing(false) // add dynamic spacing to fit each page on its own on the screen
+                        .fitEachPage(false) // fit each page to the view, else smaller pages are scaled relative to largest page.
+                        .pageSnap(false) // snap pages to screen boundaries
+                        .pageFling(false) // make a fling change only a single page like ViewPager
+                        .nightMode(false) // toggle night mode
+                        .load();
+
+                return pdfView.getPageCount();
+            default:
+                pdfView.fromAsset(docName)
+                        .enableSwipe(true) // allows to block changing pages using swipe
+                        .swipeHorizontal(false)
+                        .enableDoubletap(false)
+                        .defaultPage(0)
+                        .enableAnnotationRendering(false) // render annotations (such as comments, colors or forms)
+                        .password(null)
+                        .scrollHandle(null)
+                        .enableAntialiasing(true) // improve rendering a little bit on low-res screens
+                        // spacing between pages in dp. To define spacing color, set view background
+                        .spacing(3)
+                        .autoSpacing(false) // add dynamic spacing to fit each page on its own on the screen
+                        .fitEachPage(false) // fit each page to the view, else smaller pages are scaled relative to largest page.
+                        .pageSnap(false) // snap pages to screen boundaries
+                        .pageFling(false) // make a fling change only a single page like ViewPager
+                        .nightMode(false) // toggle night mode
+                        .load();
+
+               return pdfView.getPageCount();
+
+        }
+
+    }
+}

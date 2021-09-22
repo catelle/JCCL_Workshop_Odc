@@ -44,6 +44,16 @@
     <string name="detail_page_doc_title">Livre de mathematique</string>
     <string name="detail_page_doc_description">Modelisation des bases de donnees NoSql , en  plusieurs collection</string>
 
+    <string name="detail_page_doc_poster_name">Junior Temgoua</string>
+    <string name="detail_page_doc_profession">Enseignant de mathematique</string>
+    <string name="text_download">Telecharger</string>
+    <string name="signale_doc">signaler</string>
+    <string name="text_apercu">Apercu du Document</string>
+    <string name="commentaires">commentaires</string>
+    <string name="comment_date">il y\'a 6 jours</string>
+    <string name="text_leave_comment">Laisser un commentaire</string>
+    <string name="text_popup_note">Combien d\'etoiles donner vous a ce document</string>
+
     <string-array name="labels_array">
         <item>Votre Statut</item>
         <item>Enseignant</item>
@@ -76,6 +86,7 @@
         <item>2001</item>
         <item>2000</item>
     </string-array>
+
     <string name="title_activity_product">ProductActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -83,8 +94,6 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
 
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <!-- page de forum  -->
 

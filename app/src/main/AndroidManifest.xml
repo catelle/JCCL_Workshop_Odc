@@ -9,20 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JCCL_Network_Project">
+
         <activity
             android:name=".detail_pages.PaidActivity"
             android:exported="true" />
         <activity
-            android:name=".InscriptionActivity"
+            android:name=".detail_pages.ProductActivity"
             android:exported="true"
             android:label="@string/title_activity_product"
             android:theme="@style/Theme.JCCL_Network_Project.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".PdfViewer"
+            android:exported="true" />
+        <activity
+            android:name=".detail_pages.DetailPublication_doc"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".EditActivity"
+            android:exported="true" />
+        <activity
+            android:name=".InscriptionActivity"
             android:exported="true"
             android:label="@string/title_activity_inscription"
-            android:theme="@style/Theme.JCCL_Network_Project" />
-        <activity android:name=".detail_pages.ProductActivity">
+            android:theme="@style/Theme.JCCL_Network_Project">
+        </activity>
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
