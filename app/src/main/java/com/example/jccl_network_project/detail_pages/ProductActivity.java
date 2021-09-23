@@ -52,7 +52,6 @@ public class ProductActivity extends AppCompatActivity{
                 2, LinearLayoutManager.VERTICAL, false);
         recyclerViewProfil.setLayoutManager(gridLayoutProfil);
 
-
     }
 
 }

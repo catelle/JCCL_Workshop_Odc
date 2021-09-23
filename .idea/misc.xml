@@ -31,10 +31,12 @@
         <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.30434782608695654" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_pdf_viewer.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/activity_product.xml" value="0.2" />
         <entry key="app/src/main/res/layout/comment_item.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/favoris_item.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/formation_item.xml" value="0.278125" />
         <entry key="app/src/main/res/layout/fragment_favoris.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/fragment_forum_fragment.xml" value="0.3020833333333333" />
         <entry key="app/src/main/res/layout/fragment_profil_fragment.xml" value="0.33" />
         <entry key="app/src/main/res/layout/note_popup.xml" value="0.2046875" />
         <entry key="app/src/main/res/layout/star_item.xml" value="0.2046875" />

@@ -33,7 +33,7 @@ public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapt
     }
 
 
-    class Word_viewholder extends RecyclerView.ViewHolder {
+    class Word_viewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView wordItemView;
         final WordCategoryAdapter mAdater;
@@ -44,6 +44,10 @@ public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapt
             this.mAdater = adapter;
         }
 
+        @Override
+        public void onClick(View view) {
+
+        }
     }
     @NonNull
     @Override
