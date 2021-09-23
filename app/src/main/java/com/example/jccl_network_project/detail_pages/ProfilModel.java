@@ -53,15 +53,15 @@ public class ProfilModel {
     private static int[] getImages(){
 
         int[] images = {
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech
         };
 
         return images;

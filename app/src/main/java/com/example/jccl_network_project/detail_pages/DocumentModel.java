@@ -104,15 +104,15 @@ public class DocumentModel {
     private static int[] getImagesPoster(){
 
         int[] imagesPoster = {
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook,
-                R.drawable.ic_baseline_facebook
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech,
+                R.mipmap.ic_profil_tech
         };
 
         return imagesPoster;
@@ -122,16 +122,16 @@ public class DocumentModel {
     private static int[] getImagesDoc(){
 
         int[] imagesDoc = {
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
-                R.drawable.ic_google,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
+                R.mipmap.ic_livre_mathpc,
         };
 
         return imagesDoc;

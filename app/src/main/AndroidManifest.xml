@@ -11,6 +11,14 @@
         android:theme="@style/Theme.JCCL_Network_Project">
 
         <activity
+            android:name=".detail_pages.PaidActivity"
+            android:exported="true" />
+        <activity
+            android:name=".detail_pages.ProductActivity"
+            android:exported="true"
+            android:label="@string/title_activity_product"
+            android:theme="@style/Theme.JCCL_Network_Project.NoActionBar" />
+        <activity
             android:name=".PdfViewer"
             android:exported="true" />
         <activity
