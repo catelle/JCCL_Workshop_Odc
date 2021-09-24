@@ -14,7 +14,7 @@
             android:name=".detail_pages.PaidActivity"
             android:exported="true" />
         <activity
-            android:name=".detail_pages.ProductActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:label="@string/title_activity_product"
             android:theme="@style/Theme.JCCL_Network_Project.NoActionBar" />
@@ -35,7 +35,7 @@
             android:label="@string/title_activity_inscription"
             android:theme="@style/Theme.JCCL_Network_Project">
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".detail_pages.ProductActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

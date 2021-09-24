@@ -2,120 +2,110 @@
 
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="2dp"
-    android:layout_marginTop="2dp"
+    android:layout_height="120dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
+        android:layout_marginBottom="10dp">
 
             <ImageView
                 android:id="@+id/img_doc"
-                android:layout_width="105dp"
-                android:layout_marginStart="2dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:scaleY="1.4"
                 android:src="@mipmap/ic_livre_mathpc"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_img_poster"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp"
+                android:layout_toEndOf="@+id/img_doc"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="18dp">
+                <ImageView
+                    android:id="@+id/img_poster"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:srcCompat="@mipmap/ic_profil_tech_round" />
 
-            <LinearLayout
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/name_poster"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
-                android:orientation="vertical">
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:orientation="horizontal">
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        app:cardCornerRadius="50dp">
-                        <ImageView
-                            android:id="@+id/img_poster"
-                            android:layout_width="40dp"
-                            android:layout_height="40dp"
-                            app:srcCompat="@mipmap/ic_profil_tech_round" />
+                android:layout_toEndOf="@+id/card_img_poster"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Courtney Henry"
+                android:textSize="12sp" />
 
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/name_poster"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="10dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="Courtney Henry"
-                        android:textSize="12sp" />
-
-                </LinearLayout>
                 <TextView
                     android:id="@+id/title_doc"
                     style="@style/subtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
+                    android:layout_below="@+id/card_img_poster"
+                    android:layout_toEndOf="@+id/img_doc"
                     android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
                     android:textSize="16sp"
                     android:text="Livre de cuisine" />
 
                 <TextView
                     android:id="@+id/description_doc"
-                    android:layout_width="110dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_below="@+id/title_doc"
+                    android:layout_toEndOf="@+id/img_doc"
+                    android:layout_alignEnd="@+id/star_icon"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="middle"
                     android:fontFamily="@font/poppins_regular"
                     android:text="Comment faire le plat de vos reves" />
 
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_gravity="end"
-                android:orientation="vertical">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginEnd="10dp"
-                    android:orientation="horizontal">
-
                     <ImageView
+                        android:id="@+id/star_icon"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_toStartOf="@+id/note"
                         app:srcCompat="@drawable/ic_vector" />
 
                     <TextView
                         android:id="@+id/note"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toStartOf="@+id/favoris"
                         android:text="(255)" />
                     <ImageView
+                        android:id="@+id/favoris"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center|top"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"
                         app:srcCompat="@drawable/ic_bi_heart" />
-
-                </LinearLayout>
 
                 <TextView
                     android:id="@+id/isFree"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
+                    android:layout_below="@+id/favoris"
                     android:layout_marginTop="10dp"
+                    android:layout_alignParentEnd="true"
                     android:layout_marginEnd="10dp"
                     android:fontFamily="@font/poppins_regular"
                     android:text="free"
@@ -125,25 +115,21 @@
                     android:id="@+id/type_doc"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginEnd="10dp"
+                    android:layout_below="@+id/isFree"
+                    android:layout_alignParentEnd="true"
                     android:fontFamily="@font/poppins_regular"
+                    android:layout_marginEnd="10dp"
                     android:text="Cours"
                     android:textSize="15sp"
                     android:textColor="@color/orange" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="end"
-                    android:layout_marginTop="20dp"
                     android:layout_marginEnd="10dp"
+                    android:layout_below="@+id/type_doc"
+                    android:layout_alignParentEnd="true"
                     app:srcCompat="@drawable/ic_baseline_cloud_upload_24" />
 
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-    </LinearLayout>
+    </RelativeLayout>
 </androidx.cardview.widget.CardView>
 

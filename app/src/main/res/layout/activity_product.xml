@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+                app:srcCompat="@drawable/ic_back" />
 
             <TextView
                 style="@style/appbar_title"
@@ -52,7 +52,7 @@
     <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -64,37 +64,37 @@
                 android:layout_marginStart="15dp"
                 android:layout_marginEnd="15dp"
                 app:cardCornerRadius="8dp"
-                android:layout_marginTop="100dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <LinearLayout
+                android:layout_marginTop="100dp">
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginEnd="15dp">
+                    android:layout_height="match_parent">
 
                     <EditText
                         style="@style/appbar_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_weight="5"
                         android:background="@color/white"
+                        android:layout_toStartOf="@+id/search_icon"
+                        android:layout_alignParentStart="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="5dp"
                         android:fontFamily="@font/poppins_regular"
                         android:hint="Recherche...."
+                        android:maxLines="1"
                         android:paddingTop="5dp"
                         android:paddingBottom="5dp"
                         android:textSize="14sp" />
 
                     <ImageView
-                        android:layout_width="5dp"
+                        android:id="@+id/search_icon"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="end|center"
-                        android:layout_marginLeft="100dp"
-                        android:layout_weight="1"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
                         android:src="@drawable/ic_baseline_search_24" />
-                </LinearLayout>
+                </RelativeLayout>
 
             </androidx.cardview.widget.CardView>
 
@@ -106,6 +106,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="15dp"
+                android:layout_below="@+id/cardView4"
                 android:src="@drawable/ic_filtre_trie"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -118,6 +119,7 @@
         android:id="@+id/recyclerview_word"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/imageView2"
         android:layout_marginTop="15dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/word_category"
@@ -133,15 +135,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-        tools:listitem="@layout/teacher_item"
-        tools:itemCount="2"
+        android:layout_below="@+id/recyclerview_word"
+        tools:listitem="@layout/index_fil_discussion"
+        tools:itemCount="4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerview_word">
 
     </androidx.recyclerview.widget.RecyclerView>
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
         </ScrollView>
 
 
