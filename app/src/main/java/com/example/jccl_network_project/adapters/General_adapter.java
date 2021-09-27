@@ -11,8 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jccl_network_project.EditActivity;
-import com.example.jccl_network_project.R;
-import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 import com.example.jccl_network_project.viewholders.General_viewholder;
 
 import java.util.List;
@@ -20,7 +19,7 @@ import java.util.List;
 public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
 
     private List<Object> list ;
-    private OnviewHolderCallback activity ;
+    private OnViewHolderCallback activity ;
     private LayoutInflater mInflater;
     private int itemLayout;
 

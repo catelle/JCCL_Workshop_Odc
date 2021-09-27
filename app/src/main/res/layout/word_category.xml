@@ -25,6 +25,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="20dp"
             android:paddingEnd="20dp"
+            android:clickable="true"
+            android:focusable="true"
             android:fontFamily="@font/poppins_regular"
             android:textColor="@color/black"
             android:text="Tous" />

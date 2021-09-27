@@ -16,10 +16,10 @@ import java.util.List;
 
 public class ProfilAdapter extends RecyclerView.Adapter<ProfilAdapter.ProfilviewHolder>{
 
-    private List<ProfilModel> objectList;
+    private List<Object> objectList;
     private LayoutInflater inflater;
 
-    public ProfilAdapter(Context context, List<ProfilModel> objectList) {
+    public ProfilAdapter(Context context, List<Object> objectList) {
         this.objectList = objectList;
         inflater = LayoutInflater.from(context);
     }
@@ -62,7 +62,7 @@ public class ProfilAdapter extends RecyclerView.Adapter<ProfilAdapter.Profilview
 
     @Override
     public void onBindViewHolder(@NonNull ProfilviewHolder holder, int position) {
-        ProfilModel current = objectList.get(position);
+        ProfilModel current = (ProfilModel) objectList.get(position);
         holder.setData(current, position);
 
     }

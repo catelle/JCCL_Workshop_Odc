@@ -19,15 +19,15 @@ public class Publication {
     private String emplacement_piece ;
     private String lien;
     private String titre;
-    private String date_ajout ;
+    private String date_creation ;
     private ArrayList<String> mot_cles;
     private String niveau_scolaire;
     private List<Commentaire> commentaires;
 
     public Publication(){
     }
-    public Publication(String publication_id, String poster_id, String categorie, String description, String destination, int duree, ArrayList<Integer> note, String emplacement_piece, String lien, String titre, String date_ajout, ArrayList<String> mot_cles, String niveau_scolaire, List<Commentaire> commentaire) {
 
+    public Publication(String publication_id, String poster_id, String categorie, String description, String destination, int duree, ArrayList<Integer> note, String emplacement_piece, String lien, String titre, String date_creation, ArrayList<String> mot_cles, String niveau_scolaire, List<Commentaire> commentaires) {
         this.publication_id = publication_id;
         this.poster_id = poster_id;
         this.categorie = categorie;
@@ -38,10 +38,10 @@ public class Publication {
         this.emplacement_piece = emplacement_piece;
         this.lien = lien;
         this.titre = titre;
-        this.date_ajout = date_ajout;
+        this.date_creation = date_creation;
         this.mot_cles = mot_cles;
         this.niveau_scolaire = niveau_scolaire;
-        this.commentaires = commentaire;
+        this.commentaires = commentaires;
     }
 
     public String getPublication_id() {
@@ -97,7 +97,6 @@ public class Publication {
     }
 
     public void setNote(ArrayList<Integer> note) {
-
         this.note = note;
     }
 
@@ -125,12 +124,12 @@ public class Publication {
         this.titre = titre;
     }
 
-    public String getDate_ajout() {
-        return date_ajout;
+    public String getDate_creation() {
+        return date_creation;
     }
 
-    public void setDate_ajout(String date_ajout) {
-        this.date_ajout = date_ajout;
+    public void setDate_creation(String date_creation) {
+        this.date_creation = date_creation;
     }
 
     public ArrayList<String> getMot_cles() {
@@ -138,7 +137,6 @@ public class Publication {
     }
 
     public void setMot_cles(ArrayList<String> mot_cles) {
-
         this.mot_cles = mot_cles;
     }
 
@@ -154,8 +152,7 @@ public class Publication {
         return commentaires;
     }
 
-    public void setCommentaires(List<Commentaire> commentaire) {
-        this.commentaires = commentaire;
-
+    public void setCommentaires(List<Commentaire> commentaires) {
+        this.commentaires = commentaires;
     }
 }

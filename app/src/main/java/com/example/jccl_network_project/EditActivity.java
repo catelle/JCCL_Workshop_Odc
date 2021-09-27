@@ -13,7 +13,7 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.jccl_network_project.adapters.General_adapter;
-import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 
 import java.util.ArrayList;
 import java.util.Date;

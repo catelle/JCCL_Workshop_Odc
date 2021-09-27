@@ -14,7 +14,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 ;
 import com.example.jccl_network_project.R;
-import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 import com.example.jccl_network_project.viewholders.General_viewholder;
 
 import java.util.LinkedList;
@@ -24,14 +24,33 @@ import java.util.List;
 public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapter.Word_viewholder>  {
 
 
-    private final LinkedList<String> mWordList;
+    private  List<String> mCategorie;
     private LayoutInflater mInflater;
 
-    public WordCategoryAdapter( Context context ,LinkedList<String> mWordList) {
-        this.mWordList = mWordList;
+    public WordCategoryAdapter(Context context , List<String> mCategorie) {
+        this.mCategorie = mCategorie;
         mInflater = LayoutInflater.from(context);
+
     }
 
+
+
+    @NonNull
+    @Override
+    public WordCategoryAdapter.Word_viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View mItemView = mInflater.inflate(R.layout.word_category, parent, false);
+        return new Word_viewholder(mItemView, this);
+    }
+
+    @Override
+    public int getItemCount() {
+        return mCategorie.size();
+    }
+    @Override
+    public void onBindViewHolder(@NonNull WordCategoryAdapter.Word_viewholder holder, int position) {
+        String mCurrent = mCategorie.get(position);
+        holder.wordItemView.setText(mCurrent);
+    }
 
     class Word_viewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -49,24 +68,9 @@ public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapt
 
         }
     }
-    @NonNull
-    @Override
-    public WordCategoryAdapter.Word_viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View mItemView = mInflater.inflate(R.layout.word_category,
-                parent, false);
-        return new Word_viewholder(mItemView, this);
-    }
 
-    @Override
-    public int getItemCount() {
-        return mWordList.size();
+    public interface OnItemClickListener{
+        public void onItemClick(int position);
     }
-    @Override
-    public void onBindViewHolder(@NonNull WordCategoryAdapter.Word_viewholder holder, int position) {
-
-        String mCurrent = mWordList.get(position);
-        holder.wordItemView.setText(mCurrent);
-    }
-
 
 }

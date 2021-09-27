@@ -19,16 +19,18 @@
             android:layout_width="match_parent"
             android:layout_height="69dp"
             android:layout_gravity="center_horizontal"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/ic_baseline_arrow_back_ios_24" />
+                />
 
             <TextView
+                android:id="@+id/text_appBarTitle"
                 style="@style/appbar_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +38,8 @@
                 android:layout_marginTop="30dp"
                 android:layout_weight="3"
                 android:fontFamily="@font/poppins_regular"
-                android:text="Contenus" />
+                android:text="Contenus"
+                />
 
             <ImageView
                 android:layout_width="wrap_content"
