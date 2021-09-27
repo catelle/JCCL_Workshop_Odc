@@ -20,6 +20,7 @@ import android.widget.TextView;
 
 import com.example.jccl_network_project.R;
 import com.example.jccl_network_project.detail_pages.WordCategoryAdapter;
+
 import com.example.jccl_network_project.models.Publication;
 import com.example.jccl_network_project.models.Utilisateur;
 import com.google.android.gms.tasks.Task;
@@ -31,6 +32,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -38,12 +40,14 @@ import java.util.Map;
 
 public class ProductActivity extends AppCompatActivity {
 
+
     private List<String> mCategory = new ArrayList<>();
     private List<Object> list = new ArrayList<>();
     private TextView mAppBarTitle;
     RecyclerView mRecyclerViewWord;
     String typeContain;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +107,7 @@ public class ProductActivity extends AppCompatActivity {
         recyclerViewDoc.setLayoutManager(linearLayoutDoc);
     }
 
+
     private void createRecyclerCategorie() {
         WordCategoryAdapter wordAdapter = new WordCategoryAdapter(this, mCategory);
         mRecyclerViewWord.setAdapter(wordAdapter);
@@ -128,6 +133,7 @@ public class ProductActivity extends AppCompatActivity {
             Log.d(TAG, "erreur lors de la reccuperation des donnees relatives aux profils ");
         });
     }
+
 
     public void getAllCategory(String category) {
         db.collection("Categorie")

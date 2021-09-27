@@ -41,7 +41,6 @@ package="com.example.jccl_network_project">
         android:exported="true"
         android:label="@string/title_activity_inscription"
         android:theme="@style/Theme.JCCL_Network_Project">
-
     </activity>
     <activity android:name=".MainActivity">
 
