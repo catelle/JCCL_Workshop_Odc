@@ -8,4 +8,5 @@ public interface OnviewHolderCallback {
 
     void setFavorisViewInformation(int position);
     List<View> getViews();
+    void OnItemClick(int position);
 }

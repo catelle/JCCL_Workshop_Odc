@@ -5,16 +5,22 @@
       <map>
         <entry key="../../../../Android/Sdk/platforms/android-29/data/res/layout/simple_spinner_dropdown_item.xml" value="0.278125" />
         <entry key="../../../../Android/Sdk/platforms/android-29/data/res/layout/simple_spinner_item.xml" value="0.278125" />
+        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_detail_publication_doc.xml" value="0.41785714285714287" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_edit.xml" value="0.15486725663716813" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_inscription.xml" value="0.33" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_main.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_o_t_p.xml" value="0.26461538461538464" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_otpactivity.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/activity_view_profile.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/favoris_item.xml" value="0.10833333333333334" />
+        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fil_discussion.xml" value="0.25" />
+        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_a_propos.xml" value="0.12222222222222222" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_abonnee.xml" value="0.13425925925925927" />
+        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_favoris.xml" value="0.12222222222222222" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_forum_fragment.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_historique.xml" value="0.13425925925925927" />
-        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_home_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_home_fragment.xml" value="0.25" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_notification_fragment.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_profil_fragment.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/loret/AndroidStudioProjects/JCCL_WorkShop_Odc/JCCL_Workshop_Odc/app/src/main/res/layout/statusspinner.xml" value="0.27291666666666664" />

@@ -13,8 +13,7 @@ import androidx.annotation.NonNull;
 
 public class FirebaseUtils {
 
-<<<<<<< HEAD
-=======
+
     static final String TASK_COLLECTION = "Utilisateur";
     static CollectionReference mRefCollection;
 
@@ -49,6 +48,5 @@ public class FirebaseUtils {
 
     }
 
->>>>>>> a809ae6c2808e9c8775e8f26a59abdb509e195d7
 
 }

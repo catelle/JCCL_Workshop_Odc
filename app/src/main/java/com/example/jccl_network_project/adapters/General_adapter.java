@@ -24,7 +24,7 @@ public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
     private LayoutInflater mInflater;
     private int itemLayout;
 
-    public General_adapter(Context context ,OnviewHolderCallback activity, List<Object> list , int itemLayout ){
+    public General_adapter(Context context, List<Object> list, int itemLayout){
         this.list = list;
         this.activity = activity;
         this.mInflater = LayoutInflater.from(context);
@@ -41,8 +41,7 @@ public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
     @Override
     public void onBindViewHolder(@NonNull General_viewholder holder, int position) {
         String edit = ((EditActivity.Formation) this.list.get(position)).getIntitule();
-        List<View> liste = holder.list;
-        ((EditText)liste.get(0)).setText(edit);
+        holder.editFormation.setText(edit);
     }
 
     @Override
