@@ -39,39 +39,39 @@ public class ProductActivity extends AppCompatActivity{
 //        mWordList.addLast("Resolu");
 //        mWordList.addLast("Non Resolu");
 
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-//        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-//                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-//                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
 
 
         RecyclerView recyclerViewWord = findViewById(R.id.recyclerview_word);
@@ -81,19 +81,19 @@ public class ProductActivity extends AppCompatActivity{
                 LinearLayoutManager.HORIZONTAL, false));
 
 
-        RecyclerView recyclerViewDoc = findViewById(R.id.recyclerview_grid);
-        DocumentAdapter docAdapter = new DocumentAdapter(this, DocumentModel.getObjectList());
-        recyclerViewDoc.setAdapter(docAdapter);
-        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(this ,
-                LinearLayoutManager.VERTICAL, false);
-        recyclerViewDoc.setLayoutManager(linearLayoutDoc);
-
-//        RecyclerView recyclerViewFilDiscussion = findViewById(R.id.recyclerview_grid);
-//        FilDiscussionAdapter fdAdapter = new FilDiscussionAdapter(this, mForumList);
-//        recyclerViewFilDiscussion.setAdapter(fdAdapter);
+//        RecyclerView recyclerViewDoc = findViewById(R.id.recyclerview_grid);
+//        DocumentAdapter docAdapter = new DocumentAdapter(this, DocumentModel.getObjectList());
+//        recyclerViewDoc.setAdapter(docAdapter);
 //        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(this ,
 //                LinearLayoutManager.VERTICAL, false);
-//        recyclerViewFilDiscussion.setLayoutManager(linearLayoutDoc);
+//        recyclerViewDoc.setLayoutManager(linearLayoutDoc);
+
+        RecyclerView recyclerViewFilDiscussion = findViewById(R.id.recyclerview_grid);
+        FilDiscussionAdapter fdAdapter = new FilDiscussionAdapter(this, mForumList);
+        recyclerViewFilDiscussion.setAdapter(fdAdapter);
+        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(this ,
+                LinearLayoutManager.VERTICAL, false);
+        recyclerViewFilDiscussion.setLayoutManager(linearLayoutDoc);
 
 
 

@@ -93,6 +93,13 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
+    <string name="question">En tant que développeur front-end, vous pourrez
+        faire afficher des messages dans la console. Par exemple, les développeurs chez OpenClassrooms
+        font apparaître un message d\'avertissement pour prévenir les potentielles victimes d\'attaque self-XSS,
+        où l\'attaquant convainc la victime à coller du code néfaste dans cette console.</string>
+    <string name="response">On parle souvent de design responsive : il s\'agit d\'une technique de
+        design où l\'apparence d\'une page ou d\'une application dépend de l\'appareil sur lequel on
+        les consulte. On dépendra souvent de la largeur en pixels de la fenêtre de navigateur.</string>
 
 
     <!-- page de forum  -->
