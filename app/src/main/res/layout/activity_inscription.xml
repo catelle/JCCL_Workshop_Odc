@@ -4,9 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".InscriptionActivity">
 
     <!-- Toolbar inscription -->
+
+
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -67,7 +69,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="90dp"
                     android:contentDescription="@string/img_banner"
-                    app:srcCompat="@drawable/ic_img_signup" />
+                    app:srcCompat="@drawable/img_connxion" />
 
 
                 <TextView
@@ -95,40 +97,42 @@
                         android:layout_marginEnd="30dp"
                         android:background="@color/dark_gray"
                         android:fontFamily="@font/poppins_regular"
-                        android:hint="@string/hint_name">
+                        android:hint="@string/hint_name"
+                      android:textSize="14sp"
+                      android:paddingTop="10dp"
+                      android:paddingBottom="15dp">
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="15dp"
-                            android:fontFamily="@font/poppins_regular" />
+                      <com.google.android.material.textfield.TextInputEditText
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textSize="14sp"
+                          android:paddingTop="10dp"
+                          android:paddingBottom="15dp"
+                          android:fontFamily="@font/poppins_regular" />
                     </com.google.android.material.textfield.TextInputLayout>
 
 
-                    <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/email"
-                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/email"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/dark_gray"
+                    android:fontFamily="@font/poppins_regular"
+                    android:hint="@string/hint_email">
+
+                    <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginEnd="30dp"
-                        android:background="@color/dark_gray"
-                        android:fontFamily="@font/poppins_regular"
-                        android:hint="@string/hint_email">
+                        android:textSize="14sp"
+                        android:paddingTop="10dp"
+                        android:paddingBottom="15dp"
+                        android:fontFamily="@font/poppins_regular" />
 
-                        <com.google.android.material.textfield.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textSize="14sp"
-                            android:paddingTop="10dp"
-                            android:paddingBottom="15dp"
-                            android:fontFamily="@font/poppins_regular" />
-
-
-                    </com.google.android.material.textfield.TextInputLayout>
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <!--  ************   Staut d'utilisateur   *******************-->
                 <androidx.cardview.widget.CardView
@@ -181,19 +185,16 @@
                     app:cardElevation="@dimen/card_elevation_value">
 
 
-                    <TextView
-                        android:id="@+id/textView2"
+
+                    <Button
+                        android:id="@+id/suite_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/bacgroung_text_continuerr"
+                        android:text="Enregistrer"
                         android:fontFamily="@font/poppins_regular"
                         android:gravity="center"
-                        android:paddingTop="@dimen/marginTop_required_text"
-                        android:paddingBottom="@dimen/marginTop_required_text"
-                        android:text="@string/continuer"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_continuer"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        android:textColor="@color/white"/>
 
 
                 </androidx.cardview.widget.CardView>

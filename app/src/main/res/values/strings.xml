@@ -20,19 +20,9 @@
     <string name="bienvenu_sur_appname">Bienvenu sur appName</string>
     <string name="connexion_page_title">Connexion</string>
     <string name="Facebook">Facebook</string>
-    <string-array name="country_names">
-        <item>Cameroun</item>
-        <item>Congo</item>
-        <item>Gabon</item>
-        <item>Togo</item>
-        <item>France</item>
-        <item>USA</item>
-        <item>Allemagne</item>
-        <item>Suisse</item>
-    </string-array>
+    <string name="required">Veuillez remplir tous les champs</string>
 
     <!-- page d\'inscription -->
-    <string name="required">Veuillez remplir tous les champs</string>
     <string name="hint_name">Nom d\'utilisateur</string>
     <string name="hint_email">Email</string>
     <string name="title_activity_inscription">InscriptionActivity</string>
@@ -58,6 +48,27 @@
     <string name="favaris_tab_item_poster_name">Junior Temgoua</string>
     <string name="detail_page_doc_title">Livre de mathematique</string>
     <string name="detail_page_doc_description">Modelisation des bases de donnees NoSql , en  plusieurs collection</string>
+    <string name="title_activity_product">ProductActivity</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+
+
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="previous">Previous</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string-array name="country_names">
+        <item>Cameroun</item>
+        <item>Congo</item>
+        <item>Gabon</item>
+        <item>Togo</item>
+        <item>France</item>
+        <item>USA</item>
+        <item>Allemagne</item>
+        <item>Suisse</item>
+    </string-array>
 
     <string-array name="labels_array">
         <item>Votre Statut</item>
@@ -66,8 +77,6 @@
         <item>Etudiant</item>
         <item>Elève</item>
     </string-array>
-
-
     <string-array name="spinner_formation">
         <item>2020</item>
         <item>2019</item>
@@ -91,15 +100,6 @@
         <item>2001</item>
         <item>2000</item>
     </string-array>
-    <string name="title_activity_product">ProductActivity</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 
     <!-- page de forum  -->
 

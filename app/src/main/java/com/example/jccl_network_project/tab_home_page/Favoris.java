@@ -4,30 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
 
-import androidx.fragment.app.Fragment;
-
-import com.example.jccl_network_project.R;
-
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link Favoris#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class Favoris extends Fragment {
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-=======
-import android.widget.LinearLayout;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -40,6 +17,11 @@ import com.example.jccl_network_project.models.ModelFavorisItem;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link Favoris#newInstance} factory method to
+ * create an instance of this fragment.
+ */
 public class Favoris extends Fragment {
 
 
@@ -58,13 +40,11 @@ public class Favoris extends Fragment {
 
     //********** End **************************///
 
-
->>>>>>> 47cf004f52f5ae333e59622c33da8278b91b7514
     public Favoris() {
         // Required empty public constructor
     }
 
-<<<<<<< HEAD
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
@@ -74,8 +54,7 @@ public class Favoris extends Fragment {
      * @return A new instance of fragment Favoris.
      */
     // TODO: Rename and change types and number of parameters
-=======
->>>>>>> 47cf004f52f5ae333e59622c33da8278b91b7514
+
     public static Favoris newInstance(String param1, String param2) {
         Favoris fragment = new Favoris();
         Bundle args = new Bundle();
@@ -97,10 +76,6 @@ public class Favoris extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-<<<<<<< HEAD
-        // Inflate the layout for this fragment
-        View view = inflater.inflate(R.layout.fragment_favoris, container, false);
-=======
 
 
         // Inflate the layout for this fragment
@@ -119,7 +94,7 @@ public class Favoris extends Fragment {
         recyclerFavoris.setAdapter(adapter);
         recyclerFavoris.setLayoutManager(lm);
 
->>>>>>> 47cf004f52f5ae333e59622c33da8278b91b7514
+
         return view;
     }
 }

@@ -11,7 +11,7 @@ import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-<<<<<<< HEAD
+
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -26,12 +26,12 @@ import static com.example.jccl_network_project.MainActivity.TAGlocalisation;
 import static com.example.jccl_network_project.MainActivity.TAGprofession;
 import static com.example.jccl_network_project.MainActivity.TAGprofile_image;
 import static com.example.jccl_network_project.MainActivity.TAGusername;
-=======
+
 import android.widget.TableLayout;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.tabs.TabLayout;
->>>>>>> 47cf004f52f5ae333e59622c33da8278b91b7514
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -113,7 +113,6 @@ public class Profil_fragment extends Fragment {
         mprofile_image= view.findViewById(R.id.user_picture);
          maproposTextview=view.findViewById(R.id.apropos_textview);
          mAbonneeTextView=view.findViewById(R.id.abonnéeTextView);
-        mFavorisTextView=view.findViewById(R.id.favorisTextview);
 
 
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Categorie_array" >
+    <item>Cours</item>
+    <item>Exercices</item>
+    <item>Meetingd</item>
+    <item>Co_working</item>
+    <item>Livre</item>
+        <item>Article</item>
+        <item>Arreté</item>
+        <item>Autre</item>
+</string-array>
+    <string-array name="Domaine_array" >
+        <item>Telecommunication</item>
+        <item>Informatique</item>
+        <item>Mathematiques</item>
+        <item>Physiques</item>
+        <item>Chimie</item>
+        <item>Litterature</item>
+        <item>Langue</item>
+        <item>Phillosophie</item>
+        <item>Histoire</item>
+        <item>Geographie</item>
+        <item>Technologie</item>
+        <item>IOT</item>
+        <item>Electrotechnique</item>
+        <item>trading</item>
+        <item>Medecine</item>
+        <item>Autre</item>
+
+    </string-array>
+    <string-array name="Destination_array" >
+        <item>Public</item>
+        <item>Classe virtuelle</item>
+    </string-array>
+    <string-array name="Niveau_array" >
+        <item>Ier premier cycle  secondaire</item>
+        <item>2nd cycle secondaire</item>
+        <item>Niveau I université</item>
+        <item>Niveau II université</item>
+        <item>Licence</item>
+        <item>Master I</item>
+        <item>Master II</item>
+        <item>Doctorat</item>
+        <item>Autre</item>
+    </string-array>
+</resources>

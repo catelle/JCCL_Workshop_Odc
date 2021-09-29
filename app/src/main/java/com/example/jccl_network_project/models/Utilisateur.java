@@ -79,7 +79,7 @@ public class Utilisateur {
 
         return this.documentsFournis;
     }
-    }
+
     public String getId_user() {
         return id_user;
     }

@@ -1,5 +1,6 @@
 package com.example.jccl_network_project;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,6 +18,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
+import static android.content.ContentValues.TAG;
 import static com.example.jccl_network_project.MainActivity.TAGlocalisation;
 import static com.example.jccl_network_project.MainActivity.TAGprofession;
 import static com.example.jccl_network_project.MainActivity.TAGprofile_image;
@@ -23,7 +26,12 @@ import static com.example.jccl_network_project.MainActivity.TAGusername;
 
 import com.example.jccl_network_project.adapters.General_adapter;
 import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -53,6 +61,7 @@ public class EditActivity extends AppCompatActivity {
     List<Object> list;
     General_adapter adapter;
     RecyclerView recycler;
+    EditText nomET,professionET, descriptionET;
 
 
     @Override
@@ -66,7 +75,29 @@ public class EditActivity extends AppCompatActivity {
        nom=data.getStringExtra(TAGusername);
        localisation=data.getStringExtra(TAGlocalisation);
        profession=data.getStringExtra(TAGprofession);
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            for (UserInfo profile : user.getProviderData()) {
+                // Id of the provider (ex: google.com)
+                String providerId = profile.getProviderId();
 
+                // UID specific to the provider
+                String uid = profile.getUid();
+
+
+                // Name, email address, and profile photo Url
+                 nom = profile.getDisplayName();
+                email = profile.getEmail();
+                Uri photoUrl = profile.getPhotoUrl();
+
+            }
+        }
+       nomET=findViewById(R.id.edit_nom);
+        professionET=findViewById(R.id.edit_profession);
+        descriptionET=findViewById(R.id.edit_description);
+
+        nomET.setText(nom);
+        professionET.setText(profession);
 
 
        // creer les champs qui peuvent etre ajouter
@@ -112,6 +143,45 @@ public class EditActivity extends AppCompatActivity {
                Map< String,Object > edited=new HashMap<>();
                edited.put("email",email);
                edited.put("profession",profession);
+
+
+               FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+               UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                       .setDisplayName("Jane Q. User")
+                       .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
+                       .build();
+
+               user.updateProfile(profileUpdates)
+                       .addOnCompleteListener(new OnCompleteListener<Void>() {
+                           @Override
+                           public void onComplete(@NonNull Task<Void> task) {
+                               if (task.isSuccessful()) {
+                                   Log.d(TAG, "User profile updated.");
+                               }
+                           }
+                       });
+
+               user.updateEmail(email)
+                       .addOnCompleteListener(new OnCompleteListener<Void>() {
+                           @Override
+                           public void onComplete(@NonNull Task<Void> task) {
+                               if (task.isSuccessful()) {
+                                   Log.d(TAG, "User email address updated.");
+                               }
+                           }
+                       });
+               user.sendEmailVerification()
+                       .addOnCompleteListener(new OnCompleteListener<Void>() {
+                           @Override
+                           public void onComplete(@NonNull Task<Void> task) {
+                               if (task.isSuccessful()) {
+                                   Log.d(TAG, "Email sent.");
+                               }
+                           }
+                       });
+
+
 
 
            }

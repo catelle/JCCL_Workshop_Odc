@@ -33,6 +33,22 @@ public class Publication {
         this.commentaire = commentaire;
     }
 
+    public Publication(String publication_id, String categorie, String description, String destination,  String lien, String titre, List<String> mot_cles, String niveau_scolaire) {
+        this.publication_id = publication_id;
+        this.poster_id = poster_id;
+        this.categorie = categorie;
+        this.description = description;
+        this.destination = destination;
+        this.duree = duree;
+        this.note = note;
+        this.emplacement_piece = emplacement_piece;
+        this.lien = lien;
+        this.titre = titre;
+        this.mot_cles = mot_cles;
+        this.niveau_scolaire = niveau_scolaire;
+        this.commentaire = commentaire;
+    }
+
     public String getPublication_id() {
         return publication_id;
     }
