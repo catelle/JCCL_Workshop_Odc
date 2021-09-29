@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/card_filDiscussion"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    android:layout_marginStart="10dp"
+    android:layout_marginTop="10dp"
+    app:cardCornerRadius="8dp"
+    android:layout_marginEnd="10dp">
+
+    <RelativeLayout
+        android:id="@+id/relativelayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/status_probleme"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:background="#00A524"
+            android:paddingStart="5dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Resolus"/>
+
+        <TextView
+            android:id="@+id/sujet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/status_probleme"
+            android:text="HTML/CSS" />
+        <TextView
+            android:id="@+id/probleme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/sujet"
+            android:textColor="@color/black"
+            android:fontFamily="@font/poppins_bold"
+            android:maxLines="2"
+            android:ellipsize="middle"
+            android:text="J'arrive pas à rendre ma page responsive, qu'elle propriété dois je utilisé"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/img_mini_profil"
+            android:layout_below="@+id/probleme"
+            android:layout_marginLeft="10dp"
+            app:cardCornerRadius="15dp"
+            android:layout_width="30dp"
+            android:layout_height="30dp">
+            <ImageView
+                android:id="@+id/img_posted"
+                android:src="@mipmap/ic_profil_tech"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/name_profil"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/probleme"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/img_mini_profil"
+            android:text="Markin McKenney" />
+
+        <TextView
+            android:id="@+id/date_posted"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/name_profil"
+            android:layout_marginTop="4dp"
+            android:gravity="center"
+            android:layout_toStartOf="@+id/icon_comment"
+            android:layout_below="@+id/probleme"
+            android:text="Il y'a 5 jours"/>
+
+        <ImageView
+            android:id="@+id/icon_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/probleme"
+            android:layout_toStartOf="@+id/nb_comment"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="5dp"
+            android:src="@drawable/ic_ant_design_message_outlined" />
+
+        <TextView
+            android:id="@+id/nb_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/probleme"
+            android:text="12"/>
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

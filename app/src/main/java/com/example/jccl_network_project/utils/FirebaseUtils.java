@@ -1,5 +1,6 @@
 package com.example.jccl_network_project.utils;
 
+
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
@@ -12,6 +13,9 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import androidx.annotation.NonNull;
 
@@ -43,7 +47,6 @@ public class FirebaseUtils {
                         Log.d("TAG_SUCCESS","Task added successfully");
 
 
-
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -53,7 +56,29 @@ public class FirebaseUtils {
                     }
                 });
 
+
+
     }
+                        public static void getAllPublication() {
+
+                            FirebaseFirestore.getInstance().collection("publication")
+                                    .get()
+                                    .addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
+                                        @Override
+                                        public void onSuccess(QuerySnapshot snapshots) {
+
+
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+
+                                            Log.w("TAG_FAILURE", "Task has not been added", e);
+                                        }
+                                    });
+
+                        }
     public  static  void addPublication(Publication publication){
         FirebaseUtils.getReferenceFirestore(PUBLICATION_COLLECTION)
 
@@ -78,6 +103,16 @@ public class FirebaseUtils {
 
     }
 
+
+
+
+    public static void getUser() {
+
+    }
+
+    public static void getAllUsers() {
+
+    }
 
 }
 

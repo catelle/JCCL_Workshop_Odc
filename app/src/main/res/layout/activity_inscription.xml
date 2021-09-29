@@ -8,7 +8,6 @@
 
     <!-- Toolbar inscription -->
 
-
     <ScrollView
         android:id="@+id/scrollView2"
         android:layout_width="match_parent"
@@ -20,8 +19,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+            android:layout_height="match_parent"
+            android:background="@color/light_gray">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView5"
@@ -71,7 +70,6 @@
                     android:contentDescription="@string/img_banner"
                     app:srcCompat="@drawable/img_connxion" />
 
-
                 <TextView
                     android:id="@+id/requirement_field"
                     android:layout_width="match_parent"
@@ -86,9 +84,9 @@
 
                 <!--   ***************   Full field inscription  ***********                -->
 
+                <!--  ************   Nom d'utilisateur   *******************-->
 
-
-                  <com.google.android.material.textfield.TextInputLayout
+                    <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/user_name"
                         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                         android:layout_width="match_parent"
@@ -124,15 +122,18 @@
                     android:fontFamily="@font/poppins_regular"
                     android:hint="@string/hint_email">
 
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp"
-                        android:paddingTop="10dp"
-                        android:paddingBottom="15dp"
-                        android:fontFamily="@font/poppins_regular" />
 
-                </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp"
+                            android:paddingTop="10dp"
+                            android:paddingBottom="15dp"
+                            android:fontFamily="@font/poppins_regular" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
 
                 <!--  ************   Staut d'utilisateur   *******************-->
                 <androidx.cardview.widget.CardView

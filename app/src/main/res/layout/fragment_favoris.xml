@@ -8,7 +8,6 @@
     android:layout_height="match_parent"
     tools:context=".tab_home_page.Favoris">
 
-
     <!-- Recyclerview responsable de l'affichage des favoris -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_favoris"

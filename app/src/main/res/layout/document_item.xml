@@ -1,151 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--<GridLayout -->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="match_parent"-->
-<!--   >-->
 
-    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="wrap_content"
-        android:layout_height="250dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="2dp"
-        android:layout_marginBottom="2dp"
-        android:layout_marginTop="2dp"
-        app:cardCornerRadius="8dp"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="120dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="5dp"
+    android:layout_marginEnd="5dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
 
-            <LinearLayout
+            <ImageView
+                android:id="@+id/img_doc"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:id="@+id/img_doc"
-                    android:layout_width="100dp"
-                    android:layout_height="110dp"
-                    app:srcCompat="@drawable/ic_baseline_menu_book_24" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <ImageView
-
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        app:srcCompat="@drawable/ic_bi_heart" />
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginTop="5dp"
-                        android:layout_marginRight="5dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            app:srcCompat="@drawable/ic_vector" />
-
-                        <TextView
-                            android:id="@+id/note"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:text="(255)" />
-                    </LinearLayout>
-
-                    <TextView
-                        android:id="@+id/isFree"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="free"
-                        android:textColor="#00A524" />
-
-                    <TextView
-                        android:id="@+id/type_doc"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:fontFamily="@font/poppins_regular"
-                        android:text="Cours"
-                        android:textColor="@color/orange" />
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_livre_mathpc"/>
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_img_poster"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal">
-
+                android:layout_toEndOf="@+id/img_doc"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="18dp">
                 <ImageView
                     android:id="@+id/img_poster"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ic_baseline_facebook" />
+                    app:srcCompat="@mipmap/ic_profil_tech_round" />
 
-                <TextView
-                    android:id="@+id/name_poster"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="5dp"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Courtney Henry"
-                    android:textSize="13sp" />
-
-            </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
-                android:id="@+id/title_doc"
-                style="@style/subtitle"
+                android:id="@+id/name_poster"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:layout_marginTop="5dp"
-                android:text="Livre de cuisine" />
+                android:layout_toEndOf="@+id/card_img_poster"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Courtney Henry"
+                android:textSize="12sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/title_doc"
+                    style="@style/subtitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_img_poster"
+                    android:layout_toEndOf="@+id/img_doc"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    android:text="Livre de cuisine" />
 
                 <TextView
                     android:id="@+id/description_doc"
-                    android:layout_width="110dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginRight="8dp"
+                    android:layout_below="@+id/title_doc"
+                    android:layout_toEndOf="@+id/img_doc"
+                    android:layout_alignEnd="@+id/star_icon"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginStart="10dp"
+                    android:maxLines="2"
+                    android:ellipsize="middle"
                     android:fontFamily="@font/poppins_regular"
                     android:text="Comment faire le plat de vos reves" />
 
+                    <ImageView
+                        android:id="@+id/star_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_toStartOf="@+id/note"
+                        app:srcCompat="@drawable/ic_vector" />
+
+                    <TextView
+                        android:id="@+id/note"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="5dp"
+                        android:layout_toStartOf="@+id/favoris"
+                        android:text="(255)" />
+                    <ImageView
+                        android:id="@+id/favoris"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_alignParentEnd="true"
+                        app:srcCompat="@drawable/ic_bi_heart" />
+
+                <TextView
+                    android:id="@+id/isFree"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/favoris"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="free"
+                    android:textSize="15sp"
+                    android:textColor="#00A524" />
+                <TextView
+                    android:id="@+id/type_doc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/isFree"
+                    android:layout_alignParentEnd="true"
+                    android:fontFamily="@font/poppins_regular"
+                    android:layout_marginEnd="10dp"
+                    android:text="Cours"
+                    android:textSize="15sp"
+                    android:textColor="@color/orange" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="start|bottom"
+                    android:layout_marginEnd="10dp"
+                    android:layout_below="@+id/type_doc"
+                    android:layout_alignParentEnd="true"
                     app:srcCompat="@drawable/ic_baseline_cloud_upload_24" />
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-<!--</GridLayout>-->
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
+

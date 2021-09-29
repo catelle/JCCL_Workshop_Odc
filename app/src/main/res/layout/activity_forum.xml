@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dark_gray"
+    tools:context=".detail_pages.ForumActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/ic_back" />
+
+            <TextView
+                style="@style/appbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="3"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center_horizontal"
+                android:text="Discussion" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_search" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="5dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="10dp">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#E3871B">
+
+                    <TextView
+                        android:id="@+id/status_probleme"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:background="#00A524"
+                        android:fontFamily="@font/poppins_bold"
+                        android:paddingStart="5dp"
+                        android:text="Resolus"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/sujet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/status_probleme"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:text="HTML/CSS" />
+
+                    <TextView
+                        android:id="@+id/probleme"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/sujet"
+                        android:layout_marginLeft="10dp"
+                        android:ellipsize="middle"
+                        android:fontFamily="@font/poppins_bold"
+                        android:maxLines="2"
+                        android:text="J'arrive pas à rendre ma page responsive, qu'elle propriété dois je utilisé"
+                        android:textColor="@color/black" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/img_mini_profil"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_below="@+id/probleme"
+                        android:layout_marginLeft="10dp"
+                        app:cardCornerRadius="30dp">
+
+                        <ImageView
+                            android:id="@+id/img_posted"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/ic_profil_tech" />
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/name_profil"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/probleme"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_toEndOf="@+id/img_mini_profil"
+                        android:text="Markin McKenney" />
+
+                    <TextView
+                        android:id="@+id/date_posted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/img_mini_profil"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:text="Il y'a 5 jours" />
+
+                    <TextView
+                        android:id="@+id/question_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/date_posted"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:text="@string/question"
+                        android:textColor="@color/black" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/question_text"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:src="@mipmap/ic_livre_mathpc" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <TextView
+                android:id="@+id/reponse_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Reponses"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/nb_reponse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/question"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/reponse_title"
+                android:fontFamily="@font/poppins_regular"
+                android:text="(10)"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reponses"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reponse_title"
+                tools:itemCount="2"
+                tools:listitem="@layout/card_reponse">
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <TextView
+                android:id="@+id/text_comment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/reponses"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Laisser un commentaire"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+
+            <RelativeLayout
+                android:id="@+id/relative"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/text_comment"
+                android:layout_marginBottom="18dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/space_to_comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:background="#D6D3D3"
+                    app:cardCornerRadius="8dp">
+
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_regular"
+                        android:hint="Commentaires....." />
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/logo_put_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/space_to_comment"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="15dp"
+                    android:src="@drawable/ic_img_logo" />
+
+                <TextView
+                    android:id="@+id/text_put_img"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/space_to_comment"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/logo_put_img"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="Ajoutez une image"
+                    android:textColor="@color/black" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/space_to_comment"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_toEndOf="@+id/text_put_img"
+                    android:fontFamily="@font/poppins_regular"
+                    android:text="(optionnel)" />
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/img_signaler_discussion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/ic_logo_signaler_discussion" />
+
+            <TextView
+                android:id="@+id/text_signaler"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/relative"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/img_signaler_discussion"
+                android:fontFamily="@font/poppins_regular"
+                android:text="signaler cette discussion"
+                android:textSize="13sp" />
+
+            <Button
+                android:id="@+id/soumettre"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/relative"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Soumettre" />
+
+        </RelativeLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

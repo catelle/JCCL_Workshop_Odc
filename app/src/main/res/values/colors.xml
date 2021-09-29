@@ -40,6 +40,8 @@
     <color name="blue">#0A75D8</color>
     <color name="background_toolbar">#F9F7F7</color>
     <color name="bacgroung_text_continuerr">#E3871B</color>
-
+    <color name="full_dark_gray">#6B6B6B</color>
+    <color name="transparent">#40FFFFFF</color>
+    <color name="yellow">#FFCE31</color>
 
 </resources>

@@ -4,8 +4,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
-
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -43,6 +41,7 @@ public class Favoris extends Fragment {
     public Favoris() {
         // Required empty public constructor
     }
+
 
 
     /**
@@ -93,7 +92,6 @@ public class Favoris extends Fragment {
         RecyclerView.LayoutManager lm = new LinearLayoutManager(getContext() ,RecyclerView.VERTICAL , false);
         recyclerFavoris.setAdapter(adapter);
         recyclerFavoris.setLayoutManager(lm);
-
 
         return view;
     }
