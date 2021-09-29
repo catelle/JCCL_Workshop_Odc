@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">JCCL_Network_Project</string>
+    <string name="app_accueil">Accueil</string>
 
 
     <!-- page d'acceuil  -->
@@ -15,9 +16,8 @@
 
     <!-- page de connexion  -->
 
-
-    <!-- page d\'inscription -->
     <string name="required">Veuillez remplir tous les champs</string>
+    <!-- page d\'inscription -->
     <string name="hint_name">Nom d\'utilisateur</string>
     <string name="hint_email">Email</string>
     <string name="title_activity_inscription">InscriptionActivity</string>
@@ -39,6 +39,7 @@
     <string name="edit_page_description">Description</string>
     <string name="edit_page_valider">Valider</string>
     <string name="favaris_tab_item_title">"Livre de cuisine "</string>
+
     <string name="favaris_tab_item_categorie">Cours</string>
     <string name="favaris_tab_item_poster_name">Junior Temgoua</string>
     <string name="detail_page_doc_title">Livre de mathematique</string>
@@ -53,11 +54,25 @@
     <string name="comment_date">il y\'a 6 jours</string>
     <string name="text_leave_comment">Laisser un commentaire</string>
     <string name="text_popup_note">Combien d\'etoiles donner vous a ce document</string>
+    <string name="edit_page_ville">Ville</string>
+
+    <string name="edit_page_email">Email</string>
+    <string name="connexion_title">Connexion</string>
+    <string name="numero_de_telephone">numero de telephone</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="code_verification">Code verification</string>
+    <string name="app_Discussion">Discussion</string>
+    <string-array name="country_codes">
+        <item>Cameroun</item>
+        <item>France</item>
+        <item>Congo</item>
+        <item>Allemagne</item>
+    </string-array>
 
     <string-array name="labels_array">
-        <item>Votre Statut</item>
+        <item>--Votre Statut--</item>
         <item>Enseignant</item>
-        <item>Encardreur</item>
+        <item>Professionnel</item>
         <item>Etudiant</item>
         <item>Elève</item>
     </string-array>
@@ -106,6 +121,5 @@
 
 
     <!-- page de fil de discussion -->
-
 
 </resources>

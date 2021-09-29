@@ -69,4 +69,7 @@ public class FavorisViewHolder extends RecyclerView.ViewHolder {
 
         Log.d("***tag" , item.getPosterName() + "" );
     }
+
 }
+
+

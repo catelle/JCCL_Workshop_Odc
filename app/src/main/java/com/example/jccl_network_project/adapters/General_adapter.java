@@ -24,9 +24,9 @@ public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
     private LayoutInflater mInflater;
     private int itemLayout;
 
-
     public General_adapter(Context context, List<Object> list, int itemLayout){
 
+        this.list = list;
         this.activity = activity;
         this.mInflater = LayoutInflater.from(context);
         this.itemLayout = itemLayout;

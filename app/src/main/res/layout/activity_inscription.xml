@@ -43,6 +43,8 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/text_size_inscription_bar" />
 
+
+
                 <ImageView
                     android:id="@+id/icon_clear"
                     android:layout_width="wrap_content"
@@ -62,6 +64,7 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <ImageView
                     android:id="@+id/img_banner"
                     android:layout_width="match_parent"
@@ -78,8 +81,8 @@
                     android:layout_marginTop="@dimen/marginTop_required_text"
                     android:fontFamily="@font/poppins_regular"
                     android:text="@string/required"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/text_size_required" />
+
 
                 <!--   ***************   Full field inscription  ***********                -->
 
@@ -129,13 +132,25 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                 <!--  ************   Staut d'utilisateur   *******************-->
-                <androidx.cardview.widget.CardView
+
+            <!--  ************   Confirmation continuer l'inscription   *******************-->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/marginLeft"
+                android:layout_marginTop="@dimen/marginTop_cardView"
+                android:layout_marginRight="@dimen/marginLeft"
+                app:cardCornerRadius="@dimen/card_corner_radius"
+                app:cardElevation="@dimen/card_elevation_value">
+
+                <TextView
+                    android:id="@+id/continue_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/marginLeft"
                     android:layout_marginTop="@dimen/margin_end_iconclear"
                     android:layout_marginRight="@dimen/marginLeft"
-                    app:cardElevation="@dimen/card_elevation_value">
+                    app:cardElevation="@dimen/card_elevation_value"/>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -162,32 +177,33 @@
                 <!--  ************   fin champ d'utilisateur   *******************-->
 
                 <!--  ************   Confirmation continuer l'inscription   *******************-->
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/marginLeft"
-                    android:layout_marginTop="@dimen/marginTop_cardView"
-                    android:layout_marginRight="@dimen/marginLeft"
-                    app:cardCornerRadius="@dimen/card_corner_radius"
-                    app:cardElevation="@dimen/card_elevation_value">
 
-
-                    <TextView
-                        android:id="@+id/textView2"
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/bacgroung_text_continuerr"
-                        android:fontFamily="@font/poppins_regular"
-                        android:gravity="center"
-                        android:paddingTop="@dimen/marginTop_required_text"
-                        android:paddingBottom="@dimen/marginTop_required_text"
-                        android:text="@string/continuer"
-                        android:textColor="@color/white"
-                        android:textSize="@dimen/text_size_continuer"
-                        android:textStyle="bold" />
+                        android:layout_marginLeft="@dimen/marginLeft"
+                        android:layout_marginTop="@dimen/marginTop_cardView"
+                        android:layout_marginRight="@dimen/marginLeft"
+                        app:cardCornerRadius="@dimen/card_corner_radius"
+                        app:cardElevation="@dimen/card_elevation_value">
 
 
-                </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/textView2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@color/bacgroung_text_continuerr"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:paddingTop="@dimen/marginTop_required_text"
+                            android:paddingBottom="@dimen/marginTop_required_text"
+                            android:text="@string/continuer"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/text_size_continuer"
+                            android:textStyle="bold" />
+
+
+                    </androidx.cardview.widget.CardView>
 
                 <!--  ************   Autres moyens d'inscription   *******************-->
                 <LinearLayout
@@ -351,6 +367,7 @@
                         android:textColor="#E3871B"
                         android:textStyle="bold" />
                 </LinearLayout>
+
 
                 <!--  ************   Se connecter *******************-->
 

@@ -1,5 +1,6 @@
 package com.example.jccl_network_project.detail_pages;
 
+
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,6 +71,7 @@ public class DetailPublication_doc extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_publication_doc);
+
 
         /**va charger toutes les donnes relative a une publication dans la
          * variable @param {publication}*/
@@ -185,3 +187,4 @@ public class DetailPublication_doc extends AppCompatActivity {
                 });
     }
 }
+

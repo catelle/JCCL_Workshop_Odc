@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.jccl_network_project">
 
     <application
@@ -9,12 +10,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.JCCL_Network_Project">
+
         <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
             android:name=".detail_pages.PaidActivity"
             android:exported="true" />
+        <activity
+            android:name=".OTPActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
+
         <activity
             android:name=".detail_pages.ProductActivity"
             android:exported="true"
@@ -29,11 +38,13 @@
         <activity
             android:name=".EditActivity"
             android:exported="true" />
+
         <activity
             android:name=".InscriptionActivity"
             android:exported="true"
             android:label="@string/title_activity_inscription"
-            android:theme="@style/Theme.JCCL_Network_Project"></activity>
+            android:theme="@style/Theme.JCCL_Network_Project" />
+
         <activity android:name=".detail_pages.ForumActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -41,6 +52,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
     </application>
 
 </manifest>
