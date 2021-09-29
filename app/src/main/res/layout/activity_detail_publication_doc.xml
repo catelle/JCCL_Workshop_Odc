@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_gray"
     tools:context=".detail_pages.DetailPublication_doc">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -20,10 +21,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:src="@drawable/ic_search"
+            android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/black" />
+
 
         <ImageView
             android:id="@+id/btn_search"
@@ -43,12 +46,354 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_top"
+            android:layout_marginBottom="@dimen/margin_bottom"
             android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:paddingLeft="@dimen/margin_right_left"
+                android:paddingRight="@dimen/margin_right_left"
+                android:orientation="vertical">
+
+                <!-- Document title -->
+                <TextView
+                    style="@style/title_doc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/detail_page_doc_title" />
+
+                <!-- Description document -->
+                <TextView
+                    android:id="@+id/text_description"
+                    style="@style/medium_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:text="@string/detail_page_doc_description" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <!-- poster picture -->
+                    <ImageView
+                        android:id="@+id/image_poster"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_weight="0.5"
+                        android:src="@mipmap/img_user_picture"
+
+                        />
+
+
+                    <!-- Poster name -->
+                    <TextView
+                        android:id="@+id/text_poster_name"
+                        style="@style/text_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:text="@string/detail_page_doc_poster_name" />
+
+                    <!-- categorie document -->
+                    <TextView
+                        android:id="@+id/text_categorie"
+                        android:layout_width="128dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:text="@string/favaris_tab_item_categorie"
+                        android:textColor="@color/orange" />
+
+                </LinearLayout>
+
+                <!-- Poster document profession -->
+                <TextView
+                    android:id="@+id/text_poster_profession"
+                    style="@style/medium_bold_text"
+                    android:layout_width="230dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_page_doc_profession" />
+
+                <!-- Section Note -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/text_note"
+                        style="@style/text_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="5.0"
+                        android:textSize="18dp" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_full_star"
+                            app:tint="#FFCE31" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_full_star"
+                            app:tint="#FFCE31" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_full_star"
+                            app:tint="#FFCE31" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_half_star"
+                            app:tint="#FFCE31" />
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_empty_star"
+                            app:tint="@color/gray" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/text_commments_number"
+                        style="@style/text_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="11"
+                        android:textSize="18dp" />
+
+                    <TextView
+                        style="@style/text_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/commentaires" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- Download button -->
+            <TextView
+                android:id="@+id/btn_download"
+                style="@style/button_text"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/btn_size"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginLeft="@dimen/margin_right_left"
+                android:layout_marginRight="@dimen/margin_right_left"
+                android:background="@drawable/shape_download_btn"
+                android:clickable="true"
+                android:gravity="center"
+                android:text="@string/text_download" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:padding="@dimen/margin_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:layout_marginTop="@dimen/margin_top">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_favoris"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_assignment" />
+
+                    <TextView
+                        style="@style/text_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/signale_doc" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginBottom="@dimen/margin_top"
+                android:background="@color/gray" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="20dp"
+                android:background="@color/white">
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:src="@drawable/ic_page"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_page_count"
+                    style="@style/text_gray"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="30 pages"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                <com.github.barteksc.pdfviewer.PDFView
+                    android:id="@+id/pdfView_book"
+                    android:layout_width="169dp"
+                    android:layout_height="209dp"
+                    android:layout_marginTop="30dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/text_page_count"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/image_book"-->
+<!--                    android:layout_width="169dp"-->
+<!--                    android:layout_height="209dp"-->
+<!--                    android:layout_marginTop="30dp"-->
+<!--                    android:scaleType="centerCrop"-->
+<!--                    android:src="@mipmap/img_book"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="@+id/text_page_count" />-->
+
+                <TextView
+                    android:id="@+id/btn_apercu"
+                    style="@style/button_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/btn_size"
+                    android:layout_marginTop="140dp"
+                    android:background="@drawable/shape_btn_apercu"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:text="@string/text_apercu"
+                    android:textColor="@color/black"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/pdfView_book" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_top"
+                android:paddingLeft="@dimen/margin_top"
+                android:paddingRight="@dimen/margin_top"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/commentaires" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_comments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top"
+                    android:paddingTop="20dp"
+                    android:paddingBottom="20dp"
+                    tools:itemCount="4"
+                    android:layout_marginBottom="@dimen/margin_top"
+                    tools:listitem="@layout/comment_item"/>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/title"
+                android:text="@string/text_leave_comment"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginLeft="@dimen/margin_right_left"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:padding="@dimen/margin_top"
+                android:layout_marginBottom="@dimen/margin_top"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:background="@color/white">
+
+                <EditText
+                    android:id="@+id/edit_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/margin_right_left"
+                    android:background="@drawable/shape_edit_text"
+                    android:hint="@string/text_leave_comment"
+                    android:padding="5dp"
+                    android:layout_weight="2"
+                     />
+
+                <ImageButton
+                    android:id="@+id/btn_sent_comment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:src="@drawable/ic_send"
+                    android:layout_weight="1"
+                    app:tint="@color/orange" />
+            </LinearLayout>
+
+
+<!--        </LinearLayout>-->
+
+
+
 
             <!-- Document title -->
             <TextView
@@ -69,6 +414,7 @@
                 android:text="@string/detail_page_doc_description"/>
 
         </LinearLayout>
+
 
     </ScrollView>
 

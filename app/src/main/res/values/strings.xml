@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">JCCL_Network_Project</string>
+    <string name="app_accueil">Accueil</string>
 
 
     <!-- page d'acceuil  -->
@@ -43,6 +44,18 @@
     <string name="favaris_tab_item_poster_name">Junior Temgoua</string>
     <string name="detail_page_doc_title">Livre de mathematique</string>
     <string name="detail_page_doc_description">Modelisation des bases de donnees NoSql , en  plusieurs collection</string>
+
+
+    <string name="detail_page_doc_poster_name">Junior Temgoua</string>
+    <string name="detail_page_doc_profession">Enseignant de mathematique</string>
+    <string name="text_download">Telecharger</string>
+    <string name="signale_doc">signaler</string>
+    <string name="text_apercu">Apercu du Document</string>
+    <string name="commentaires">commentaires</string>
+    <string name="comment_date">il y\'a 6 jours</string>
+    <string name="text_leave_comment">Laisser un commentaire</string>
+    <string name="text_popup_note">Combien d\'etoiles donner vous a ce document</string>
+
     <string name="edit_page_ville">Ville</string>
 
     <string name="edit_page_email">Email</string>
@@ -50,6 +63,9 @@
     <string name="numero_de_telephone">numero de telephone</string>
     <string name="s_inscrire">S\'inscrire</string>
     <string name="code_verification">Code verification</string>
+
+    <string name="app_Discussion">Discussion</string>
+
     <string-array name="country_codes">
         <item>Cameroun</item>
         <item>France</item>
@@ -58,7 +74,7 @@
     </string-array>
 
     <string-array name="labels_array">
-        <item>Votre Statut</item>
+        <item>--Votre Statut--</item>
         <item>Enseignant</item>
         <item>Professionnel</item>
         <item>Etudiant</item>
@@ -90,10 +106,24 @@
         <item>2000</item>
     </string-array>
 
+    <string name="title_activity_product">ProductActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="question">En tant que développeur front-end, vous pourrez
+        faire afficher des messages dans la console. Par exemple, les développeurs chez OpenClassrooms
+        font apparaître un message d\'avertissement pour prévenir les potentielles victimes d\'attaque self-XSS,
+        où l\'attaquant convainc la victime à coller du code néfaste dans cette console.</string>
+    <string name="response">On parle souvent de design responsive : il s\'agit d\'une technique de
+        design où l\'apparence d\'une page ou d\'une application dépend de l\'appareil sur lequel on
+        les consulte. On dépendra souvent de la largeur en pixels de la fenêtre de navigateur.</string>
+
+
     <!-- page de forum  -->
 
 
     <!-- page de fil de discussion -->
-
 
 </resources>

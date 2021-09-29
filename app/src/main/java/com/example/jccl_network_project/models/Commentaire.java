@@ -5,15 +5,23 @@ import java.util.Date;
 public class Commentaire {
 
     private String commentaire_id ;
-    private Date date_creation;
-    private String user_id ;
+    private String date_creation;
+    private String commenteur_id ;
     private String texte;
+    private String note;
+    private String commenteurPhoto;
 
-    public Commentaire(String commentaire_id, Date date_creation, String user_id, String texte) {
+    public Commentaire(){
+
+    }
+
+    public Commentaire(String date_creation, String commenteur_id, String texte , String note , String commenteurPhoto) {
         this.commentaire_id = commentaire_id;
         this.date_creation = date_creation;
-        this.user_id = user_id;
+        this.commenteur_id = commenteur_id;
         this.texte = texte;
+        this.note = note;
+        this.commenteurPhoto =commenteurPhoto ;
     }
 
     public String getCommentaire_id() {
@@ -24,20 +32,20 @@ public class Commentaire {
         this.commentaire_id = commentaire_id;
     }
 
-    public Date getDate_creation() {
+    public String getDate_creation() {
         return date_creation;
     }
 
-    public void setDate_creation(Date date_creation) {
+    public void setDate_creation(String date_creation) {
         this.date_creation = date_creation;
     }
 
-    public String getUser_id() {
-        return user_id;
+    public String getCommenteur_id() {
+        return commenteur_id;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setCommenteur_id(String user_id) {
+        this.commenteur_id = user_id;
     }
 
     public String getTexte() {
@@ -46,5 +54,21 @@ public class Commentaire {
 
     public void setTexte(String texte) {
         this.texte = texte;
+    }
+
+    public String getNote() {
+        return note;
+    }
+
+    public void setNote(String note) {
+        this.note = note;
+    }
+
+    public String getCommenteurPhoto() {
+        return commenteurPhoto;
+    }
+
+    public void setCommenteurPhoto(String commenteurPhoto) {
+        this.commenteurPhoto = commenteurPhoto;
     }
 }

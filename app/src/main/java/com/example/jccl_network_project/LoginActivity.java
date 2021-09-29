@@ -1,5 +1,7 @@
 package com.example.jccl_network_project;
+import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -38,7 +40,6 @@ import static com.example.jccl_network_project.InscriptionActivity.TAGuid;
 import static com.example.jccl_network_project.InscriptionActivity.TAGusername;
 
 
-
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     EditText phone, mdp;
@@ -46,7 +47,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
     private FirebaseAuth mAuth;
     Spinner spinner;
     String country_code;
-
+    // ...
   private  String userid;
    private String nom;
    private String statut_utilisateur;
@@ -59,10 +60,17 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 // Initialize Firebase Auth
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        ActionBar act;
+        act=getSupportActionBar();
+        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
+
+        act.setBackgroundDrawable(cd);
 
         getSupportActionBar().hide();
          data=getIntent();
@@ -90,7 +98,6 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                 (android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
         spinner.setOnItemSelectedListener(this);
-
 
         mAuth=FirebaseAuth.getInstance();
 
@@ -122,12 +129,11 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                 signIn(phoneAuthCredential);
 
             }
-
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
                 Toast.makeText(LoginActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
-
             }
+
 
             @Override
             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
@@ -144,6 +150,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                         otpIntent.putExtra(TAGstatus,statut_utilisateur);
 
                         otpIntent.putExtra(TAGphonenumber,phoneNum);
+
                         startActivity(otpIntent);
                     }
 
@@ -151,24 +158,20 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
             }
         };
+
     }
 
-    @Override
-    protected void onStart() {
+
+        protected void onStart(){
         super.onStart();
         FirebaseUser user=mAuth.getCurrentUser();
         
 
-       if(user==null){
 
-
-
-               sendTomain();
-           }
-
-
-
-}
+        if(user!=null){
+            sendTomain();
+            }
+        }
 
 
     public void sendTomain(){
@@ -208,6 +211,8 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
-
     }
 }
+
+
+

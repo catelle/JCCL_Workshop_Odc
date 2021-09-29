@@ -7,28 +7,22 @@ import androidx.fragment.app.FragmentContainer;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TableLayout;
-import android.widget.Toast;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
     //********** Declaration des variables *************//
-     private BottomNavigationView bottomNavigation;
+    private BottomNavigationView bottomNavigation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().hide();
-
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnNavigationItemSelectedListener( navigationItemSelectedListener);
@@ -39,42 +33,29 @@ public class MainActivity extends AppCompatActivity {
     // Declaration du navigationItemSelectedListener pour la gestion des click
     // des click sur la bottom navigation
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
-                @Override
-                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-                    Fragment fragment = null;
+            Fragment fragment = null;
 
-                    switch (item.getItemId()){
-                        case R.id.home_fragment:
-                            fragment = new Home_fragment();
-                            break;
-                        case R.id.notification_fragment:
-                            fragment = new Notification_fragment();
-                            break;
-                        case R.id.profil_fragment:
-                            fragment = new Profil_fragment();
-                            break;
-                        case R.id.forum_fragment:
-                            fragment = new Forum_fragment();
-                            break;
-                    }
+            switch (item.getItemId()){
+                case R.id.home_fragment:
+                    fragment = new Home_fragment();
+                    break;
+                case R.id.notification_fragment:
+                    fragment = new Notification_fragment();
+                    break;
+                case R.id.profil_fragment:
+                    fragment = new Profil_fragment();
+                    break;
+                case R.id.forum_fragment:
+                    fragment = new Forum_fragment();
+                    break;
+            }
 
-                    getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container , fragment).commit();
-                    return true;
-                }
-            };
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseAuth mAuth= FirebaseAuth.getInstance();
-        FirebaseUser user= mAuth.getCurrentUser();
-        if(user!=null){
-            Toast.makeText(MainActivity.this,"on start method",Toast.LENGTH_LONG).show();
-            Intent intent=new Intent(MainActivity.this,InscriptionActivity.class);
-            startActivity(intent);
-            finish();
-
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container , fragment).commit();
+            return true;
         }
-    }
+    };
+
 }

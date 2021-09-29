@@ -14,8 +14,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+
 import com.example.jccl_network_project.models.Utilisateur;
 import com.example.jccl_network_project.utils.FirebaseUtils;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -33,6 +35,7 @@ import static com.example.jccl_network_project.LoginActivity.TAGphonenumber;
 public class OTPActivity extends AppCompatActivity {
     private EditText msendcodeEditText;
 
+
     private Button mcodeButton;
     private FirebaseAuth mAuth;
     private String OTP;
@@ -45,16 +48,22 @@ public class OTPActivity extends AppCompatActivity {
     private  Intent data;
     private String phoneNum;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_o_t_p);
 
+        ActionBar act;
+        act=getSupportActionBar();
+        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
+
+        act.setBackgroundDrawable(cd);
         getSupportActionBar().hide();
         continuebutton=findViewById(R.id.continue_button);
         msendcodeEditText=findViewById(R.id.phone_number);
         mAuth=FirebaseAuth.getInstance();
-        Intent data=getIntent();
+        Intent data = getIntent();
         OTP=data.getStringExtra("auth");
         userid=data.getStringExtra(TAGusername);
         nom=data.getStringExtra(TAGusername);
@@ -82,8 +91,8 @@ public class OTPActivity extends AppCompatActivity {
 
             }
         });
-
     }
+
 
     private void signIn(PhoneAuthCredential credential){
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -93,6 +102,7 @@ public class OTPActivity extends AppCompatActivity {
                     sendTomain();
                 }else{
                     Toast.makeText(OTPActivity.this," verification failed",Toast.LENGTH_LONG).show();
+
 
                 }
             }
@@ -108,6 +118,7 @@ public class OTPActivity extends AppCompatActivity {
         }
     }
 
+
     public void sendTomain(){
         Utilisateur user=new Utilisateur(userid,nom,phoneNum,statut_utilisateur,email,valider);
         FirebaseUtils.addTask(user);
@@ -119,8 +130,13 @@ public class OTPActivity extends AppCompatActivity {
     public void resendconfirmationemailfunction(View view) {
     }
 
+
     public void sendThecodefunction(View view) {
         Intent intent=new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
     }
+
 }
+
+
+

@@ -1,18 +1,15 @@
 package com.example.jccl_network_project.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jccl_network_project.EditActivity;
-import com.example.jccl_network_project.R;
-import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 import com.example.jccl_network_project.viewholders.General_viewholder;
 
 import java.util.List;
@@ -20,13 +17,13 @@ import java.util.List;
 public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
 
     private List<Object> list ;
-    private OnviewHolderCallback activity ;
+    private OnViewHolderCallback activity ;
     private LayoutInflater mInflater;
     private int itemLayout;
 
-
     public General_adapter(Context context, List<Object> list, int itemLayout){
 
+        this.list = list;
         this.activity = activity;
         this.mInflater = LayoutInflater.from(context);
         this.itemLayout = itemLayout;

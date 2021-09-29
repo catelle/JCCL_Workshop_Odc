@@ -5,9 +5,6 @@ import java.util.Map;
 
 public class Utilisateur {
 
-
-
-
     private String id_user;
     private String id_classe_virtuelle;
     private String avatar;
@@ -26,7 +23,13 @@ public class Utilisateur {
     private List<DocumentsFournis> DocumentsFournis;
 
 
+
+    //user constructor doesn't take id as a parameter
+
+    //public Utilisateur(String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication) {
+
     public Utilisateur(String id_user, String nom,String phone_number, String profession, String email,Boolean validation) {
+
         this.id_user = id_user;
         this.id_classe_virtuelle = null;
         this.avatar = null;
@@ -45,7 +48,8 @@ public class Utilisateur {
         this.DocumentsFournis=null;
     }
 
-
+    public Utilisateur(String id_user, String nom, String statut_utilisateur, String email, Boolean validation) {
+    }
 
 
     public  List<DocumentsFournis>  get_documentsFournis() {
@@ -176,4 +180,6 @@ public class Utilisateur {
     public void setPublication(List<Publication> publication) {
         this.publication = publication;
     }
+
 }
+

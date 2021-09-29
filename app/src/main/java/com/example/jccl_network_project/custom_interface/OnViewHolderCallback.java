@@ -4,10 +4,11 @@ import android.view.View;
 
 import java.util.List;
 
-public interface OnviewHolderCallback {
+public interface OnViewHolderCallback {
 
     void setFavorisViewInformation(int position);
     List<View> getViews();
     void OnItemClick(int position);
+
 
 }
