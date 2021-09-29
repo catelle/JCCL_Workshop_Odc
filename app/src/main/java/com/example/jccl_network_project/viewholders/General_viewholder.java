@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jccl_network_project.R;
-import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 
 import java.util.List;
 

@@ -31,7 +31,8 @@ import static com.example.jccl_network_project.MainActivity.TAGprofile_image;
 import static com.example.jccl_network_project.MainActivity.TAGusername;
 
 import com.example.jccl_network_project.adapters.General_adapter;
-import com.example.jccl_network_project.custom_interface.OnviewHolderCallback;
+
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -40,6 +41,7 @@ import com.google.firebase.auth.UserInfo;
 import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
