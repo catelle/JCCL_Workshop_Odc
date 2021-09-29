@@ -32,6 +32,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <TextView
                     android:id="@+id/inscription"
                     android:layout_width="match_parent"
@@ -62,6 +63,7 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toTopOf="parent">
 
+
                 <ImageView
                     android:id="@+id/img_banner"
                     android:layout_width="match_parent"
@@ -72,14 +74,14 @@
 
                 <TextView
                     android:id="@+id/requirement_field"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/marginLeft"
-                    android:layout_marginTop="@dimen/marginTop_required_text"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="@string/required"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/text_size_required" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                    android:paddingStart="@dimen/paddingLeft_text_card"
+                    android:paddingTop="@dimen/paddingLeft_text_card"
+                    android:paddingBottom="@dimen/marginTop_required_text"
+                    android:text="@string/votre_statut"
+                    android:textSize="@dimen/text_size_card" />
+
 
 
                 <!--   ***************   Full field inscription  ***********                -->
@@ -144,6 +146,7 @@
                     android:layout_marginRight="@dimen/marginLeft"
                     app:cardElevation="@dimen/card_elevation_value">
 
+
             <!--  ************   Confirmation continuer l'inscription   *******************-->
 
                     <!--  ************   Nom d'utilisateur   *******************-->
@@ -184,6 +187,7 @@
                     android:layout_marginRight="@dimen/marginLeft"
                     app:cardCornerRadius="@dimen/card_corner_radius"
                     app:cardElevation="@dimen/card_elevation_value">
+
 
 
 
@@ -242,10 +246,6 @@
 
                 <!--  ************   Les inscriptions par google et facebook   *******************-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <!--  ************   inscription par facebook  *******************-->
 
@@ -365,7 +365,7 @@
 
                 <!--  ************   Se connecter *******************-->
 
-            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

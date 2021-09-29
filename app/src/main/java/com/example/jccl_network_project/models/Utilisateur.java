@@ -1,9 +1,12 @@
 package com.example.jccl_network_project.models;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.List;
 import java.util.Map;
 
 public class Utilisateur {
+
     private String id_user;
     private String id_classe_virtuelle;
     private String avatar;
@@ -12,27 +15,30 @@ public class Utilisateur {
     private String nom;
     private String prenom;
     private String profession;
-    private int telephone;
+    private String telephone;
     private String email;
     private Boolean validation;
     private List<Fil_discussion> fil_discussion;
     private List<Formation> formation;
     private List<Publication> favoris;
     private List<Publication> publication;
+
     private List<DocumentsFournis> documentsFournis;
 
 // added Documents fournis to this constructor
 
     public Utilisateur(String id_user, String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication,List<DocumentsFournis> documentsFournis) {
+
+
         this.id_user = id_user;
-        this.id_classe_virtuelle = id_classe_virtuelle;
-        this.avatar = avatar;
-        this.categorie = categorie;
-        this.description_profil = description_profil;
+        this.id_classe_virtuelle = null;
+        this.avatar = null;
+        this.categorie = null;
+        this.description_profil = null;
         this.nom = nom;
-        this.prenom = prenom;
+        this.prenom = null;
         this.profession = profession;
-        this.telephone = telephone;
+        this.telephone = null;
         this.email = email;
         this.validation = validation;
         this.fil_discussion = fil_discussion;
@@ -44,28 +50,7 @@ public class Utilisateur {
 
     //constructor used for user registration
 
-    public Utilisateur(String nom, String email,String status){
-        this.nom=nom;
-        this.email=email;
-        this.profession=status;
-        this.id_user = "ITTAE";
-        this.id_classe_virtuelle = null;
-        this.avatar = null;
-        this.categorie = null;
-        this.description_profil = null;
 
-        this.prenom = null;
-
-        this.telephone = 0;
-
-        this.validation = null;
-        this.fil_discussion = null;
-        this.formation = null;
-        this.favoris = null;
-        this.publication = null;
-        this.documentsFournis=null;
-
-    }
 
 
     //add documents fournis getters and setters
@@ -78,7 +63,36 @@ public class Utilisateur {
     public List<DocumentsFournis> getDocumentFournis(){
 
         return this.documentsFournis;
+
     }
+
+    public Utilisateur( String nom,String email, String statut_utilisateur) {
+
+        this.nom=nom;
+        this.id_user= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        this.email=email;
+        this.profession=statut_utilisateur;
+        this.id_user = "ITTAE";
+        this.id_classe_virtuelle = null;
+        this.avatar = null;
+        this.categorie = null;
+        this.description_profil = null;
+
+        this.prenom = null;
+
+        this.telephone = "";
+
+        this.validation = null;
+        this.fil_discussion = null;
+        this.formation = null;
+        this.favoris = null;
+        this.publication = null;
+        this.documentsFournis=null;
+    }
+
+
+
+
 
     public String getId_user() {
         return id_user;
@@ -144,11 +158,11 @@ public class Utilisateur {
         this.profession = profession;
     }
 
-    public int getTelephone() {
+    public String getTelephone() {
         return telephone;
     }
 
-    public void setTelephone(int telephone) {
+    public void setTelephone(String telephone) {
         this.telephone = telephone;
     }
 
@@ -199,4 +213,6 @@ public class Utilisateur {
     public void setPublication(List<Publication> publication) {
         this.publication = publication;
     }
+
 }
+

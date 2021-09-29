@@ -1,6 +1,7 @@
 package com.example.jccl_network_project.utils;
 
 
+
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
@@ -17,9 +18,11 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+
 import androidx.annotation.NonNull;
 
 public class FirebaseUtils {
+
 
     static final String TASK_COLLECTION = "Utilisateur";
     static final String PUBLICATION_COLLECTION = "Utilisateur";
@@ -43,6 +46,7 @@ public class FirebaseUtils {
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
                     public void onSuccess(DocumentReference documentReference) {
+
 
                         Log.d("TAG_SUCCESS","Task added successfully");
 
@@ -92,6 +96,7 @@ public class FirebaseUtils {
 
 
 
+
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
@@ -102,6 +107,7 @@ public class FirebaseUtils {
                 });
 
     }
+
 
 
 

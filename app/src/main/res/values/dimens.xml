@@ -25,7 +25,6 @@
     <dimen name="margin_end_divider">5dp</dimen>
     <dimen name="appbar_height">69dp</dimen>
     <dimen name="margin_right_left">30dp</dimen>
-
     <dimen name="btn_size">45dp</dimen>
     <dimen name="margin_top">10dp</dimen>
     <dimen name="margin_bottom">30dp</dimen>

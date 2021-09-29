@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -27,7 +28,9 @@ import static com.example.jccl_network_project.MainActivity.TAGprofession;
 import static com.example.jccl_network_project.MainActivity.TAGprofile_image;
 import static com.example.jccl_network_project.MainActivity.TAGusername;
 
+
 import android.widget.TableLayout;
+import android.widget.TextView;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.tabs.TabLayout;
@@ -58,6 +61,24 @@ public class Profil_fragment extends Fragment {
     // ********************* Declarations variables **********************//
     TabLayout tabLayout;
     ViewPager2 viewPager2;
+
+    //variables used for profile edition
+
+
+    //********view componnents*****//
+
+    TextView mlocalisationTV, nomTV, professionTV, villeTV;
+    ImageView photo_profilIV,iconeditIV;
+
+
+    //****String values containers//
+
+    public static final String TAGlocalisation="localisation";
+    public static final String TAGnom="nom";
+    public static final String TAGprofession="profession";
+    public static final String TAGville="ville";
+    public static final String TAGphotoprofil="photo_profil";
+
 
 
     public Profil_fragment() {
@@ -101,6 +122,29 @@ public class Profil_fragment extends Fragment {
        View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
         tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
         viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
+
+        //liaison avec la vue
+
+        mlocalisationTV=view.findViewById(R.id.localisation);
+        professionTV=view.findViewById(R.id.profession);
+        nomTV=view.findViewById(R.id.user_name);
+        photo_profilIV=view.findViewById(R.id.user_picture);
+        iconeditIV=view.findViewById(R.id.icon_edit);
+
+
+        iconeditIV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getActivity(),EditActivity.class);
+                intent.putExtra(TAGlocalisation,mlocalisationTV.getText().toString()
+                );
+                intent.putExtra(TAGprofession,professionTV.getText().toString());
+                intent.putExtra(TAGnom, nomTV.getText().toString());
+
+                startActivity(intent);
+
+            }
+        });
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
         Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
