@@ -1,5 +1,6 @@
 package com.example.jccl_network_project.detail_pages;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +42,7 @@ public class TestGeneralAdapter extends AppCompatActivity implements OnViewHolde
         listComment.add(new Commentaire("14-12-2021","6t723887237" , "j'ai adorer" , "5" , "kjfeijf") );
 
         recycler = findViewById(R.id.recycler_test);
-        adapter = new GeneralRecyclerAdapter(this ,  this, listComment , R.layout.comment_item);
+        adapter = new GeneralRecyclerAdapter(this ,  this, listComment , R.layout.comment_item  );
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this);
         recycler.setLayoutManager(lm);
         recycler.setAdapter(adapter);
@@ -49,26 +50,22 @@ public class TestGeneralAdapter extends AppCompatActivity implements OnViewHolde
     }
 
     @Override
-    public void setItemInformation(Object object) {
+    public void setItemInformation(Object object ,  @Nullable String request_code) {
           mCommentText.setText(((Commentaire)object).getTexte());
           mCommentDate.setText(((Commentaire)object).getDate_creation());
     }
 
     @Override
-    public void OnItemClick(int position, View itemView) {
-//        Log.d("***cliqued" , "element cliquer : " + position);
-        Toast.makeText(this , "element cliquer : " + position , Toast.LENGTH_SHORT);
+    public void onItemClick(int position ,  @Nullable String request_code) {
+        Log.d("***cliqued" , "element cliquer : " + position);
+        Toast.makeText(this , "element cliquer : " + position , Toast.LENGTH_SHORT).show();
 
     }
 
     @Override
-    public void bindItemView(View view) {
+    public void bindItemView(View view ,  @Nullable String request_code) {
         mCommentDate = view.findViewById(R.id.text_comment_date);
         mCommentText = view.findViewById(R.id.text_comment);
     }
 
-    @Override
-    public void onPointerCaptureChanged(boolean hasCapture) {
-
-    }
 }

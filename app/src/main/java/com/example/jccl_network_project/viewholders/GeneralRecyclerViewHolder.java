@@ -4,24 +4,24 @@ import android.util.Log;
 import android.view.View;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 
-public class GeneralRecyclerViewHolder  extends RecyclerView.ViewHolder implements View.OnClickListener {
+public class GeneralRecyclerViewHolder extends RecyclerView.ViewHolder {
 
-    private final OnViewHolderCallback onviewHolderCallback ;
-    private final View itemView ;
+    private final OnViewHolderCallback onviewHolderCallback;
+    private final View itemView;
+    private String request_code;
 
-    public GeneralRecyclerViewHolder(@NonNull View itemView, OnViewHolderCallback onviewHolderCallback) {
+    public GeneralRecyclerViewHolder(@NonNull View itemView, OnViewHolderCallback onviewHolderCallback, @Nullable String request_code) {
         super(itemView);
-        this.onviewHolderCallback = onviewHolderCallback ;
+        this.onviewHolderCallback = onviewHolderCallback;
         this.itemView = itemView;
-        onviewHolderCallback.bindItemView(itemView);
+        this.request_code = request_code;
+        itemView.setOnClickListener(v -> onviewHolderCallback.onItemClick(getAdapterPosition(), request_code));
+        onviewHolderCallback.bindItemView(itemView, request_code);
     }
 
-    @Override
-    public void onClick(View view) {
-       onviewHolderCallback.OnItemClick(getAdapterPosition() , itemView);
-    }
 }

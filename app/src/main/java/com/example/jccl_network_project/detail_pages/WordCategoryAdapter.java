@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 ;
 import com.example.jccl_network_project.R;
+import com.example.jccl_network_project.custom_interface.OnItemClickListener;
 import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 import com.example.jccl_network_project.viewholders.General_viewholder;
 
@@ -26,11 +28,14 @@ public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapt
 
     private  List<String> mCategorie;
     private LayoutInflater mInflater;
+    private Context context;
+    private OnItemClickListener onItemClickListener;
 
-    public WordCategoryAdapter(Context context , List<String> mCategorie) {
+    public WordCategoryAdapter(Context context , List<String> mCategorie , OnItemClickListener onItemClickListener) {
         this.mCategorie = mCategorie;
+        this.onItemClickListener = onItemClickListener;
+        this.context = context;
         mInflater = LayoutInflater.from(context);
-
     }
 
 
@@ -39,7 +44,7 @@ public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapt
     @Override
     public WordCategoryAdapter.Word_viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View mItemView = mInflater.inflate(R.layout.word_category, parent, false);
-        return new Word_viewholder(mItemView, this);
+        return new Word_viewholder(mItemView, onItemClickListener , context);
     }
 
     @Override
@@ -52,25 +57,27 @@ public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapt
         holder.wordItemView.setText(mCurrent);
     }
 
-    class Word_viewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class Word_viewholder extends RecyclerView.ViewHolder  {
 
         private final TextView wordItemView;
-        final WordCategoryAdapter mAdater;
+        private final OnItemClickListener onItemClickListener;
+        private Context context;
 
-        public Word_viewholder(@NonNull View itemView, WordCategoryAdapter adapter) {
+        public Word_viewholder(@NonNull View itemView, OnItemClickListener onItemClickListener, Context context) {
             super(itemView);
             wordItemView = itemView.findViewById(R.id.item_category);
-            this.mAdater = adapter;
+            this.onItemClickListener = onItemClickListener;
+            this.context = context;
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    onItemClickListener.onItemClick(getAdapterPosition());
+                }
+            });
         }
 
-        @Override
-        public void onClick(View view) {
 
-        }
-    }
-
-    public interface OnItemClickListener{
-        public void onItemClick(int position);
     }
 
 }
