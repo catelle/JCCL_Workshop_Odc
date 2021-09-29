@@ -13,11 +13,7 @@
 
         android:theme="@style/Theme.JCCL_Network_Project.NoActionBar">
         <activity android:name=".CreatePublicationActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ViewOtherProfileActivity" />
         <activity android:name=".OTPActivity" />
@@ -32,7 +28,13 @@
         <activity
             android:name=".detail_pages.ProductActivity"
             android:exported="true" />
-        <activity android:name=".InscriptionActivity"></activity>
+        <activity android:name=".InscriptionActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <activity
             android:name=".PdfViewer"

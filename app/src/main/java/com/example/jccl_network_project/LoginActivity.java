@@ -50,12 +50,7 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#FFFFFF"));
 
-
-        act.setBackgroundDrawable(cd);
 
         //Views Association
         Spinner spinner = (Spinner) findViewById(R.id.phone_number_spinner);
@@ -78,16 +73,20 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
               String phoneT = mphone_number_EditText.getText().toString();
               String phone_number = country_code+phoneT;
 
-                if(!country_code.isEmpty()){
-                    if(!phoneT.isEmpty()){
+                if(!(country_code.isEmpty())){
+                    if(!(phoneT.isEmpty())){
+                        try{
                         PhoneAuthOptions options= PhoneAuthOptions.newBuilder(mAuth)
                                 //we should replace phone_number by phone edit text content
-                                .setPhoneNumber("+237657273247")
+                                .setPhoneNumber("+237691152270")
                                 .setTimeout(60L, TimeUnit.SECONDS)
                                 .setActivity(LoginActivity.this)
                                 .setCallbacks(mcallback)
                                 .build();
                         PhoneAuthProvider.verifyPhoneNumber(options);
+                        }catch(Exception e){
+                            Toast.makeText(LoginActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+                        }
 
                     }
                 }

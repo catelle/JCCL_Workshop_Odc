@@ -130,7 +130,7 @@ public class Profil_fragment extends Fragment {
                 intent.putExtra(TAGprofession,profession.getText().toString());
                 intent.putExtra(TAGusername,username.getText().toString());
                 intent.putExtra(TAGlocalisation,localisation.getText().toString());
-                intent.putExtra(TAGprofile_image, (Parcelable) mprofile_image);
+             //   intent.putExtra(TAGprofile_image, (Parcelable) mprofile_image);
                 intent.putExtra(TAGabonnee,mAbonneeTextView.getText());
                 intent.putExtra(TAGfavoris,mFavorisTextView.getText().toString());
                 intent.putExtra(TAGApropos,maproposTextview.getText().toString());

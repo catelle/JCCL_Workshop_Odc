@@ -19,6 +19,8 @@ import android.widget.Toast;
 import com.example.jccl_network_project.models.Utilisateur;
 import com.example.jccl_network_project.utils.FirebaseUtils;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
@@ -62,16 +64,16 @@ try{
             @Override
             public void onClick(View view) {
 
-
                 Toast.makeText(InscriptionActivity.this,"value has been registered",Toast.LENGTH_LONG).show();
+
                 memail = emailEditText.getEditText().getText().toString();
                 muser_name=usernameEditText.getEditText().getText().toString();
 
-                Toast.makeText(InscriptionActivity.this,"value has been registered",Toast.LENGTH_LONG).show();
+
                 Utilisateur user=new Utilisateur(muser_name,memail,muser_status);
                 FirebaseUtils.addTask(user);
                 Toast.makeText(InscriptionActivity.this, "user added successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 finish();
 
 
@@ -99,4 +101,21 @@ try{
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
+
+        if(user!=null){
+            sendTomain();
+        }
+    }
+
+
+    public void sendTomain(){
+        startActivity(new Intent(InscriptionActivity.this,MainActivity.class));
+        finish();
+    }
+
 }
