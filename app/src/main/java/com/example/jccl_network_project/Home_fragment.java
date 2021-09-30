@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
 
-import com.example.jccl_network_project.VirtualClass.IntroVitualClassActivity;
+import com.example.jccl_network_project.VirtualClass.ClasseVirtuelleActivity;
 import com.example.jccl_network_project.detail_pages.ProductActivity;
 
 import static com.example.jccl_network_project.MainActivity.ELTTOSHOW;
@@ -93,7 +93,7 @@ public class Home_fragment extends Fragment {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(getActivity(), IntroVitualClassActivity.class);
+                Intent intent = new Intent(getActivity(), ClasseVirtuelleActivity.class);
 
                 startActivity(intent);
 

@@ -1,10 +1,12 @@
 package com.example.jccl_network_project;
 
 
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 
 
 import android.app.Activity;
@@ -14,9 +16,9 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
+
 import android.util.Log;
 import android.view.LayoutInflater;
-
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +35,7 @@ import static com.example.jccl_network_project.MainActivity.TAGusername;
 import com.example.jccl_network_project.adapters.General_adapter;
 
 
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,6 +50,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 
 
 public class EditActivity extends AppCompatActivity {
@@ -72,12 +76,8 @@ public class EditActivity extends AppCompatActivity {
     RecyclerView recycler;
     EditText nomET,professionET, descriptionET;
 
-
-
     FirebaseAuth mAuth;
     FirebaseFirestore db;
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,20 +135,17 @@ public class EditActivity extends AppCompatActivity {
 
         recycler = findViewById(R.id.recycler_formation);
 
-        mAuth=FirebaseAuth.getInstance();
-        db=FirebaseFirestore.getInstance();
-
         list = new ArrayList<>();
         list.add(new Formation("bonjour"));
         list.add(new Formation("bonsoir"));
         list.add(new Formation("salut"));
         list.add(new Formation("yo"));
         list.add(new Formation("Hola"));
-
         adapter = new General_adapter(this, list ,R.layout.formation_item);
         RecyclerView.LayoutManager lm = new LinearLayoutManager(this ,RecyclerView.VERTICAL , false);
         recycler.setLayoutManager(lm);
         recycler.setAdapter(adapter);
+
 
 
         Date date_1 =  new Date("01/01/2001");
@@ -214,6 +211,8 @@ public class EditActivity extends AppCompatActivity {
 
 
        }
+
+
 
 
 

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/light_gray"
     tools:context=".detail_pages.DetailPublication_doc">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
@@ -25,6 +26,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/black" />
 
+
         <ImageView
             android:id="@+id/btn_search"
             android:layout_width="wrap_content"
@@ -42,11 +44,10 @@
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
 
 
         <LinearLayout
@@ -388,10 +389,30 @@
             </LinearLayout>
 
 
+<!--        </LinearLayout>-->
 
+
+
+
+            <!-- Document title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/title_doc"
+                android:layout_gravity="center"
+                android:text="@string/detail_page_doc_title"/>
+
+            <!-- Description document -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                style="@style/medium_description"
+                android:layout_marginRight="@dimen/margin_right_left"
+                android:layout_marginLeft="@dimen/margin_right_left"
+                android:text="@string/detail_page_doc_description"/>
 
         </LinearLayout>
-
 
 
     </ScrollView>

@@ -1,23 +1,21 @@
 package com.example.jccl_network_project.detail_pages;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 ;
 import com.example.jccl_network_project.R;
+
 import com.example.jccl_network_project.custom_interface.OnItemClickListener;
 import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
 import com.example.jccl_network_project.viewholders.General_viewholder;
+
 
 import java.util.LinkedList;
 import java.util.List;
@@ -26,7 +24,7 @@ import java.util.List;
 public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapter.Word_viewholder>  {
 
 
-    private  List<String> mCategorie;
+    private List<String> mCategorie;
     private LayoutInflater mInflater;
     private Context context;
     private OnItemClickListener onItemClickListener;

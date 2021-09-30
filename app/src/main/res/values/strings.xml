@@ -79,6 +79,7 @@
     <string name="numero_de_telephone">numero de telephone</string>
     <string name="s_inscrire">S\'inscrire</string>
     <string name="code_verification">Code verification</string>
+
     <string name="app_Discussion">Discussion</string>
     <string name="question">En tant que développeur front-end, vous pourrez
         faire afficher des messages dans la console. Par exemple, les développeurs chez OpenClassrooms
@@ -108,9 +109,8 @@
         <item>Allemagne</item>
     </string-array>
 
-
     <string-array name="labels_array">
-        <item>Votre Statut</item>
+        <item>--Votre Statut--</item>
         <item>Enseignant</item>
         <item>Professionnel</item>
         <item>Etudiant</item>

@@ -36,6 +36,10 @@
         <item name="android:textSize">20sp</item>
         <item name="android:fontFamily">@font/poppins_bold</item>
     </style>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 97ed54e83c405b528312f6671cfd6ea609be6487
     <!-- creer le composant pour les le titre de docuemnt sur la detail doc page -->
 
     <style name="title_doc">
@@ -59,7 +63,10 @@
         <item name="fontFamily">@font/poppins_medium</item>
     </style>
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 97ed54e83c405b528312f6671cfd6ea609be6487
     <!-- Creer le composant pour les sous-titres -->
     <style name="subtitle">
         <item name="android:textColor">@color/black</item>

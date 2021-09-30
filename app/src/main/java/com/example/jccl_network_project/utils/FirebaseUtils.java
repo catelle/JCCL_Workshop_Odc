@@ -2,6 +2,7 @@ package com.example.jccl_network_project.utils;
 
 
 
+
 import android.content.Intent;
 import android.util.Log;
 import android.widget.Toast;
@@ -20,6 +21,18 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 
 import androidx.annotation.NonNull;
+
+import android.os.Parcelable;
+import android.util.Log;
+import com.example.jccl_network_project.models.Publication;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 
 public class FirebaseUtils {
 
@@ -62,6 +75,7 @@ public class FirebaseUtils {
 
 
 
+
     }
                         public static void getAllPublication() {
 
@@ -72,15 +86,21 @@ public class FirebaseUtils {
                                         public void onSuccess(QuerySnapshot snapshots) {
 
 
+
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-
                                             Log.w("TAG_FAILURE", "Task has not been added", e);
                                         }
                                     });
+
+
+
+
+
+
 
                         }
     public  static  void addPublication(Publication publication){
@@ -90,10 +110,10 @@ public class FirebaseUtils {
 
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                     @Override
+
                     public void onSuccess(DocumentReference documentReference) {
 
                         Log.d("TAG_SUCCESS","Task added successfully");
-
 
 
 
@@ -102,11 +122,13 @@ public class FirebaseUtils {
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+
                         Log.w("TAG_FAILURE", "Task has not been added", e);
                     }
                 });
 
     }
+
 
 
 
@@ -119,6 +141,7 @@ public class FirebaseUtils {
     public static void getAllUsers() {
 
     }
+
 
 }
 

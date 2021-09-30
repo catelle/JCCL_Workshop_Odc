@@ -21,11 +21,7 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.jccl_network_project.VirtualClass.IntroVitualClassActivity;
-import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
-import com.example.jccl_network_project.detail_pages.ProductActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity  {
 
@@ -59,6 +55,10 @@ public class MainActivity extends AppCompatActivity  {
     public static final String ELTTOSHOW="ElementsAAfficher";
 
 
+
+    //********** Declaration des variables *************//
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -78,9 +78,12 @@ public class MainActivity extends AppCompatActivity  {
         }
 
 
+
+
     // Declaration du navigationItemSelectedListener pour la gestion des click
     // des click sur la bottom navigation
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 

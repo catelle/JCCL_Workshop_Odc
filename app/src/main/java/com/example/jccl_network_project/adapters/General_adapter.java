@@ -1,12 +1,10 @@
 
 package com.example.jccl_network_project.adapters;
 
-import android.app.Activity;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 
 
 import androidx.annotation.NonNull;
@@ -26,6 +24,7 @@ public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
     private int itemLayout;
 
     public General_adapter(Context context, List<Object> list, int itemLayout){
+
         this.list = list;
 
         this.activity = activity;
