@@ -1,9 +1,12 @@
 package com.example.jccl_network_project.detail_pages;
 
 import static android.content.ContentValues.TAG;
+import static com.example.jccl_network_project.MainActivity.ELTTOSHOW;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,9 +36,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 
+import java.util.Collection;
 import java.util.Deque;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Locale;
 import java.util.Map;
 import java.util.Objects;
@@ -44,6 +51,8 @@ import java.util.Objects;
 public class ProductActivity extends AppCompatActivity implements OnViewHolderCallback {
 
 
+    private final LinkedList<String> mWordList = new LinkedList<>();
+    private final LinkedList<Fil_discussion> mForumList = new LinkedList<>();
     private List<Object> mCategory = new ArrayList<>();
     private List<Object> list = new ArrayList<>();
     RecyclerView mRecyclerViewWord;
@@ -94,8 +103,6 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
     private TextView type_doc;
     private TextView isFree;
     private TextView note;
-    private List<Fil_discussion> mForumList;
-    private List<String> mWordList;
 
 
     @Override
@@ -103,61 +110,12 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_product);
 
-
-        mWordList.add("Tous");
-        mWordList.add("Cours");
-        mWordList.add("Exercices");
-        mWordList.add("Corrigés");
-
-//        mWordList.addLast("Tous");
-//        mWordList.addLast("Resolu");
-//        mWordList.addLast("Non Resolu");
-
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-        mForumList.add(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
-                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
-                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
-
-
-        RecyclerView recyclerViewWord = findViewById(R.id.recyclerview_word);
-        WordCategoryAdapter wordAdapter = new WordCategoryAdapter(this, mWordList);
-        recyclerViewWord.setAdapter(wordAdapter);
-        recyclerViewWord.setLayoutManager(new LinearLayoutManager(this,
-                LinearLayoutManager.HORIZONTAL, false));
-
         mAppBarTitle = findViewById(R.id.text_appBarTitle);
         mFilter = findViewById(R.id.image_filter);
         mSearchField = findViewById(R.id.edit_search);
-        typeContain = "publication";
+        Intent data= getIntent();
+       typeContain = "publication";
+
 
 
 
@@ -175,7 +133,7 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
         /*Initialize all adapter*/
         profilAdapter = new GeneralRecyclerAdapter(this, this, list, R.layout.teacher_item, REQUEST_CODE_ADAPTER_PROFIL);
         docAdapter = new GeneralRecyclerAdapter(this, this, list, R.layout.document_item, REQUEST_CODE_ADAPTER_PUBLICATION);
-       GeneralRecyclerAdapter wordGeneralAdapter = new GeneralRecyclerAdapter(this, this, mCategory, R.layout.word_category, REQUEST_CODE_ADAPTER_CATEGORY);
+        wordAdapter = new GeneralRecyclerAdapter(this, this, mCategory, R.layout.word_category, REQUEST_CODE_ADAPTER_CATEGORY);
 
 
         /*Permet de reccuperer les differentes categorie selon le contenu de l'intent
@@ -227,24 +185,8 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
 
     }
 
-
     private void searchProcess(String field) {
         List<Object> newList = new ArrayList<>();
-
-
-//        RecyclerView recyclerViewDoc = findViewById(R.id.recyclerview_grid);
-//        DocumentAdapter docAdapter = new DocumentAdapter(this, DocumentModel.getObjectList());
-//        recyclerViewDoc.setAdapter(docAdapter);
-//        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(this ,
-//                LinearLayoutManager.VERTICAL, false);
-//        recyclerViewDoc.setLayoutManager(linearLayoutDoc);
-
-        RecyclerView recyclerViewFilDiscussion = findViewById(R.id.recyclerview_grid);
-        FilDiscussionAdapter fdAdapter = new FilDiscussionAdapter(this, mForumList);
-        recyclerViewFilDiscussion.setAdapter(fdAdapter);
-        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(this ,
-                LinearLayoutManager.VERTICAL, false);
-        recyclerViewFilDiscussion.setLayoutManager(linearLayoutDoc);
 
         for (Object value : updateList) {
             switch (typeContain) {
@@ -304,7 +246,6 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
 
     private void createRecyclerFilDiscussion() {
 
-
     }
 
 
@@ -359,10 +300,9 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
                                 break;
                             case "enseignant":
                             case "encadreur":
-                                Utilisateur utilisateur = document.toObject(Utilisateur.class);
+                         Utilisateur utilisateur = document.toObject(Utilisateur.class);
                                 list.add(utilisateur);
-                                createRecyclerProfil();
-                                break;
+                                createRecyclerProfil();break;
                             case "discussion":
                                 Fil_discussion fil_discussion = document.toObject(Fil_discussion.class);
                                 list.add(fil_discussion);
@@ -426,10 +366,12 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
                                 Publication publication = document.toObject(Publication.class);
                                 list.add(publication);
                                 break;
-                            case "encadreur":
-                            case "enseignant":
+                            case "etudiant":
                                 Utilisateur utilisateur = document.toObject(Utilisateur.class);
                                 list.add(utilisateur);
+                                break;
+                            case "enseignant":
+
                                 break;
                             case "discussion":
                                 Fil_discussion fil_discussion = document.toObject(Fil_discussion.class);

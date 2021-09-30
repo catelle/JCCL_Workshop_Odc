@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -18,24 +19,27 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.jccl_network_project.VirtualClass.IntroVitualClassActivity;
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
+import com.example.jccl_network_project.detail_pages.ProductActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.tabs.TabLayout;
 
 public class MainActivity extends AppCompatActivity  {
 
-   // EditText nomUtilisateurEditText;
-   // EditText emailEditText ;
-   // Spinner spinner ;
-   // TextView continuer_button;
+    EditText nomUtilisateurEditText;
+    EditText emailEditText ;
+    Spinner spinner ;
+    TextView continuer_button;
 
 
 
     private BottomNavigationView bottomNavigation;
-  //  private ActionBar tabLayout;
-  //  private Spinner viewPager2, viewPager1;
-  //  private String email,nomUtilisateur, status;
+    private ActionBar tabLayout;
+    private Spinner viewPager2, viewPager1;
+    private String email,nomUtilisateur, status;
 
 
 
@@ -52,16 +56,24 @@ public class MainActivity extends AppCompatActivity  {
     public static final String TAGabonnee="abonnees";
     public static final String TAGfavoris="favoris";
     public static final String TAGApropos="Apropos";
+    public static final String ELTTOSHOW="ElementsAAfficher";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        try {
 
-        bottomNavigation = findViewById(R.id.bottom_navigation);
-        bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home_fragment()).commit();
+
+
+            bottomNavigation = findViewById(R.id.bottom_navigation);
+            bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home_fragment()).commit();
+
+        }catch (Exception e){
+            Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
 
         }
 
@@ -95,6 +107,10 @@ public class MainActivity extends AppCompatActivity  {
             };
 
 
+    public void AddNewPost(View view) {
+        Intent intent=new Intent(MainActivity.this,CreatePublicationActivity.class);
+        startActivity(intent);
+    }
 }
 
 

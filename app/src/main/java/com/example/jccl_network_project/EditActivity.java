@@ -156,6 +156,9 @@ public class EditActivity extends AppCompatActivity {
        save.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
+               try{
+
+
                String email="catelleningha@gmail.com";
                //recuperation des données tests sur les valeurs
                DocumentReference ref=firestore.collection("Utilisateur").document(mauth.getUid());
@@ -201,16 +204,19 @@ public class EditActivity extends AppCompatActivity {
                        });
 
 
-
+               }catch (Exception e){
+     Toast.makeText(EditActivity.this, e.toString(),Toast.LENGTH_LONG).show();
+               }
 
            }
                });
 
 
 
+       }
 
 
-    }
+
 
 
     public class  Formation{

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TextView;
@@ -125,11 +126,11 @@ public class Profil_fragment extends Fragment {
 
         //liaison avec la vue
 
-        mlocalisationTV=view.findViewById(R.id.localisation);
-        professionTV=view.findViewById(R.id.profession);
-        nomTV=view.findViewById(R.id.user_name);
-        photo_profilIV=view.findViewById(R.id.user_picture);
-        iconeditIV=view.findViewById(R.id.icon_edit);
+        mlocalisationTV=(TextView)view.findViewById(R.id.localisation);
+        professionTV=(TextView)view.findViewById(R.id.profession);
+        nomTV=(TextView)view.findViewById(R.id.user_name);
+        photo_profilIV=(ImageView) view.findViewById(R.id.user_picture);
+        iconeditIV=(ImageView) view.findViewById(R.id.icon_edit);
 
 
         iconeditIV.setOnClickListener(new View.OnClickListener() {
@@ -150,13 +151,13 @@ public class Profil_fragment extends Fragment {
         Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
         viewPager2.setAdapter(adapter);
         //getting profil parameters to edit
-        profession=view.findViewById(R.id.profession);
-        username=view.findViewById(R.id.user_name);
-        localisation=view.findViewById(R.id.localisation);
-         iconEdit_image= view.findViewById(R.id.icon_edit);
-        mprofile_image= view.findViewById(R.id.user_picture);
-         maproposTextview=view.findViewById(R.id.apropos_textview);
-         mAbonneeTextView=view.findViewById(R.id.abonnéeTextView);
+        profession = (TextView) view.findViewById(R.id.profession);
+        username=(TextView)view.findViewById(R.id.user_name);
+        localisation=(TextView)view.findViewById(R.id.localisation);
+         iconEdit_image= (ImageView) view.findViewById(R.id.icon_edit);
+        mprofile_image= (ImageView) view.findViewById(R.id.user_picture);
+        // maproposTextview= view.findViewById(R.id.apropos_textview);
+         mAbonneeTextView=(TextView) view.findViewById(R.id.abonnéeTextView);
 
 
 
@@ -175,9 +176,9 @@ public class Profil_fragment extends Fragment {
                 intent.putExtra(TAGusername,username.getText().toString());
                 intent.putExtra(TAGlocalisation,localisation.getText().toString());
              //   intent.putExtra(TAGprofile_image, (Parcelable) mprofile_image);
-                intent.putExtra(TAGabonnee,mAbonneeTextView.getText());
-                intent.putExtra(TAGfavoris,mFavorisTextView.getText().toString());
-                intent.putExtra(TAGApropos,maproposTextview.getText().toString());
+               // intent.putExtra(TAGabonnee,mAbonneeTextView.getText());
+               // intent.putExtra(TAGfavoris,mFavorisTextView.getText().toString());
+               // intent.putExtra(TAGApropos,maproposTextview.getText().toString());
                 startActivity(intent);
 
 

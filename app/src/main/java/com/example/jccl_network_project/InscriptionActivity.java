@@ -74,12 +74,12 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
         setContentView(R.layout.activity_inscription);
 
 
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
+        //ActionBar act;
+      //  act=getSupportActionBar();
+       // ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
 
-        act.setBackgroundDrawable(cd);
-        getSupportActionBar().hide();
+       // act.setBackgroundDrawable(cd);
+       // getSupportActionBar().hide();
 
      //view associations
 try{
@@ -90,13 +90,9 @@ try{
         suite_inscription=findViewById(R.id.suite_button);
 
 
-
-
-
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.labels_array, android.R.layout.simple_spinner_item);
 
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
 
 
             spinner.setAdapter(adapter);
@@ -115,11 +111,11 @@ try{
                 muser_name=usernameEditText.getEditText().getText().toString();
 
 
-                Utilisateur user=new Utilisateur(muser_name,memail,muser_status);
-                FirebaseUtils.addTask(user);
+               // Utilisateur user=new Utilisateur(muser_name,memail,muser_status);
+               // FirebaseUtils.addTask(user);
                 Toast.makeText(InscriptionActivity.this, "user added successfully", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                finish();
+
 
 
             }
@@ -138,19 +134,9 @@ try{
     }
 
 
-    protected void onStart() {
-        super.onStart();
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
-
-        if(user!=null){
-
-        }else{
-            sendTomain();
-        }
 
 
-    }
+
 
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
@@ -176,7 +162,7 @@ try{
 
     public void sendTomain(){
         startActivity(new Intent(InscriptionActivity.this,MainActivity.class));
-        finish();
+
     }
 
 }
