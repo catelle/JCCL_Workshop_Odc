@@ -2,13 +2,12 @@ package com.example.jccl_network_project.custom_interface;
 
 import android.view.View;
 
-import java.util.List;
+import androidx.annotation.Nullable;
 
 public interface OnViewHolderCallback {
 
-    void setFavorisViewInformation(int position);
-    List<View> getViews();
-    void OnItemClick(int position);
-
+    void setItemInformation(Object object ,@Nullable String request_code);
+    void onItemClick(int position ,@Nullable String request_code);
+    void bindItemView(View view ,@Nullable String request_code);
 
 }

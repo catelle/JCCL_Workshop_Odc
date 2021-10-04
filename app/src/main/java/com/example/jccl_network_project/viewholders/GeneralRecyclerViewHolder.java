@@ -22,6 +22,10 @@ public class GeneralRecyclerViewHolder extends RecyclerView.ViewHolder {
         this.request_code = request_code;
         itemView.setOnClickListener(v -> onviewHolderCallback.onItemClick(getAdapterPosition(), request_code));
         onviewHolderCallback.bindItemView(itemView, request_code);
+
     }
 
+    public OnViewHolderCallback getOnviewHolderCallback() {
+        return onviewHolderCallback;
+    }
 }

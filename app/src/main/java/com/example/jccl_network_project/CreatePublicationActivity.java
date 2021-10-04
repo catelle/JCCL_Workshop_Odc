@@ -49,6 +49,7 @@ public class CreatePublicationActivity extends AppCompatActivity implements Adap
     ImageButton uploadContent,sellcontentButton;
 
     ImageView uploadedImage;
+    String TAG="error";
 
     Button create_publication_button, choose_file_button;
 
@@ -79,6 +80,8 @@ public class CreatePublicationActivity extends AppCompatActivity implements Adap
 
 
 //component associations
+try{
+
 
         categoriePub = findViewById(R.id.categorie_pub);
         domainePub = findViewById(R.id.domaine_pub);
@@ -100,6 +103,12 @@ public class CreatePublicationActivity extends AppCompatActivity implements Adap
         selled=false;
 
         db=FirebaseFirestore.getInstance();
+}catch(Exception e){
+    Toast.makeText(CreatePublicationActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+    Intent intent=new Intent(CreatePublicationActivity.this,InscriptionActivity.class);
+    intent.putExtra(TAG,e.toString());
+    startActivity(intent);
+}
 
  //response to clic on create publication
 

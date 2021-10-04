@@ -114,6 +114,11 @@ public class MainActivity extends AppCompatActivity  {
         Intent intent=new Intent(MainActivity.this,CreatePublicationActivity.class);
         startActivity(intent);
     }
+
+    public void addingNewdiscussion(View view) {
+        Intent intent=new Intent(MainActivity.this,CreateFillDiscussion.class);
+        startActivity(intent);
+    }
 }
 
 

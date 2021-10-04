@@ -45,6 +45,8 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
+import static com.github.vipulasri.timelineview.TimelineView.TAG;
+
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
@@ -83,6 +85,10 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
 
      //view associations
 try{
+
+    Intent data=getIntent();
+    String e=data.getStringExtra(TAG);
+    Toast.makeText(InscriptionActivity.this,e,Toast.LENGTH_LONG).show();
 
         spinner = findViewById(R.id.user_status);
         emailEditText=findViewById(R.id.email);

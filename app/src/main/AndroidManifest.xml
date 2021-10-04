@@ -22,7 +22,13 @@
         <activity
             android:name=".EditActivity"
             android:exported="true" />
-        <activity android:name=".CreatePublicationActivity" />
+        <activity android:name=".CreatePublicationActivity" >
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".ViewOtherProfileActivity" />
         <activity
 
@@ -40,11 +46,7 @@
             android:name=".InscriptionActivity"
             android:exported="true" />
 
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".PdfViewer"
