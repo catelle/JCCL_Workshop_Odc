@@ -1,10 +1,6 @@
 <resources>
     <string name="app_name">JCCL_Network_Project</string>
-
-    <string name="required">Veuillez remplir tous les champs</string>
-    <string name="hint_name">Nom d\'utilisateur</string>
-    <string name="hint_email">Email</string>
-    <string name="title_activity_inscription">InscriptionActivity</string>
+    <string name="app_accueil">Accueil</string>
 
 
     <!-- page d'acceuil  -->
@@ -16,17 +12,118 @@
     <string name="home_page_follow_count">(1300 abonnees)</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="name_inscription">Inscription</string>
 
     <!-- page de connexion  -->
 
-
+    <string name="required">Veuillez remplir tous les champs</string>
     <!-- page d\'inscription -->
+    <string name="hint_name">Nom d\'utilisateur</string>
+    <string name="hint_email">Email</string>
+    <string name="title_activity_inscription">InscriptionActivity</string>
+    <string name="description_content_banner">clear_icon</string>
+    <string name="img_banner">img_banner</string>
+    <string name="profession_fili_re">Profession/Filière</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="continuer">Continuer</string>
+    <string name="other_way_signup">Ou via les réseaux sociaux</string>
+    <string name="facebook_image">facebook_image</string>
+    <string name="facebook">Facebook</string>
+    <string name="google">Google</string>
+    <string name="google_img">google_img</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="votre_statut">Votre Statut</string>
+    <string name="edit_page_nom">Nom</string>
+    <string name="edit_page_profession">Profession</string>
+    <string name="edit_page_formation">Formation</string>
+    <string name="edit_page_description">Description</string>
+    <string name="edit_page_valider">Valider</string>
+    <string name="favaris_tab_item_title">"Livre de cuisine "</string>
+
+    <string name="favaris_tab_item_categorie">Cours</string>
+    <string name="favaris_tab_item_poster_name">Junior Temgoua</string>
+    <string name="detail_page_doc_title">Livre de mathematique</string>
+    <string name="detail_page_doc_description">Modelisation des bases de donnees NoSql , en  plusieurs collection</string>
+
+
+    <string name="detail_page_doc_poster_name">Junior Temgoua</string>
+    <string name="detail_page_doc_profession">Enseignant de mathematique</string>
+    <string name="text_download">Telecharger</string>
+    <string name="signale_doc">signaler</string>
+    <string name="text_apercu">Apercu du Document</string>
+    <string name="commentaires">commentaires</string>
+    <string name="comment_date">il y\'a 6 jours</string>
+    <string name="text_leave_comment">Laisser un commentaire</string>
+    <string name="text_popup_note">Combien d\'etoiles donner vous a ce document</string>
+
+    <string name="edit_page_ville">Ville</string>
+
+    <string name="edit_page_email">Email</string>
+    <string name="connexion_title">Connexion</string>
+    <string name="numero_de_telephone">numero de telephone</string>
+    <string name="s_inscrire">S\'inscrire</string>
+    <string name="code_verification">Code verification</string>
+
+    <string name="app_Discussion">Discussion</string>
+
+    <string-array name="country_codes">
+        <item>Cameroun</item>
+        <item>France</item>
+        <item>Congo</item>
+        <item>Allemagne</item>
+    </string-array>
+
+    <string-array name="labels_array">
+        <item>--Votre Statut--</item>
+        <item>Enseignant</item>
+        <item>Professionnel</item>
+        <item>Etudiant</item>
+        <item>Elève</item>
+    </string-array>
+
+
+    <string-array name="spinner_formation">
+        <item>2020</item>
+        <item>2019</item>
+        <item>2018</item>
+        <item>2017</item>
+        <item>2016</item>
+        <item>2015</item>
+        <item>2014</item>
+        <item>2013</item>
+        <item>2012</item>
+        <item>2011</item>
+        <item>2010</item>
+        <item>2009</item>
+        <item>2008</item>
+        <item>2007</item>
+        <item>2006</item>
+        <item>2005</item>
+        <item>2004</item>
+        <item>2003</item>
+        <item>2002</item>
+        <item>2001</item>
+        <item>2000</item>
+    </string-array>
+
+    <string name="title_activity_product">ProductActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="question">En tant que développeur front-end, vous pourrez
+        faire afficher des messages dans la console. Par exemple, les développeurs chez OpenClassrooms
+        font apparaître un message d\'avertissement pour prévenir les potentielles victimes d\'attaque self-XSS,
+        où l\'attaquant convainc la victime à coller du code néfaste dans cette console.</string>
+    <string name="response">On parle souvent de design responsive : il s\'agit d\'une technique de
+        design où l\'apparence d\'une page ou d\'une application dépend de l\'appareil sur lequel on
+        les consulte. On dépendra souvent de la largeur en pixels de la fenêtre de navigateur.</string>
 
 
     <!-- page de forum  -->
 
 
     <!-- page de fil de discussion -->
-
 
 </resources>
