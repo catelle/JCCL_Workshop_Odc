@@ -14,6 +14,7 @@ public class Publication {
     private String categorie;
     private String description;
     private String destination;
+    private String domaine;
     private int duree;
     private ArrayList<Integer> note;
     private String emplacement_piece ;
@@ -54,8 +55,10 @@ public class Publication {
         this.description = description;
         this.destination = destination;
         this.duree = 0;
+        this.domaine=domaine;
         this.note = null;
         this.emplacement_piece = null;
+        this.date_ajout=null;
         this.lien = lien;
         this.titre = titre;
         this.mot_cles = mot_cles;

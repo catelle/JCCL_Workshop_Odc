@@ -10,13 +10,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.net.Uri;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 
 
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +40,8 @@ import com.example.jccl_network_project.adapters.General_adapter;
 
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -45,12 +50,18 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+import java.util.UUID;
 
 
 public class EditActivity extends AppCompatActivity {
@@ -65,11 +76,13 @@ public class EditActivity extends AppCompatActivity {
     ImageView profile_image;
     String localisation;
     String profession;
-    Button save;
+    Button save,uploddocs;
+    ImageView uploadedImage;
 
     FirebaseAuth mauth;
     FirebaseFirestore firestore;
-
+    FirebaseStorage storage;
+    private Uri filePath;
 
     List<Object> list;
     General_adapter adapter;
@@ -78,6 +91,8 @@ public class EditActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     FirebaseFirestore db;
+
+    private final int PICK_IMAGE_REQUEST = 22;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +104,7 @@ public class EditActivity extends AppCompatActivity {
        nom=data.getStringExtra(TAGusername);
        localisation=data.getStringExtra(TAGlocalisation);
        profession=data.getStringExtra(TAGprofession);
+        storage = FirebaseStorage.getInstance();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         if (user != null) {
             for (UserInfo profile : user.getProviderData()) {
@@ -109,6 +125,14 @@ public class EditActivity extends AppCompatActivity {
        nomET=findViewById(R.id.edit_nom);
         professionET=findViewById(R.id.edit_profession);
         descriptionET=findViewById(R.id.edit_description);
+        uploadedImage=findViewById(R.id.uploadedImage);
+        uploddocs=findViewById(R.id.uploaddocs);
+        uploddocs.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SelectImage();
+            }
+        });
 
         nomET.setText(nom);
         professionET.setText(profession);
@@ -213,6 +237,140 @@ public class EditActivity extends AppCompatActivity {
        }
 
 
+
+    private void SelectImage()
+    {
+
+        // Defining Implicit Intent to mobile gallery
+        Intent intent = new Intent();
+        intent.setType("image/*");
+
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(
+                Intent.createChooser(
+                        intent,
+                        "Select Image from here..."),
+                PICK_IMAGE_REQUEST);
+    }
+
+    // UploadImage method
+    private void uploadImage()
+    {
+        if (filePath != null) {
+
+            // Code for showing progressDialog while uploading
+            ProgressDialog progressDialog
+                    = new ProgressDialog(this);
+            progressDialog.setTitle("Uploading...");
+            progressDialog.show();
+
+            // Defining the child of storageReference
+
+            String fiepath= "publication/" + UUID.randomUUID().toString();
+
+            StorageReference storageRef = storage.getReference();
+
+            StorageReference ref
+                    = storageRef.child("images/"
+                    + UUID.randomUUID().toString());
+
+            // adding listeners on upload
+            // or failure of image
+            ref.putFile(filePath)
+                    .addOnSuccessListener(
+                            new OnSuccessListener<UploadTask.TaskSnapshot>() {
+
+                                @Override
+                                public void onSuccess(
+                                        UploadTask.TaskSnapshot taskSnapshot)
+                                {
+
+                                    // Image uploaded successfully
+                                    // Dismiss dialog
+                                    progressDialog.dismiss();
+                                    Toast
+                                            .makeText(EditActivity.this,
+                                                    "Image Uploaded!!",
+                                                    Toast.LENGTH_SHORT)
+                                            .show();
+                                }
+                            })
+
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e)
+                        {
+
+                            // Error, Image not uploaded
+                            progressDialog.dismiss();
+                            Toast
+                                    .makeText(EditActivity.this,
+                                            "Failed " + e.getMessage(),
+                                            Toast.LENGTH_SHORT)
+                                    .show();
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+
+                        // Progress Listener for loading
+                        // percentage on the dialog box
+                        @Override
+                        public void onProgress(
+                                UploadTask.TaskSnapshot taskSnapshot)
+                        {
+                            double progress
+                                    = (100.0
+                                    * taskSnapshot.getBytesTransferred()
+                                    / taskSnapshot.getTotalByteCount());
+                            progressDialog.setMessage(
+                                    "Uploaded "
+                                            + (int)progress + "%");
+                        }
+                    });
+        }
+    }
+
+    // Override onActivityResult method
+    @Override
+    protected void onActivityResult(int requestCode,
+                                    int resultCode,
+                                    Intent data)
+    {
+
+        super.onActivityResult(requestCode,
+                resultCode,
+                data);
+
+        // checking request code and result code
+        // if request code is PICK_IMAGE_REQUEST and
+        // resultCode is RESULT_OK
+        // then set image in the image view
+        if (requestCode == PICK_IMAGE_REQUEST
+                && resultCode == RESULT_OK
+                && data != null
+                && data.getData() != null) {
+
+            // Get the Uri of data
+            filePath = data.getData();
+            try {
+
+                // Setting image on image view using Bitmap
+                Bitmap bitmap = MediaStore
+                        .Images
+                        .Media
+                        .getBitmap(
+                                getContentResolver(),
+                                filePath);
+                uploadedImage.setImageBitmap(bitmap);
+
+            }
+
+            catch (IOException e) {
+                // Log the exception
+                e.printStackTrace();
+            }
+        }
+    }
 
 
 

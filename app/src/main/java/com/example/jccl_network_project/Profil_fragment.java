@@ -67,7 +67,7 @@ public class Profil_fragment extends Fragment {
 
     //variables used for profile edition
 
-    Button mybutt;
+    Button mybutt,openprofile;
     //********view componnents*****//
 
     TextView mlocalisationTV, nomTV, professionTV, villeTV;
@@ -126,6 +126,7 @@ public class Profil_fragment extends Fragment {
         tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
         viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
         mybutt=view.findViewById(R.id.button_open_apercu);
+        openprofile=view.findViewById(R.id.button_open_apercu);
 
         //liaison avec la vue
 
@@ -152,6 +153,13 @@ public class Profil_fragment extends Fragment {
 
                 startActivity(intent);
 
+            }
+        });
+
+        openprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getActivity(),ViewOtherProfileActivity.class));
             }
         });
 

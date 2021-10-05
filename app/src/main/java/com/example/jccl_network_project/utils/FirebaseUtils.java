@@ -12,6 +12,7 @@ import com.example.jccl_network_project.models.Publication;
 import com.example.jccl_network_project.models.Utilisateur;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -34,11 +35,13 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import static com.github.vipulasri.timelineview.TimelineView.TAG;
+
 public class FirebaseUtils {
 
 
     static final String TASK_COLLECTION = "Utilisateur";
-    static final String PUBLICATION_COLLECTION = "Utilisateur";
+    static final String PUBLICATION_COLLECTION = "publication";
     static CollectionReference mRefCollection;
 
 
@@ -52,8 +55,10 @@ public class FirebaseUtils {
         return mRefCollection;
     }
     public  static  void addTask(Utilisateur user){
-        FirebaseUtils.getReferenceFirestore(TASK_COLLECTION)
 
+try{
+
+    FirebaseUtils.getReferenceFirestore(TASK_COLLECTION)
                 .add(user)
 
                 .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
@@ -72,7 +77,9 @@ public class FirebaseUtils {
                         Log.w("TAG_FAILURE", "Task has not been added", e);
                     }
                 });
+}catch(Exception e){
 
+}
 
 
 
@@ -114,6 +121,25 @@ public class FirebaseUtils {
                     public void onSuccess(DocumentReference documentReference) {
 
                         Log.d("TAG_SUCCESS","Task added successfully");
+                        DocumentReference washingtonRef = FirebaseFirestore.getInstance().collection("utilisateur").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+// Set the "isCapital" field of the city 'DC'
+                        washingtonRef
+                                .update("publication", publication)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Log.d(TAG, "DocumentSnapshot successfully updated!");
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.w(TAG, "Error updating document", e);
+                                    }
+                                });
+
+
 
 
 

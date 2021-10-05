@@ -117,10 +117,10 @@ try{
                 muser_name=usernameEditText.getEditText().getText().toString();
 
 
-               // Utilisateur user=new Utilisateur(muser_name,memail,muser_status);
+              // Utilisateur user=new Utilisateur(muser_name,memail,muser_status);
                // FirebaseUtils.addTask(user);
                 Toast.makeText(InscriptionActivity.this, "user added successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
 
 
 

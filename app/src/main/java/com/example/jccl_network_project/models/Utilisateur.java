@@ -17,7 +17,7 @@ public class Utilisateur {
     private String profession;
     private String telephone;
     private String email;
-    private Boolean validation;
+    private String validation;
     private List<Fil_discussion> fil_discussion;
     private List<Formation> formation;
     private List<Publication> favoris;
@@ -27,7 +27,7 @@ public class Utilisateur {
 
 // added Documents fournis to this constructor
 
-    public Utilisateur(String id_user, String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication,List<DocumentsFournis> documentsFournis) {
+    public Utilisateur(String id_user, String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, String validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication,List<DocumentsFournis> documentsFournis) {
 
 
         this.id_user = id_user;
@@ -66,13 +66,12 @@ public class Utilisateur {
 
     }
 
-    public Utilisateur( String nom,String email, String statut_utilisateur) {
+    public Utilisateur( String nom,String email, String statut_utilisateur,String userphone,String validation) {
 
         this.nom=nom;
-        this.id_user= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        this.id_user=nom+email;
         this.email=email;
         this.profession=statut_utilisateur;
-        this.id_user = "ITTAE";
         this.id_classe_virtuelle = null;
         this.avatar = null;
         this.categorie = null;
@@ -80,9 +79,9 @@ public class Utilisateur {
 
         this.prenom = null;
 
-        this.telephone = "";
+        this.telephone = userphone;
 
-        this.validation = null;
+        this.validation = validation;
         this.fil_discussion = null;
         this.formation = null;
         this.favoris = null;
@@ -174,11 +173,11 @@ public class Utilisateur {
         this.email = email;
     }
 
-    public Boolean getValidation() {
+    public String getValidation() {
         return validation;
     }
 
-    public void setValidation(Boolean validation) {
+    public void setValidation(String validation) {
         this.validation = validation;
     }
 

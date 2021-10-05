@@ -8,58 +8,54 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.JCCL_Network_Project.NoActionBar">
+
         <activity
             android:name=".CreateFillDiscussion"
             android:exported="true" />
         <activity android:name=".ViewProfileActivity" />
         <activity android:name=".VirtualClass.ClasseVirtuelleActivity" />
         <activity android:name=".OTPActivity" />
-        <activity android:name=".LoginActivity" />
+        <activity android:name=".LoginActivity" >
 
+
+    </activity>
         <activity
             android:name=".detail_pages.DetailPublication_doc"
             android:exported="true" />
         <activity
             android:name=".EditActivity"
             android:exported="true" />
-        <activity android:name=".CreatePublicationActivity" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".CreatePublicationActivity">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
         </activity>
         <activity android:name=".ViewOtherProfileActivity" />
         <activity
-
             android:name=".detail_pages.PaidActivity"
             android:exported="true" />
+        <activity android:name=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
-        <activity android:name=".MainActivity"></activity>
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+    </activity>
         <activity
             android:name=".detail_pages.ProductActivity"
-            android:exported="true"></activity>
-
-        <activity android:name=".InscriptionActivity">
-            android:name=".InscriptionActivity"
             android:exported="true" />
-
+        <activity android:name=".InscriptionActivity">
 
         </activity>
         <activity
             android:name=".PdfViewer"
             android:exported="true" />
-        <activity android:name=".detail_pages.ForumActivity"></activity>
+        <activity android:name=".detail_pages.ForumActivity" />
         <activity
             android:name=".detail_pages.TestGeneralAdapter"
             android:exported="true" />
-
     </application>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
     <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
 </manifest>

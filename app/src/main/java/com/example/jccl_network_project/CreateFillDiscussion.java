@@ -9,6 +9,6 @@ public class CreateFillDiscussion extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_fill_discussion);
+        setContentView(R.layout.fil_discussion);
     }
 }

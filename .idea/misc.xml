@@ -3,17 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-
         <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_inscription.xml" value="0.25" />
         <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_product.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/document_item.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/teacher_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/word_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.2203125" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/drawable/facebookstrokestyle.xml" value="0.17685185185185184" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_create_fill_discussion.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_create_publication.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_creation_publication.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_detail_publication_doc.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_edit.xml" value="0.10555555555555556" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_forum.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_inscription.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_inscription.xml" value="0.2" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_login.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_o_t_p.xml" value="0.20416666666666666" />
@@ -27,7 +30,6 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/index_fil_discussion.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/statusspinner.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/teacher_item.xml" value="0.1" />
-
         <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_forum.xml" value="0.19375" />
@@ -42,13 +44,11 @@
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
-
         <entry key="app/src/main/res/layout/fragment_favoris.xml" value="0.32760416666666664" />
         <entry key="app/src/main/res/layout/fragment_forum_fragment.xml" value="0.2713541666666667" />
         <entry key="app/src/main/res/layout/fragment_home_fragment.xml" value="0.2713541666666667" />
         <entry key="app/src/main/res/layout/fragment_profil_fragment.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2864583333333333" />
-
       </map>
     </option>
   </component>

@@ -12,6 +12,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.jccl_network_project.models.Utilisateur;
+import com.example.jccl_network_project.utils.FirebaseUtils;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -20,6 +23,12 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+import static com.example.jccl_network_project.LoginActivity.TAGemail;
+import static com.example.jccl_network_project.LoginActivity.TAGphone;
+import static com.example.jccl_network_project.LoginActivity.TAGstatus;
+import static com.example.jccl_network_project.LoginActivity.TAGusername;
+import static com.example.jccl_network_project.LoginActivity.TAGvalidation;
+
 
 public class OTPActivity extends AppCompatActivity {
 
@@ -27,6 +36,7 @@ public class OTPActivity extends AppCompatActivity {
     private Button mcodeButton;
     private FirebaseAuth mAuth;
     private String OTP;
+    String user_name,user_status, user_email, user_phone,validation;
 
 
     @Override
@@ -35,17 +45,24 @@ public class OTPActivity extends AppCompatActivity {
         setContentView(R.layout.activity_o_t_p);
 
 //changing action bar color
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#FFFFFF"));
+      //  ActionBar act;
+      //  act=getSupportActionBar();
+      //  ColorDrawable cd=new ColorDrawable(Color.parseColor("#FFFFFF"));
 
 
-        act.setBackgroundDrawable(cd);
+       // act.setBackgroundDrawable(cd);
 
         mcodeButton=findViewById(R.id.sendCodeButton);
         mOtpcodeEditText=findViewById(R.id.otp_code_EditText);
         mAuth=FirebaseAuth.getInstance();
-        OTP=getIntent().getStringExtra("auth");
+        Intent data=getIntent();
+        OTP=data.getStringExtra("auth");
+         user_name=data.getStringExtra(TAGusername);
+         user_status=data.getStringExtra(TAGstatus);
+         user_email=data.getStringExtra(TAGemail);
+        user_phone=data.getStringExtra(TAGphone);
+         validation=data.getStringExtra(TAGvalidation);
+
 
         mcodeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,6 +87,9 @@ public class OTPActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
+                    Utilisateur user=new Utilisateur(user_name,user_email,user_status, user_phone,validation);
+                    FirebaseUtils.addTask(user);
+                    Toast.makeText(OTPActivity.this," welcome on JCCL network !",Toast.LENGTH_LONG).show();
                     sendTomain();
                 }else{
                     Toast.makeText(OTPActivity.this," verification failed",Toast.LENGTH_LONG).show();
@@ -82,10 +102,8 @@ public class OTPActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser=mAuth.getCurrentUser();
-        if(currentUser!=null){
-            sendTomain();
-        }
+
+
     }
 
 

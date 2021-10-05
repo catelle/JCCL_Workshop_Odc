@@ -12,7 +12,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -22,13 +21,15 @@ import com.example.jccl_network_project.utils.FirebaseUtils;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.OnProgressListener;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.google.firebase.storage.UploadTask.TaskSnapshot;
 
 import java.io.IOException;
 import java.util.List;
@@ -42,18 +43,19 @@ public class CreatePublicationActivity extends AppCompatActivity implements Adap
 
     Spinner categoriePub,domainePub, destinantionPub,niveau_scolaire_pub;
 
-    EditText contentDescription_editText, title_editText;
+    EditText  title_editText;
+    TextInputLayout contentDescription_editText;
 
     EditText [] mots_clés=new EditText[5];
 
-    ImageButton uploadContent,sellcontentButton;
+    ImageView uploadContent,sellcontentButton;
 
     ImageView uploadedImage;
     String TAG="error";
 
     Button create_publication_button, choose_file_button;
 
-    String categorie, domaine, destination,titre,description;
+    String categorie, domaine, destination,titre,description,niveau;
     List<String> mots_clé;
     
     public static Boolean selled;
@@ -82,10 +84,13 @@ public class CreatePublicationActivity extends AppCompatActivity implements Adap
 //component associations
 try{
 
-
+        storage = FirebaseStorage.getInstance();
+        mAuth=FirebaseAuth.getInstance();
+        FirebaseUser user=mAuth.getCurrentUser();
         categoriePub = findViewById(R.id.categorie_pub);
         domainePub = findViewById(R.id.domaine_pub);
         destinantionPub = findViewById(R.id.destinantion_pub);
+        niveau_scolaire_pub=findViewById(R.id.niveau_scolaire_pub);
         contentDescription_editText = findViewById(R.id.user_name);
         uploadContent = findViewById(R.id.upload_image_button);
         sellcontentButton = findViewById(R.id.sellcontent_button);
@@ -103,87 +108,124 @@ try{
         selled=false;
 
         db=FirebaseFirestore.getInstance();
+
+    //response to clic on create publication
+
+    choose_file_button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            SelectImage();
+        }
+    });
+
+    // clic on sell content button
+
+    sellcontentButton.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            selled=true;
+            Toast.makeText(CreatePublicationActivity.this,"content will be sell",Toast.LENGTH_LONG).show();
+        }
+    });
+
+
+    //adapters for spinners
+
+
+    ArrayAdapter<CharSequence> adapterCategorie = ArrayAdapter.createFromResource(this,R.array.Categorie_array, android.R.layout.simple_spinner_item);
+    adapterCategorie.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+    ArrayAdapter<CharSequence> adapterDomaine = ArrayAdapter.createFromResource(this,R.array.Domaine_array, android.R.layout.simple_spinner_item);
+    adapterDomaine.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+    ArrayAdapter<CharSequence> adapterDestination = ArrayAdapter.createFromResource(this,R.array.Destination_array, android.R.layout.simple_spinner_item);
+    adapterDomaine.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+    ArrayAdapter<CharSequence> adapterNiveauScolaire = ArrayAdapter.createFromResource(this,R.array.Niveau_array, android.R.layout.simple_spinner_item);
+    adapterDomaine.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+
+    //adapters and spinners association
+
+    domainePub.setAdapter(adapterDomaine);
+    categoriePub.setAdapter(adapterCategorie);
+    niveau_scolaire_pub.setAdapter(adapterNiveauScolaire);
+    destinantionPub.setAdapter(adapterDestination);
+
+    domainePub.setOnItemSelectedListener(this);
+    categoriePub.setOnItemSelectedListener(this);
+    niveau_scolaire_pub.setOnItemSelectedListener(this);
+    destinantionPub.setOnItemSelectedListener(this);
+
+    create_publication_button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+
+            try{
+
+
+                description=contentDescription_editText.getEditText().getText().toString();
+            }catch (Exception e){
+                Toast.makeText(CreatePublicationActivity.this,"1"+e.toString(),Toast.LENGTH_LONG).show();
+            }
+
+            try{
+
+
+                titre=title_editText.getText().toString();
+
+            }catch (Exception e){
+                Toast.makeText(CreatePublicationActivity.this,"2"+e.toString(),Toast.LENGTH_LONG).show();
+            }
+            try{
+
+
+                mots_clé.add(mots_clés[0].getText().toString());
+                mots_clé.add(mots_clés[1].getText().toString());
+              //  mots_clé.add(mots_clés[2].getText().toString());
+               // mots_clé.add(mots_clés[3].getText().toString());
+
+            }catch (Exception e){
+                Toast.makeText(CreatePublicationActivity.this,"2"+e.toString(),Toast.LENGTH_LONG).show();
+            }
+            try{
+
+
+                Publication publication = new Publication(mAuth.getCurrentUser().getUid(),categorie,description,destination,filePath.toString(),titre,mots_clé,niveau);
+                FirebaseUtils.addPublication(publication);
+
+            }catch (Exception e){
+                Toast.makeText(CreatePublicationActivity.this,"3"+e.toString(),Toast.LENGTH_LONG).show();
+            }
+
+
+                Toast.makeText(CreatePublicationActivity.this,"publiction added successfully",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(CreatePublicationActivity.this,MainActivity.class));
+
+
+            uploadImage();
+
+        }
+    });
+
 }catch(Exception e){
     Toast.makeText(CreatePublicationActivity.this,e.toString(),Toast.LENGTH_LONG).show();
     Intent intent=new Intent(CreatePublicationActivity.this,InscriptionActivity.class);
     intent.putExtra(TAG,e.toString());
-    startActivity(intent);
 }
 
- //response to clic on create publication
-
-        choose_file_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-           SelectImage();
-            }
-        });
 
 
-// clic on sell content button
-
-        sellcontentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                selled=true;
-            }
-        });
-
-//clic on upload content button
-
-        uploadContent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                uploadImage();
-            }
-        });
 
 
- //adapters for spinners
 
-        ArrayAdapter<CharSequence> adapterCategorie = ArrayAdapter.createFromResource(this,R.array.Categorie_array, android.R.layout.simple_spinner_item);
-        adapterCategorie.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        ArrayAdapter<CharSequence> adapterDomaine = ArrayAdapter.createFromResource(this,R.array.Domaine_array, android.R.layout.simple_spinner_item);
-        adapterDomaine.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        ArrayAdapter<CharSequence> adapterDestination = ArrayAdapter.createFromResource(this,R.array.Destination_array, android.R.layout.simple_spinner_item);
-        adapterDomaine.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
-        ArrayAdapter<CharSequence> adapterNiveauScolaire = ArrayAdapter.createFromResource(this,R.array.Niveau_array, android.R.layout.simple_spinner_item);
-        adapterDomaine.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
- //adapters and spinners association
-
-       domainePub.setAdapter(adapterDomaine);
-       categoriePub.setAdapter(adapterCategorie);
-       niveau_scolaire_pub.setAdapter(adapterNiveauScolaire);
-       destinantionPub.setAdapter(adapterDestination);
-
-       domainePub.setOnItemSelectedListener(this);
-       categoriePub.setOnItemSelectedListener(this);
-       niveau_scolaire_pub.setOnItemSelectedListener(this);
-        destinantionPub.setOnItemSelectedListener(this);
-
-        create_publication_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-           description=contentDescription_editText.getText().toString();
-           titre=title_editText.getText().toString();
-           mots_clé.add(mots_clés[0].getText().toString());
-           mots_clé.add(mots_clés[1].getText().toString());
-           mots_clé.add(mots_clés[2].getText().toString());
-           mots_clé.add(mots_clés[3].getText().toString());
-                Publication publication = new Publication(mAuth.getCurrentUser().toString(),"cours",description,"public",filePath.toString(),titre,mots_clé,"Iera année uiversité");
-                FirebaseUtils.addPublication(publication);
-                Toast.makeText(CreatePublicationActivity.this,"publiction added successfully",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(CreatePublicationActivity.this,MainActivity.class));
-            }
-        });
 
     }
+
+
 
 
     private void SelectImage()
@@ -192,6 +234,7 @@ try{
         // Defining Implicit Intent to mobile gallery
         Intent intent = new Intent();
         intent.setType("image/*");
+
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(
                 Intent.createChooser(
@@ -254,10 +297,13 @@ try{
             progressDialog.show();
 
             // Defining the child of storageReference
+
+            String fiepath= "publication/" + UUID.randomUUID().toString();
+
+            StorageReference storageRef = storage.getReference();
+
             StorageReference ref
-                    = storageReference
-                    .child(
-                            "images/"
+                    = storageRef.child("images/"
                                     + UUID.randomUUID().toString());
 
             // adding listeners on upload
@@ -296,13 +342,13 @@ try{
                                     .show();
                         }
                     })
-                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                    .addOnProgressListener(new OnProgressListener<TaskSnapshot>() {
 
                                 // Progress Listener for loading
                                 // percentage on the dialog box
                                 @Override
                                 public void onProgress(
-                                        UploadTask.TaskSnapshot taskSnapshot)
+                                        TaskSnapshot taskSnapshot)
                                 {
                                     double progress
                                             = (100.0
@@ -320,12 +366,27 @@ try{
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String spinnerID= String.valueOf(adapterView.getId());
 
-    }
+        switch(adapterView.getId()){
+            case R.id.domaine_pub:
+                domaine=adapterView.getSelectedItem().toString();
+                break;
+            case R.id.categorie_pub:
+                categorie=adapterView.getSelectedItem().toString();
+                break;
+            case R.id.niveau_scolaire_pub:
+                niveau=adapterView.getSelectedItem().toString();
+                break;
+            case R.id.destinantion_pub:
+                destination=adapterView.getSelectedItem().toString();
+                break;
+        }
 
-    @Override
+
+
+}
     public void onNothingSelected(AdapterView<?> adapterView) {
 
     }
+
 }

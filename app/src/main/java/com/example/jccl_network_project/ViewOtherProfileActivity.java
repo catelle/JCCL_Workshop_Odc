@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.tabs.TabLayout;
@@ -33,12 +34,17 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
     // ********************* Declarations variables **********************//
     TabLayout tabLayout;
     ViewPager2 viewPager2;
+    private TabLayout.BaseOnTabSelectedListener tabSelectedListener;
+    private ViewPager2.OnPageChangeCallback pageChangeCallback;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_view_other_profile);
+
+        try{
+
 
 
         tabLayout =  (TabLayout) findViewById(R.id.tabLayout);
@@ -69,9 +75,11 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
         tabLayout.addOnTabSelectedListener(tabSelectedListener);
         viewPager2.registerOnPageChangeCallback(pageChangeCallback);
 
-    }
+    }catch(Exception e){
+            Toast.makeText(ViewOtherProfileActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+        }
 
-    private TabLayout.OnTabSelectedListener tabSelectedListener = new TabLayout.OnTabSelectedListener() {
+   tabSelectedListener = new TabLayout.OnTabSelectedListener() {
         @Override
         public void onTabSelected(TabLayout.Tab tab) {
             viewPager2.setCurrentItem(tab.getPosition());
@@ -87,12 +95,12 @@ public class ViewOtherProfileActivity extends AppCompatActivity {
 
         }
     };
-
-    private ViewPager2.OnPageChangeCallback pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
+        pageChangeCallback = new ViewPager2.OnPageChangeCallback() {
         @Override
         public void onPageSelected(int position) {
             tabLayout.selectTab(tabLayout.getTabAt(position));
         }
     };
 
+}
 }

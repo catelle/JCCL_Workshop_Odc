@@ -81,19 +81,7 @@
 
             </androidx.recyclerview.widget.RecyclerView>
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/floatingActionButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginEnd="10dp"
-                android:onClick="addingNewdiscussion"
-                android:layout_marginTop="646dp"
-                android:backgroundTint="@color/bacgroung_text_continuerr"
-                android:clickable="true"
-                android:src="@drawable/ic_add"
-                tools:layout_editor_absoluteY="639dp" />
+
         </RelativeLayout>
     </ScrollView>
 
@@ -139,4 +127,20 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="10dp"
+        android:onClick="addingNewdiscussion"
+        android:layout_marginTop="646dp"
+        android:backgroundTint="@color/bacgroung_text_continuerr"
+        android:clickable="true"
+        android:src="@drawable/ic_add"
+        tools:layout_editor_absoluteY="639dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

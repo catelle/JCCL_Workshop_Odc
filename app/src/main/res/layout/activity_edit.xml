@@ -335,6 +335,19 @@
                     android:text="Ajouter"
                     android:textColor="@color/orange" />
 
+                <ImageView
+                    android:id="@+id/uploadedImage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:srcCompat="@tools:sample/avatars" />
+
+                <Button
+                    android:id="@+id/uploaddocs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/orange"
+                    android:text="Uploader une preuve de votre profession." />
+
             </LinearLayout>
 
 

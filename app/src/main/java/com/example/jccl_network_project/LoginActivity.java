@@ -25,6 +25,7 @@ import com.example.jccl_network_project.utils.FirebaseUtils;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -33,7 +34,10 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+
 import java.util.concurrent.TimeUnit;
+
+import javax.security.auth.callback.Callback;
 
 
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
@@ -50,6 +54,25 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
 
     Spinner spinner;
+    private TextInputLayout emailEditText, usernameEditText;
+    Button suite_inscription;
+    private String memail, muser_name, muser_status;
+    private Spinner spinnerstatus;
+    EditText nomEditText;
+    String nom, email, statut_utilisateur;
+    String validation;
+
+    TextView continue_button;
+    public static final String TAGuid ="uid";
+
+
+    public static final String TAGusername ="username";
+    public static final String TAGstatus ="userstatus";
+    public static final String TAGemail ="email";
+    public static final String TAGphone ="phone";
+    public static final String TAGvalidation ="phone";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,30 +89,78 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         Email_connection_button=findViewById(R.id.connexion_with_email_button);
         google_connection_button = findViewById(R.id.cardviewfacebook);
         mphone_number_EditText=findViewById(R.id.phone_number_editText);
+        spinnerstatus = findViewById(R.id.user_status);
+        emailEditText=findViewById(R.id.email);
+        usernameEditText=findViewById(R.id.user_name);
+        suite_inscription=findViewById(R.id.suite_button);
 
         //FirebaseAuth instance
 
         mAuth = FirebaseAuth.getInstance();
 
         //response to clic on send verification code button
+        mcallback=new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+            @Override
+            public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                signIn(phoneAuthCredential);
 
+            }
+
+            @Override
+            public void onVerificationFailed(@NonNull FirebaseException e) {
+                Toast.makeText(LoginActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
+
+            }
+
+            @Override
+            public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
+                super.onCodeSent(s, forceResendingToken);
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Toast.makeText(LoginActivity.this,"OTP code has been send",Toast.LENGTH_LONG).show();
+                        Intent otpIntent =new Intent(LoginActivity.this,OTPActivity.class);
+                        otpIntent.putExtra("auth",s);
+                        otpIntent.putExtra(TAGemail,memail);
+                        otpIntent.putExtra(TAGusername,muser_name);
+                        otpIntent.putExtra(TAGstatus,muser_status);
+                        otpIntent.putExtra(TAGphone,phone_number);
+                        otpIntent.putExtra(TAGvalidation,validation);
+
+
+                        startActivity(otpIntent);
+                    }
+
+                },1000);
+
+            }
+        };
         send_code_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
               String country_code = getCountryCode();
               String phoneT = mphone_number_EditText.getText().toString();
-              String phone_number = country_code+phoneT;
+              phone_number = country_code+phoneT;
+
+
+                memail = emailEditText.getEditText().getText().toString();
+                muser_name=usernameEditText.getEditText().getText().toString();
+
+
+
+
+
+
 
                 if(!(country_code.isEmpty())){
                     if(!(phoneT.isEmpty())){
                         try{
-                        PhoneAuthOptions options= PhoneAuthOptions.newBuilder(mAuth)
-                                //we should replace phone_number by phone edit text content
-                                .setPhoneNumber("+237691152270")
-                                .setTimeout(60L, TimeUnit.SECONDS)
-                                .setActivity(LoginActivity.this)
-                                .setCallbacks(mcallback)
-                                .build();
+                            PhoneAuthOptions options= PhoneAuthOptions.newBuilder(mAuth)
+                                    .setPhoneNumber("+237657273247")
+                                    .setTimeout(60L, TimeUnit.SECONDS)
+                                    .setActivity(LoginActivity.this)
+                                    .setCallbacks( mcallback)
+                                    .build();
                         PhoneAuthProvider.verifyPhoneNumber(options);
 
                         }catch(Exception e){
@@ -98,42 +169,24 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
                     }
                 }
-                mcallback=new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-                    @Override
-                    public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                        signIn(phoneAuthCredential);
 
-                    }
-
-                    @Override
-                    public void onVerificationFailed(@NonNull FirebaseException e) {
-                        Toast.makeText(LoginActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
-
-                    }
-
-                    @Override
-                    public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
-                        super.onCodeSent(s, forceResendingToken);
-                        new Handler().postDelayed(new Runnable() {
-                            @Override
-                            public void run() {
-                                Toast.makeText(LoginActivity.this,"OTP code has been send",Toast.LENGTH_LONG).show();
-                                Intent otpIntent =new Intent(LoginActivity.this,OTPActivity.class);
-                                otpIntent.putExtra("auth",s);
-                                startActivity(otpIntent);
-                            }
-
-                        },1000);
-
-                    }
-                };
 
 
             }
         });
 
 
-// Create an ArrayAdapter using the string array and a default spinner layout
+// Create an ArrayAdapter using the string array and a default spinner
+        ArrayAdapter<CharSequence> adapterstatus = ArrayAdapter.createFromResource(this,R.array.labels_array, android.R.layout.simple_spinner_item);
+
+        adapterstatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spinnerstatus.setAdapter(adapterstatus);
+
+        spinnerstatus.setOnItemSelectedListener(this);
+
+
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
                 R.array.country_names, android.R.layout.simple_spinner_item);
 // Specify the layout to use when the list of choices appears
@@ -155,6 +208,9 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         //spinner item selection listener
             public void onItemSelected(AdapterView<?> parent, View view,
                                            int pos, long id) {
+                switch(parent.getId()){
+                    case R.id.phone_number_spinner:
+
 
                              parent.getItemAtPosition(pos);
                            if(parent.getSelectedItem().toString().equals("Cameroun")){
@@ -179,7 +235,16 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                            else if(parent.getSelectedItem().toString().equals("Suisse")){
 
                            }
-
+                           break;
+                    case R.id.user_name:
+                        muser_status=parent.getSelectedItem().toString();
+                        if(muser_status=="Etudiant"||muser_status=="Eleve"){
+                            validation="true";
+                        }else{
+                            validation="false";
+                        }
+                        break;
+                }
 
 
 
@@ -194,21 +259,16 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser user=mAuth.getCurrentUser();
+      //  FirebaseUser user=mAuth.getCurrentUser();
         
 
-        if(user!=null){
-            sendTomain();
-        }
+      //  if(user!=null){
+           // sendTomain();
+      //  }
     }
 
-
-
-    public void sendTomain(){
-        startActivity(new Intent(LoginActivity.this,MainActivity.class));
-        finish();
-    }
-    private void signIn(PhoneAuthCredential credential){
+    public void signIn(PhoneAuthCredential credential){
+        Toast.makeText(LoginActivity.this,"sign in method",Toast.LENGTH_LONG).show();
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -221,6 +281,13 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
             }
         });
     }
+
+    public void sendTomain(){
+        Toast.makeText(LoginActivity.this,"problem in sendtomain",Toast.LENGTH_LONG).show();
+        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+
+    }
+
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
 

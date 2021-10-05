@@ -17,10 +17,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+            <EditText
+                android:id="@+id/phone_number_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="phone" />
+
+            <Spinner
+                android:id="@+id/phone_number_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/light_gray">
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView5"
@@ -54,6 +80,13 @@
                     android:layout_marginEnd="@dimen/margin_end_iconclear"
                     android:contentDescription="@string/description_content_banner"
                     app:srcCompat="@drawable/ic_baseline_clear_24" />
+
+                <EditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone" />
             </androidx.cardview.widget.CardView>
 
 
@@ -153,6 +186,10 @@
                     <!--  ************   Nom d'utilisateur   *******************-->
 
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"></LinearLayout>
 
                     <TextView
                         android:id="@+id/continue_button"
@@ -180,6 +217,7 @@
                             android:ems="6"
                             android:fontFamily="@font/poppins_regular" />
 
+
                     </LinearLayout>
 
 
@@ -197,9 +235,6 @@
                     android:layout_marginRight="@dimen/marginLeft"
                     app:cardCornerRadius="@dimen/card_corner_radius"
                     app:cardElevation="@dimen/card_elevation_value">
-
-
-
 
 
                     <Button
@@ -220,6 +255,11 @@
                 </androidx.cardview.widget.CardView>
 
                 <!--  ************   Autres moyens d'inscription   *******************-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

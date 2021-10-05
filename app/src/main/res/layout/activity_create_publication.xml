@@ -194,7 +194,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
-                        <ImageButton
+                        <ImageView
                             android:id="@+id/sellcontent_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -210,7 +210,7 @@
                             android:background="@color/white"
                             android:text="choose file" />
 
-                        <ImageButton
+                        <ImageView
                             android:id="@+id/upload_image_button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
