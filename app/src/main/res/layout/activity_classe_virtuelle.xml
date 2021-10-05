@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dark_gray"
     tools:context=".ClasseVirtuelleActivity">
 
     <androidx.cardview.widget.CardView
@@ -48,80 +49,138 @@
 
     </androidx.cardview.widget.CardView>
 
-    <ImageView
-        android:id="@+id/img_brand"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/card_toolbar_classe_virtuelle"
-        app:srcCompat="@drawable/ic_undraw_dreamer_gxxi_1" />
-    <TextView
-        android:id="@+id/text_not_available"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/poppins_regular"
-        app:layout_constraintTop_toBottomOf="@+id/img_brand"
-        android:text="Vous n'etes affilier à aucune classe virtuelle"/>
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="0.6dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/text_not_available"/>
-    <TextView
-        android:id="@+id/text_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="@font/poppins_regular"
-        android:gravity="center"
-        android:textColor="@color/orange"
-        app:layout_constraintTop_toBottomOf="@+id/divider"
-        android:text="C'est quoi la classe virtuelle"/>
-    <TextView
-        android:id="@+id/text_go_to_prenium"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:gravity="center"
-        android:fontFamily="@font/poppins_regular"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/text_info"
-        android:text="Pour jouir des avantages offertes par la classe virtuelle, passez prenium"/>
-
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
         app:cardCornerRadius="8dp"
-        app:cardElevation="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/text_go_to_prenium">
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintTop_toBottomOf="@+id/card_toolbar_classe_virtuelle">
 
-        <TextView
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/orange"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/white"
-            android:paddingTop="8dp"
-            android:paddingBottom="8dp"
-            android:gravity="center"
-            app:layout_constraintTop_toBottomOf="@+id/text_go_to_prenium"
-            android:text="Prenium"/>
+            android:layout_height="match_parent">
 
+            <EditText
+                style="@style/appbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toEndOf="@+id/search_icon"
+                android:background="@color/white"
+                android:fontFamily="@font/poppins_regular"
+                android:hint="Recherche...."
+                android:maxLines="1"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:id="@+id/search_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="5dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_baseline_search_24" />
+
+        </RelativeLayout>
     </androidx.cardview.widget.CardView>
 
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintTop_toBottomOf="@+id/card_toolbar_classe_virtuelle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cardView4">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:background="#A20A75D8"
+            app:srcCompat="@drawable/ic_baseline_add_road_24" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/categorie_co_space"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:paddingTop="5dp"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingBottom="5dp"
+            android:text="Co-space" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/categorie_meeting"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toStartOf="@+id/cardView6"
+        app:layout_constraintStart_toEndOf="@+id/categorie_co_space"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:layout_gravity="center"
+            android:paddingEnd="10dp"
+            android:paddingBottom="5dp"
+            android:text="Meeting" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView6"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView4">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:paddingStart="10dp"
+            android:paddingTop="5dp"
+            android:paddingEnd="10dp"
+            android:layout_gravity="center"
+            android:paddingBottom="5dp"
+            android:text="Forum" />
+    </androidx.cardview.widget.CardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        tools:listitem="@layout/classe_virtuelle_item_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/categorie_meeting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
