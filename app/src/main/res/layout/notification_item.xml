@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark_gray">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_img_notification"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginBottom="25dp"
+            app:cardCornerRadius="30dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@mipmap/ic_profil_tech" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/text_name_notification"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/card_img_notification"
+            android:fontFamily="@font/poppins_regular"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:text="Kennedy Doe"/>
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_name_notification"
+            android:layout_toEndOf="@+id/card_img_notification"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="2"
+            android:ellipsize="middle"
+            android:text="Vous avez un nouveau cours: conception des systemes embarqués "/>
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

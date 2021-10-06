@@ -65,4 +65,5 @@ dependencies {
     //dependance pour l'implementation des backdrop
     implementation 'com.github.kishan2612:Material-Backdrop-Android:v1.1.0'
 
+
 }

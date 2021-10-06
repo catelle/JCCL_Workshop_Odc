@@ -13,7 +13,7 @@
             android:name=".ClasseVirtuelleActivity"
             android:exported="true" />
         <activity android:name=".ViewProfileActivity" />
-        <activity android:name=".OthersProfileActivvity" />
+<!--        <activity android:name=".OthersProfileActivvity" />-->
         <activity android:name=".OTPActivity" />
         <activity android:name=".LoginActivity" />
         <activity
