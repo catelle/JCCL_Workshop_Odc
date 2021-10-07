@@ -243,13 +243,13 @@ public class EditActivity extends AppCompatActivity {
 
         // Defining Implicit Intent to mobile gallery
         Intent intent = new Intent();
-        intent.setType("image/*");
+        intent.setType("application/*");
 
         intent.setAction(Intent.ACTION_GET_CONTENT);
         startActivityForResult(
                 Intent.createChooser(
                         intent,
-                        "Select Image from here..."),
+                        "Select document from here..."),
                 PICK_IMAGE_REQUEST);
     }
 
@@ -271,7 +271,7 @@ public class EditActivity extends AppCompatActivity {
             StorageReference storageRef = storage.getReference();
 
             StorageReference ref
-                    = storageRef.child("images/"
+                    = storageRef.child("documentToVerify/"
                     + UUID.randomUUID().toString());
 
             // adding listeners on upload
