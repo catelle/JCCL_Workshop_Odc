@@ -3,18 +3,21 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/drawable/shape_card_border.xml" value="0.2203125" />
+        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/drawable/shape_download_btn.xml" value="0.2203125" />
+        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/drawable/shape_edit_text.xml" value="0.2203125" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_classe_virtuelle.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_detail_publication_doc.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_edit.xml" value="0.22" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_forum.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_inscription.xml" value="0.25" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_login.xml" value="0.33" />
-        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_o_t_p.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_paid.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_pdf_viewer.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_product.xml" value="0.33" />
-        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_view_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/activity_view_profile.xml" value="0.25" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/card_reponse.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/classe_virtuelle_item_content.xml" value="0.5" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/classe_vituelle_blank.xml" value="0.292259083728278" />
@@ -23,9 +26,9 @@
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/favoris_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fil_discussion.xml" value="0.25" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/formation_item.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_a_propos.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_a_propos.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_abonnee.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_favoris.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_favoris.xml" value="0.33" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_forum_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_historique.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/HP/Downloads/jccl_projet/JCCL_Workshop_Odc/app/src/main/res/layout/fragment_home_fragment.xml" value="0.33" />

@@ -75,6 +75,7 @@
 
 
                     <ImageView
+                        android:id="@+id/img_brand_home"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleX="1.5"
@@ -93,21 +94,67 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/orange"
-                        android:text="Retrouver les meilleurs Encardreurs a votre service"/>
+                        android:text="@string/text_market_encardreur"/>
                     <ImageView
+                        android:id="@+id/back_to_img"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="120dp"
+                        android:onClick="previousImage"
                         app:tint="@color/orange"
                         app:srcCompat="@drawable/ic_back" />
 
                     <ImageView
+                        android:id="@+id/next_to_img"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_alignParentEnd="true"
+                        android:onClick="nextImage"
                         android:layout_marginTop="120dp"
                         app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
                         app:tint="@color/orange" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="8dp"
+                        android:layout_marginStart="200dp"
+                        android:layout_alignParentBottom="@+id/text_brand"
+                        android:layout_marginTop="250dp">
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:id="@+id/bullet_1"
+                            android:background="@color/orange"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="8dp"
+                        android:layout_marginStart="215dp"
+                        android:layout_alignParentBottom="@+id/text_brand"
+                        android:layout_marginTop="250dp">
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:id="@+id/bullet_2"
+                            android:background="@color/white"/>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:cardCornerRadius="8dp"
+                        android:layout_marginStart="230dp"
+                        android:layout_alignParentBottom="@+id/text_brand"
+                        android:layout_marginTop="250dp">
+                        <TextView
+                            android:layout_width="10dp"
+                            android:layout_height="10dp"
+                            android:id="@+id/bullet_3"
+                            android:background="@color/white"/>
+                    </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
 
@@ -162,7 +209,7 @@
                     android:id="@+id/teach1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@mipmap/ic_profil_tech" />
+                    android:src="@mipmap/ic_prof" />
             </androidx.cardview.widget.CardView>
 
             <TextView
@@ -175,7 +222,7 @@
                 android:fontFamily="@font/poppins_regular"
                 android:layout_marginStart="29dp"
                 android:textSize="12sp"
-                android:text="Andrew McKenney"/>
+                android:text="John Boogle"/>
             <TextView
                 android:id="@+id/text_abonne"
                 android:layout_width="wrap_content"
@@ -190,11 +237,9 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/img_teach2"
                 android:layout_toEndOf="@+id/img_teach1"
-                android:layout_toStartOf="@+id/img_teach3"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginStart="30dp"
+                android:layout_marginStart="27dp"
                 android:layout_marginTop="20dp"
                 app:cardElevation="8dp"
                 app:cardCornerRadius="50dp">
@@ -246,7 +291,7 @@
                     android:id="@+id/teach3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:src="@mipmap/ic_profil_tech" />
+                    android:src="@mipmap/ic_prof2" />
 
             </androidx.cardview.widget.CardView>
 
@@ -261,7 +306,7 @@
                 android:textColor="@color/black"
                 android:layout_marginStart="40dp"
                 android:textSize="12sp"
-                android:text="Andrew McKenney"/>
+                android:text="Georges Fongan"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -334,7 +379,7 @@
                             android:id="@+id/student1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/ic_profil_tech" />
+                            android:src="@mipmap/ic_student" />
                     </androidx.cardview.widget.CardView>
 
                     <TextView
@@ -347,7 +392,7 @@
                         android:layout_marginStart="30dp"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        android:text="Andrew McKenney"/>
+                        android:text="Andrew Kenfack"/>
 
 
                     <androidx.cardview.widget.CardView
@@ -364,7 +409,7 @@
                             android:id="@+id/student2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/ic_profil_tech" />
+                            android:src="@mipmap/ic_student3" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -379,7 +424,7 @@
                         android:layout_marginStart="20dp"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        android:text="Andrew McKenney"/>
+                        android:text="Rose Ninga"/>
 
 
                     <androidx.cardview.widget.CardView
@@ -395,7 +440,7 @@
                             android:id="@+id/student3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/ic_profil_tech" />
+                            android:src="@mipmap/ic_student2" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -410,7 +455,7 @@
                         android:layout_marginStart="30dp"
                         android:textColor="@color/black"
                         android:textSize="12sp"
-                        android:text="Andrew McKenney"/>
+                        android:text="Julie Kenta"/>
 
                     <Button
                         android:layout_width="200dp"
@@ -470,13 +515,12 @@
                         android:layout_height="100dp"
                         android:layout_marginStart="30dp"
                         app:cardElevation="8dp"
-                        android:layout_marginTop="20dp"
-                        app:cardCornerRadius="50dp">
+                        android:layout_marginTop="20dp">
                         <ImageView
                             android:id="@+id/doc1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/ic_profil_tech" />
+                            android:src="@mipmap/ic_livre_mathpc" />
 
                     </androidx.cardview.widget.CardView>
 
@@ -509,14 +553,13 @@
                         android:layout_height="100dp"
                         android:layout_marginStart="20dp"
                         android:layout_marginTop="20dp"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="50dp">
+                        app:cardElevation="8dp">
 
                         <ImageView
                             android:id="@+id/doc2"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/ic_profil_tech" />
+                            android:src="@mipmap/ic_physique_book"/>
 
                     </androidx.cardview.widget.CardView>
 
@@ -550,14 +593,13 @@
                         android:layout_height="100dp"
                         android:layout_marginStart="20dp"
                         app:cardElevation="8dp"
-                        android:layout_marginTop="20dp"
-                        app:cardCornerRadius="50dp">
+                        android:layout_marginTop="20dp">
 
                         <ImageView
                             android:id="@+id/doc3"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:src="@mipmap/ic_profil_tech" />
+                            android:src="@mipmap/ic_informatique_book" />
 
                     </androidx.cardview.widget.CardView>
 

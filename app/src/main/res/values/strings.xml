@@ -119,6 +119,9 @@
     <string name="response">On parle souvent de design responsive : il s\'agit d\'une technique de
         design où l\'apparence d\'une page ou d\'une application dépend de l\'appareil sur lequel on
         les consulte. On dépendra souvent de la largeur en pixels de la fenêtre de navigateur.</string>
+    <string name="text_market_encardreur">Retrouver les meilleurs Encardreurs a votre service</string>
+    <string name="text_market_contenu">Des contenus variers pour vous enrichir</string>
+    <string name="text_market_forum">Partager, échanger avec une large communauté </string>
 
 
     <!-- page de forum  -->
