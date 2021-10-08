@@ -19,7 +19,7 @@ public class Publication {
     private ArrayList<Integer> note;
     private String emplacement_piece ;
     private String lien;
-    private String titre;
+    private String titre=null;
     private String date_ajout ;
     private List<String> mot_cles;
 

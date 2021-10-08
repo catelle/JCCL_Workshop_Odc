@@ -21,6 +21,8 @@ import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jccl_network_project.detail_pages.DetailPublication_doc;
+import com.example.jccl_network_project.detail_pages.ForumActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity  {
@@ -36,6 +38,7 @@ public class MainActivity extends AppCompatActivity  {
     private ActionBar tabLayout;
     private Spinner viewPager2, viewPager1;
     private String email,nomUtilisateur, status;
+
 
 
 
@@ -118,6 +121,17 @@ public class MainActivity extends AppCompatActivity  {
 
     public void addingNewdiscussion(View view) {
         Intent intent=new Intent(MainActivity.this,CreateFillDiscussion.class);
+        startActivity(intent);
+    }
+
+
+    public void ouvrirDetailFil(View view) {
+        Intent intent=new Intent(MainActivity.this, ForumActivity.class);
+        startActivity(intent);
+    }
+
+    public void opendocument(View view) {
+        Intent intent=new Intent(MainActivity.this, DetailPublication_doc.class);
         startActivity(intent);
     }
 }

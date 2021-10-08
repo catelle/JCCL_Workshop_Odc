@@ -34,6 +34,7 @@ import static com.example.jccl_network_project.MainActivity.TAGusername;
 
 import android.widget.TableLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.tabs.TabLayout;
@@ -123,25 +124,29 @@ public class Profil_fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
+
+       try{
+
+
         tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
         viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
-        mybutt=view.findViewById(R.id.button_open_apercu);
-        openprofile=view.findViewById(R.id.button_open_apercu);
+        //mybutt=view.findViewById(R.id.button_open_apercu);
+       // openprofile=view.findViewById(R.id.button_open_apercu);
 
         //liaison avec la vue
 
         mlocalisationTV=(TextView)view.findViewById(R.id.localisation);
-        professionTV=(TextView)view.findViewById(R.id.profession);
+       professionTV=(TextView)view.findViewById(R.id.profession);
         nomTV=(TextView)view.findViewById(R.id.user_name);
         photo_profilIV=(ImageView) view.findViewById(R.id.user_picture);
         iconeditIV=(ImageView) view.findViewById(R.id.icon_edit);
 
-        mybutt.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(),ViewProfileActivity.class));
-            }
-        });
+        //mybutt.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View view) {
+              //  startActivity(new Intent(getActivity(),ViewProfileActivity.class));
+            //}
+        //});
         iconeditIV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -156,12 +161,12 @@ public class Profil_fragment extends Fragment {
             }
         });
 
-        openprofile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(getActivity(),ViewOtherProfileActivity.class));
-            }
-        });
+       // openprofile.setOnClickListener(new View.OnClickListener() {
+         //   @Override
+           // public void onClick(View view) {
+             //   startActivity(new Intent(getActivity(),ViewOtherProfileActivity.class));
+            //}
+        //});
 
         FragmentManager fm = getActivity().getSupportFragmentManager();
         Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
@@ -212,6 +217,9 @@ public class Profil_fragment extends Fragment {
         tabLayout.addTab(tabLayout.newTab().setText("A propos"));
         tabLayout.addOnTabSelectedListener(tabSelectedListener);
         viewPager2.registerOnPageChangeCallback(pageChangeCallback);
+       }catch (Exception e){
+           Toast.makeText(getActivity(),e.toString(),Toast.LENGTH_LONG).show();
+       }
         return view ;
     }
 

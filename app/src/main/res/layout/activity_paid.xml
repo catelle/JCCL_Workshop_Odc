@@ -36,11 +36,11 @@
                         style="@style/appbar_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:gravity="center_horizontal"
                         android:layout_marginTop="30dp"
                         android:layout_weight="3"
                         android:fontFamily="@font/poppins_regular"
-                        android:text="Contenus" />
+                        android:gravity="center_horizontal"
+                        android:text="Ventes contenus" />
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -75,21 +75,21 @@
                     android:background="@color/dark_gray"
                     android:text="691152270"/>
             </androidx.cardview.widget.CardView>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/outlinedTextFie"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/dark_gray"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"
                 android:layout_marginEnd="30dp"
-                android:hint="Rappel"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/dark_gray"
+                android:hint="Montant">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -134,16 +134,17 @@
                 app:cardCornerRadius="8dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp">
+
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/orange"
-                    android:textColor="@color/white"
-                    android:textSize="19sp"
                     android:gravity="center"
-                    android:paddingTop="15dp"
                     android:paddingBottom="15dp"
-                    android:text="Acheter"/>
+                    android:paddingTop="15dp"
+                    android:text="Vendrre"
+                    android:textColor="@color/white"
+                    android:textSize="19sp" />
             </androidx.cardview.widget.CardView>
         </LinearLayout>
 

@@ -21,12 +21,14 @@
                 android:layout_height="match_parent">
 
                 <Button
+                    android:id="@+id/postNewFill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="8dp"
                     android:backgroundTint="@color/bacgroung_text_continuerr"
                     android:fontFamily="@font/poppins_regular"
+                    android:onClick="CreateFildiscussionButton"
                     android:text="Poster votre probleme"
                     android:textSize="12sp"
                     android:textStyle="bold"
@@ -122,6 +124,7 @@
                                 android:layout_alignParentStart="true"
                                 android:layout_marginStart="10dp"
                                 android:layout_marginTop="15dp"
+                                android:onClick="addImageFill"
                                 android:src="@drawable/ic_img_logo" />
 
                             <TextView
@@ -131,6 +134,7 @@
                                 android:layout_marginTop="20dp"
                                 android:layout_toEndOf="@+id/logo_put_img"
                                 android:fontFamily="@font/poppins_regular"
+                                android:onClick="addImageFil"
                                 android:text="Ajoutez une image"
                                 android:textColor="@color/black" />
 
@@ -142,6 +146,15 @@
                                 android:layout_toEndOf="@+id/text_put_img"
                                 android:fontFamily="@font/poppins_regular"
                                 android:text="(optionnel)" />
+
+                            <ImageView
+                                android:id="@+id/uploadedImageFill"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_below="@+id/text_put_img"
+                                android:layout_marginBottom="-38dp"
+                                tools:srcCompat="@tools:sample/avatars" />
 
                         </RelativeLayout>
 
@@ -181,7 +194,7 @@
                                 android:orientation="vertical">
 
                                 <EditText
-                                    android:id="@+id/editTextTextPersonName2"
+                                    android:id="@+id/problemedescription"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="top"
@@ -269,7 +282,7 @@
                             app:cardCornerRadius="8dp">
 
                             <EditText
-                                android:id="@+id/editTextTextPersonName"
+                                android:id="@+id/titreEditText"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:background="@color/dark_gray"

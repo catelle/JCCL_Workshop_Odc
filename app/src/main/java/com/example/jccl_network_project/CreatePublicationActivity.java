@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.jccl_network_project.detail_pages.PaidActivity;
 import com.example.jccl_network_project.models.Publication;
 import com.example.jccl_network_project.utils.FirebaseUtils;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -92,7 +93,7 @@ try{
         destinantionPub = findViewById(R.id.destinantion_pub);
         niveau_scolaire_pub=findViewById(R.id.niveau_scolaire_pub);
         contentDescription_editText = findViewById(R.id.user_name);
-        uploadContent = findViewById(R.id.upload_image_button);
+
         sellcontentButton = findViewById(R.id.sellcontent_button);
         create_publication_button = findViewById(R.id.create_publication);
         choose_file_button = findViewById(R.id.choosefile_button);
@@ -125,6 +126,8 @@ try{
         public void onClick(View view) {
             selled=true;
             Toast.makeText(CreatePublicationActivity.this,"content will be sell",Toast.LENGTH_LONG).show();
+            Intent intent=new Intent(CreatePublicationActivity.this, PaidActivity.class);
+            startActivity(intent);
         }
     });
 
@@ -389,4 +392,7 @@ try{
 
     }
 
+    public void sellcontentButton(View view) {
+
+    }
 }

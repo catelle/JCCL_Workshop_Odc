@@ -22,6 +22,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jccl_network_project.CreatePublicationActivity;
+import com.example.jccl_network_project.InscriptionActivity;
+import com.example.jccl_network_project.MainActivity;
 import com.example.jccl_network_project.R;
 import com.example.jccl_network_project.adapters.GeneralRecyclerAdapter;
 import com.example.jccl_network_project.custom_interface.OnItemClickListener;
@@ -147,12 +150,14 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
                 mAppBarTitle.setText("Publication");
                 break;
             case "enseignant":
-                mAppBarTitle.setText("Profil Enseignant");
+
                 getAllProduct(collection.get("user"), "categorie", "enseignant");
+                mAppBarTitle.setText("Profil Enseignant");
                 break;
             case "encadreur":
-                mAppBarTitle.setText("Profil encadreur");
+
                 getAllProduct(collection.get("user"), "categorie", "encadreur");
+                mAppBarTitle.setText("Profil encadreur");
                 break;
             case "discussion":
                 mAppBarTitle.setText("Fil de discussion");
@@ -419,8 +424,8 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
                 if (select != mCategory.get(0)) {
                     switch (typeContain) {
                         case "publication":
-                            getSelectCategory("publication", "categorie", (String) select);
-                            Log.d("cliquer", select + "");
+                            Intent intent=new Intent(ProductActivity.this, DetailPublication_doc.class);
+                           startActivity(intent);
                             break;
                         case "enseignant":
                         case "encadreur":
@@ -447,10 +452,14 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
             case REQUEST_CODE_ADAPTER_PROFIL:
                 Log.d("****Cliquer", " Profil " + position);
                 Toast.makeText(this, "click sur " + position, Toast.LENGTH_SHORT).show();
+                Intent intent=new Intent(ProductActivity.this, DetailPublication_doc.class);
+                startActivity(intent);
                 break;
             case REQUEST_CODE_ADAPTER_PUBLICATION:
                 Log.d("****Cliquer", " publication " + position);
                 Toast.makeText(this, "click sur " + position, Toast.LENGTH_SHORT).show();
+                Intent intentn=new Intent(ProductActivity.this, DetailPublication_doc.class);
+                startActivity(intentn);
                 break;
         }
     }
@@ -480,4 +489,9 @@ public class ProductActivity extends AppCompatActivity implements OnViewHolderCa
     }
 
 
+    public void backToMainActivity(View view) {
+        Intent intent=new Intent(ProductActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

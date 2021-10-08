@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.example.jccl_network_project.VirtualClass.ClasseVirtuelleActivity;
 import com.example.jccl_network_project.detail_pages.ProductActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import static com.example.jccl_network_project.MainActivity.ELTTOSHOW;
 
@@ -32,7 +33,12 @@ public class Home_fragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    Button mAllStudentsButton, mAllTeachersButton,mAllpostsButton, mIntroVCButton;
+
+    Boolean isFabOpen=false;
+
+    Button mAllStudentsButton, mAllTeachersButton,mAllpostsButton;
+    FloatingActionButton mIntroVCButton;
+    private FloatingActionButton mfabNewPost;
 
     public Home_fragment() {
         // Required empty public constructor
@@ -72,10 +78,21 @@ public class Home_fragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_home_fragment, container, false);
 
-        mAllpostsButton = (Button)view.findViewById(R.id.AllPublications);
-        mIntroVCButton = (Button)view.findViewById(R.id.VirtualClassDescription);
+        mAllpostsButton = (Button)view.findViewById(R.id.AllPublictions);
+        mfabNewPost=view.findViewById(R.id.fabnewpost);
+        mIntroVCButton = (FloatingActionButton)view.findViewById(R.id.fabCV);
         mAllStudentsButton = (Button)view.findViewById(R.id.AllStudentProfileButton);
-        mAllTeachersButton = (Button)view.findViewById(R.id.AllTeachersProfileButton);
+        mAllTeachersButton = (Button)view.findViewById(R.id.AllTeachersProfilButton);
+       FloatingActionButton mfabintro=(FloatingActionButton)view.findViewById(R.id.fabintro3);
+
+       mfabintro.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               translationfunction();
+
+           }
+       });
+
 
         mAllpostsButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -123,8 +140,40 @@ public class Home_fragment extends Fragment {
 
             }
         });
+        mAllpostsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"clic on all posts",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), ProductActivity.class);
+                intent.putExtra(ELTTOSHOW,"publication");
+                startActivity(intent);
+
+
+            }
+        });
 
 
         return view;
     }
+
+    public void translationfunction(){
+
+        if(!isFabOpen){
+            Toast.makeText(getActivity(),"fab1 clicked",Toast.LENGTH_LONG).show();
+            isFabOpen=true;
+
+            mfabNewPost.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+            mIntroVCButton.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
+            // agendaFab.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
+            //  fab1.setVisibility(View.INVISIBLE);
+        }else{
+            isFabOpen=false;
+            mfabNewPost.animate().translationY(0);
+
+            mIntroVCButton.animate().translationY(0);
+            //  fab1.setVisibility(View.VISIBLE);
+        }
+
+    }
+
 }

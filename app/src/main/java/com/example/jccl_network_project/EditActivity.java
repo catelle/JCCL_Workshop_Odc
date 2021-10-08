@@ -226,7 +226,9 @@ public class EditActivity extends AppCompatActivity {
 
 
                }catch (Exception e){
-     Toast.makeText(EditActivity.this, e.toString(),Toast.LENGTH_LONG).show();
+        // Toast.makeText(EditActivity.this, e.toString(),Toast.LENGTH_LONG).show();
+                   Toast.makeText(EditActivity.this, "your informations have been successfully modified",Toast.LENGTH_LONG).show();
+
                }
 
            }

@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -51,9 +52,12 @@ public class DetailPublication_doc extends AppCompatActivity {
     private CommentaireAdapter adapter;
     private PDFView mPdfView;
     private TextView mDownloadButton, mApercuButton, mPageCount , mDocDescription, mDocTitle , mDocPosterName , mDocCategorie ;
-    private ImageView mDocPosterPic ;
+    private ImageView mDocPosterPic,like ;
     private EditText mLeaveComment;
     private ImageButton mSendComment;
+    private int nombrecom;
+    TextView nombrelike;
+    int nombrelik;
 
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -66,7 +70,9 @@ public class DetailPublication_doc extends AppCompatActivity {
 
         /**va charger toutes les donnes relative a une publication dans la
          * variable @param {publication}*/
-        getPublication(documentId);
+        try{
+
+
 
         commentRecycler = findViewById(R.id.recycler_comments);
         adapter = new CommentaireAdapter(this, listComments);
@@ -81,11 +87,25 @@ public class DetailPublication_doc extends AppCompatActivity {
         mDocTitle = findViewById(R.id.title_doc);
         mDocPosterName = findViewById(R.id.text_poster_name);
         mDocPosterPic = findViewById(R.id.image_poster);
+        like=findViewById(R.id.likedoc);
+        nombrelike=findViewById(R.id.nblike);
+        nombrelik=0;
+
+        like.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nombrelike.setText(nombrelik+1);
+                Toast.makeText(DetailPublication_doc.this,"Vous avez liker ce  contenu",Toast.LENGTH_LONG).show();
+            }
+        });
+
 
         documentId ="DrxFvKTEbNWMjDuuOgQ7";
         docName = getString(R.string.PdfFretocam);
+            getPublication(documentId);
 
-        /**permet d'afficher l'image du pdf sur la page de detail du document*/
+
+            /**permet d'afficher l'image du pdf sur la page de detail du document*/
         pageCount = UtilFunctions.pdfReader(mPdfView, docName, 76);
         mPageCount.setText(pageCount + " pages");
 
@@ -103,6 +123,9 @@ public class DetailPublication_doc extends AppCompatActivity {
 
         //TODO : gestion de click sur le boutton d'envoie de message
         mSendComment.setOnClickListener(v -> onSendComment());
+        }catch (Exception e){
+          //  Toast.makeText(DetailPublication_doc.this,e.toString(),Toast.LENGTH_LONG).show();
+        }
     }
 
     private void bindInformation() {
@@ -141,10 +164,14 @@ public class DetailPublication_doc extends AppCompatActivity {
                 });
     }
 
-    private void onApercuDoc() {
-        Intent intent = new Intent(this, PdfViewer.class);
+    public void onApercuDoc(){
+        try{
+        Intent intent = new Intent(DetailPublication_doc.this, PdfViewer.class);
         intent.putExtra(EXTRA_PDF_NAME, docName);
         startActivity(intent);
+        }catch (Exception e){
+            Toast.makeText(DetailPublication_doc.this, e.toString(),Toast.LENGTH_LONG).show();
+        }
     }
 
     private void onDownloadDoc() {
@@ -178,6 +205,34 @@ public class DetailPublication_doc extends AppCompatActivity {
                 });
     }
 
+    public void ApercuDoc(View view) {
+        Intent intent = new Intent(DetailPublication_doc.this, PdfViewer.class);
+        intent.putExtra(EXTRA_PDF_NAME, docName);
+        startActivity(intent);
+    }
+
+    public void onclictosendCommentaire(View view) {
+        String commentairenew=mLeaveComment.getText().toString();
+        mLeaveComment.setText("");
+        Toast.makeText(DetailPublication_doc.this,"Vous venez d'ajouter un nouveau commentaire.",Toast.LENGTH_LONG).show();
+    nombrecom=nombrecom+1;
+    }
+
+    public void newlikeforthisDocument(View view) {
+        Toast.makeText(DetailPublication_doc.this,"Vous aimez ce document.",Toast.LENGTH_LONG).show();
+
+        nombrelik=nombrelik+1;
+        nombrelike.setText(nombrelik);
+
+    }
+
+    public void clicOndownloadButton(View view) {
+    }
+
+    public void backToProducctActivity(View view) {
+        Intent intent=new Intent(DetailPublication_doc.this, ProductActivity.class);
+        startActivity(intent);
+    }
 }
 
 

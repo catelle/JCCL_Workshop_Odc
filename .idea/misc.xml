@@ -10,8 +10,10 @@
         <entry key="..\:/Users/HP/Downloads/JCCL_projet/JCCL_Workshop_Odc/app/src/main/res/layout/word_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/drawable-anydpi/ic_add.xml" value="0.2203125" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/drawable/facebookstrokestyle.xml" value="0.17685185185185184" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_class_virtuelle_content.xml" value="0.153125" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_classe_virtuelle.xml" value="0.142578125" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_create_fill_discussion.xml" value="0.1" />
-        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_create_publication.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_create_publication.xml" value="0.13" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_creation_publication.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_detail_publication_doc.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_edit.xml" value="0.10555555555555556" />
@@ -20,18 +22,25 @@
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_login.xml" value="0.11574074074074074" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_o_t_p.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_paid.xml" value="0.153125" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_pdf_viewer.xml" value="0.153125" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_product.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/activity_view_profile.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/card_reponse.xml" value="0.153125" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/classe_virtuelle_item_content.xml" value="0.153125" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/classe_vituelle_blank.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/fil_discussion.xml" value="0.25" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/fragment_favoris.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/fragment_forum_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/fragment_home_fragment.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/fragment_notification_fragment.xml" value="0.1318181818181818" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/fragment_profil_fragment.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/index_fil_discussion.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/note_popup.xml" value="0.153125" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/star_item.xml" value="0.153125" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/statusspinner.xml" value="0.1" />
         <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/teacher_item.xml" value="0.1" />
+        <entry key="..\:/Users/PC/AndroidStudioProjects/JCCL_Network_Project/app/src/main/res/layout/word_category.xml" value="0.153125" />
         <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_forum.xml" value="0.19375" />

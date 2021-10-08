@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_brand"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_undraw_dreamer_gxxi_1" />
+
+            <TextView
+                android:id="@+id/text_not_available"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="Vous n'etes affilier à aucune classe virtuelle"
+                app:layout_constraintTop_toBottomOf="@+id/img_brand" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="0.6dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/text_not_available" />
+
+            <TextView
+                android:id="@+id/text_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="C'est quoi la classe virtuelle"
+                android:textColor="@color/orange"
+                app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+            <TextView
+                android:id="@+id/text_go_to_prenium"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="Pour jouir des avantages offertes par la classe virtuelle, passez prenium"
+                android:textColor="@color/black"
+                app:layout_constraintTop_toBottomOf="@+id/text_info" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="8dp"
+                app:layout_constraintTop_toBottomOf="@+id/text_go_to_prenium">
+
+                <TextView
+                    android:id="@+id/registeredtoCV"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/orange"
+                    android:fontFamily="@font/poppins_bold"
+                    android:gravity="center"
+                    android:onClick="clicregisteredtoCV"
+                    android:paddingBottom="8dp"
+                    android:paddingTop="8dp"
+                    android:text="Prenium"
+                    android:textColor="@color/white"
+                    app:layout_constraintTop_toBottomOf="@+id/text_go_to_prenium" />
+
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
