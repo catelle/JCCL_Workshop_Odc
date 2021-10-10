@@ -11,15 +11,17 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jccl_network_project.R;
+import com.example.jccl_network_project.models.Publication;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docviewholder>{
 
-    private List<DocumentModel> objectList;
+    private List<Object> objectList;
     private LayoutInflater inflater;
 
-    public DocumentAdapter(Context context, List<DocumentModel> objectList) {
+    public DocumentAdapter(Context context, List<Object> objectList) {
         inflater = LayoutInflater.from(context);
         this.objectList = objectList;
 
@@ -36,7 +38,7 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docvie
         private final TextView isFree;
         private final TextView note;
         private int position;
-        private DocumentModel currentObject;
+        private Publication currentObject;
 
         public Docviewholder(@NonNull View itemView) {
             super(itemView);
@@ -50,15 +52,15 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docvie
             note = itemView.findViewById(R.id.note);
         }
 
-        public void setData(DocumentModel currentObject, int position) {
+        public void setData(Publication currentObject, int position) {
 
-            this.img_doc.setImageResource(currentObject.getImg_profil_doc());
-            this.img_poster.setImageResource(currentObject.getImg_profil_poster());
-            this.title_doc.setText(currentObject.getTitle_doc());
-            this.description_doc.setText(currentObject.getDescription_doc());
-            this.name_poster.setText(currentObject.getName_poster());
-            this.type_doc.setText(currentObject.getType_cours());
-            this.note.setText(currentObject.getNote());
+//            this.img_doc.setImageResource(currentObject.getImg_profil_doc());
+//            this.img_poster.setImageResource(currentObject.getImg_profil_poster());
+            this.title_doc.setText(currentObject.getTitre());
+            this.description_doc.setText(currentObject.getDescription());
+            this.name_poster.setText(currentObject.getPoster_id());
+            this.type_doc.setText(currentObject.getCategorie());
+//            this.note.setText((ArrayList<Integer>) currentObject.getNote());
             this.isFree.setText("free");
             this.position = position;
             this.currentObject = currentObject;
@@ -75,7 +77,7 @@ public class DocumentAdapter extends RecyclerView.Adapter<DocumentAdapter.Docvie
 
     @Override
     public void onBindViewHolder(@NonNull DocumentAdapter.Docviewholder holder, int position) {
-        DocumentModel current = objectList.get(position);
+        Publication current = (Publication) objectList.get(position);
         holder.setData(current, position);
     }
 

@@ -92,7 +92,7 @@ public class DetailPublication_doc extends AppCompatActivity {
         mDocPosterPic = findViewById(R.id.image_poster);
 
         documentId ="DrxFvKTEbNWMjDuuOgQ7";
-        docName = "fretocam.pdf";
+        docName = getString(R.string.PdfFretocam);
 
         /**permet d'afficher l'image du pdf sur la page de detail du document*/
         pageCount = UtilFunctions.pdfReader(mPdfView, docName, 76);

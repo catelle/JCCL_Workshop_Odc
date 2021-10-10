@@ -8,6 +8,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.jccl_network_project.R;
 
+import com.example.jccl_network_project.custom_interface.OnViewHolderCallback;
+
+import java.util.List;
+
+
 public class General_viewholder extends RecyclerView.ViewHolder {
 
     public EditText editFormation ;
