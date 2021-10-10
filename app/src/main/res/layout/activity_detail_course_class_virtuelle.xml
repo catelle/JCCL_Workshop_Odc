@@ -50,387 +50,394 @@
     </androidx.cardview.widget.CardView>
 
     <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="match_parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/img_cours"
-            android:layout_margin="10dp"
+        <RelativeLayout
             android:layout_width="match_parent"
-            app:cardCornerRadius="10dp"
-            android:layout_height="180dp">
-            <ImageView
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardView3">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/img_cours"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleX="2.3"
-                android:src="@mipmap/ic_office_work" />
-        </androidx.cardview.widget.CardView>
+                android:layout_height="180dp"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleX="2.3"
+                    android:src="@mipmap/ic_office_work" />
+            </androidx.cardview.widget.CardView>
 
 
-        <TextView
-            android:id="@+id/text_cours"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/img_cours"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Developpement personnelle"
-            android:layout_marginStart="10dp"
-            android:textSize="15sp"
-            android:textColor="@color/black" />
+            <TextView
+                android:id="@+id/text_cours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/img_cours"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Developpement personnelle"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
 
-        <ImageView
-            android:id="@+id/icon_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_cours"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="10dp"
-            app:srcCompat="@drawable/ic_baseline_location_on_24"
-            app:tint="#A2008000" />
+            <ImageView
+                android:id="@+id/icon_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_cours"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="10dp"
+                app:srcCompat="@drawable/ic_baseline_location_on_24"
+                app:tint="#A2008000" />
 
-        <TextView
-            android:id="@+id/text_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_cours"
-            android:layout_marginTop="13dp"
-            android:layout_toEndOf="@+id/icon_location"
-            android:fontFamily="@font/poppins_regular"
-            android:gravity="center"
-            android:text="Douala-Cameoun"
-            android:textSize="12sp" />
+            <TextView
+                android:id="@+id/text_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_cours"
+                android:layout_marginTop="13dp"
+                android:layout_toEndOf="@+id/icon_location"
+                android:fontFamily="@font/poppins_regular"
+                android:gravity="center"
+                android:text="Douala-Cameoun"
+                android:textSize="12sp" />
 
 
-        <TextView
-            android:id="@+id/text_niveau"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_below="@+id/text_location"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:text="Niveau :"/>
-        <TextView
-            android:id="@+id/niveau"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/text_niveau"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_below="@+id/text_location"
-            android:textColor="@color/orange"
-            android:layout_marginTop="10dp"
-            android:textSize="12sp"
-            android:text="Intermediaire"/>
+            <TextView
+                android:id="@+id/text_niveau"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_location"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Niveau :"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/text_peroide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toStartOf="@+id/peroide"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="5dp"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_below="@+id/text_location"
-            android:textSize="12sp"
-            android:textColor="@color/black"
-            android:text="Peroide :"/>
-        <TextView
-            android:id="@+id/peroide"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_alignParentEnd="true"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_below="@+id/text_location"
-            android:textColor="#0F056B"
-            android:textSize="12sp"
-            android:layout_marginTop="10dp"
-            android:text="Un mois"/>
+            <TextView
+                android:id="@+id/niveau"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_location"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toEndOf="@+id/text_niveau"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Intermediaire"
+                android:textColor="@color/orange"
+                android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/title_detail"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/niveau"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:textColor="@color/black"
-            android:text="Detail de la formation" />
+            <TextView
+                android:id="@+id/text_peroide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_location"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="5dp"
+                android:layout_toStartOf="@+id/peroide"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Peroide :"
+                android:textColor="@color/black"
+                android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/text_detail_course"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_detail"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:fontFamily="@font/poppins_regular"
-            android:text="Nous vous proposons un ecosystem collaborative en vous
+            <TextView
+                android:id="@+id/peroide"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_location"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Un mois"
+                android:textColor="#0F056B"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/title_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/niveau"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Detail de la formation"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/text_detail_course"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_detail"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Nous vous proposons un ecosystem collaborative en vous
             offrant un espace de travail et un ensemble de relation avec des professionnel da la tech..."
-            android:textSize="12sp" />
-        <TextView
-            android:id="@+id/title_available"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_detail_course"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black"
-            android:text="Disponibilité de la formation" />
+                android:textSize="12sp" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_date"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_available"
-            android:layout_alignParentStart="true"
-            android:layout_marginStart="10dp"
-            android:layout_marginLeft="10dp"
-            app:cardCornerRadius="8dp">
-
-            <RelativeLayout
+            <TextView
+                android:id="@+id/title_available"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_detail_course"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Disponibilité de la formation"
+                android:textColor="@color/black" />
 
-                <ImageView
-                    android:id="@+id/img_calendar"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
-
-                <TextView
-                    android:id="@+id/title_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/img_calendar"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Date"
-                    android:textSize="12sp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/title_date"
-                    android:layout_toEndOf="@+id/img_calendar"
-                    android:fontFamily="@font/poppins_regular"
-                    android:paddingEnd="5dp"
-                    android:text="Dec 24"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
-
-            </RelativeLayout>
-
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_time"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_available"
-            android:layout_marginStart="50dp"
-            android:layout_marginEnd="50dp"
-            android:layout_toStartOf="@+id/card_duration"
-            android:layout_toEndOf="@+id/card_date"
-            app:cardCornerRadius="8dp">
-
-            <RelativeLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_date"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_available"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                app:cardCornerRadius="8dp">
 
-                <ImageView
-                    android:id="@+id/img_time"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    app:srcCompat="@drawable/ic_baseline_access_time_24" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/title_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/img_time"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Temps"
-                    android:textSize="12sp" />
+                    <ImageView
+                        android:id="@+id/img_calendar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_baseline_calendar_today_24" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/title_time"
-                    android:layout_toEndOf="@+id/img_time"
-                    android:fontFamily="@font/poppins_regular"
-                    android:paddingEnd="5dp"
-                    android:text="11 heures"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    <TextView
+                        android:id="@+id/title_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/img_calendar"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Date"
+                        android:textSize="12sp" />
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title_date"
+                        android:layout_toEndOf="@+id/img_calendar"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingEnd="5dp"
+                        android:text="Dec 24"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
 
-        </androidx.cardview.widget.CardView>
+                </RelativeLayout>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_available"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="10dp"
-            app:cardCornerRadius="8dp">
+            </androidx.cardview.widget.CardView>
 
-            <RelativeLayout
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_time"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_available"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_toStartOf="@+id/card_duration"
+                android:layout_toEndOf="@+id/card_date"
+                app:cardCornerRadius="8dp">
 
-                <ImageView
-                    android:id="@+id/img_duration"
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:padding="10dp"
-                    app:srcCompat="@drawable/ic_baseline_access_alarms_24" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/title_duration"
+                    <ImageView
+                        android:id="@+id/img_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_baseline_access_time_24" />
+
+                    <TextView
+                        android:id="@+id/title_time"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/img_time"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Temps"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title_time"
+                        android:layout_toEndOf="@+id/img_time"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingEnd="5dp"
+                        android:text="11 heures"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/card_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_available"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="10dp"
+                app:cardCornerRadius="8dp">
+
+                <RelativeLayout
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toEndOf="@+id/img_duration"
-                    android:fontFamily="@font/poppins_regular"
-                    android:text="Durée"
-                    android:textSize="12sp" />
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/title_duration"
-                    android:layout_toEndOf="@+id/img_duration"
-                    android:fontFamily="@font/poppins_regular"
-                    android:paddingEnd="5dp"
-                    android:text="Dec 24"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
+                    <ImageView
+                        android:id="@+id/img_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp"
+                        app:srcCompat="@drawable/ic_baseline_access_alarms_24" />
 
-            </RelativeLayout>
+                    <TextView
+                        android:id="@+id/title_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@+id/img_duration"
+                        android:fontFamily="@font/poppins_regular"
+                        android:text="Durée"
+                        android:textSize="12sp" />
 
-        </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/title_duration"
+                        android:layout_toEndOf="@+id/img_duration"
+                        android:fontFamily="@font/poppins_regular"
+                        android:paddingEnd="5dp"
+                        android:text="Dec 24"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
 
-        <TextView
-            android:id="@+id/title_facilities"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/card_date"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginBottom="10dp"
-            android:textColor="@color/black"
-            android:text="Avantages" />
+                </RelativeLayout>
 
-        <ImageView
-            android:id="@+id/icon_meeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_facilities"
-            android:layout_marginStart="25dp"
-            app:srcCompat="@drawable/ic_baseline_people_outline_24"
-            app:tint="#A2008000" />
+            </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/text_meeting"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/icon_meeting"
-            android:layout_marginStart="10dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="12sp"
-            android:text="Meeting"/>
+            <TextView
+                android:id="@+id/title_facilities"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/card_date"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Avantages"
+                android:textColor="@color/black" />
 
-        <ImageView
-            android:id="@+id/icon_certification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_facilities"
-            android:layout_marginStart="45dp"
-            android:layout_toEndOf="@+id/icon_meeting"
-            app:srcCompat="@drawable/ic_baseline_cast_for_education_24"
-            app:tint="#A20A75D8" />
-        <TextView
-            android:id="@+id/text_certification"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/icon_meeting"
-            android:layout_toEndOf="@+id/icon_meeting"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="12sp"
-            android:text="Certification"/>
+            <ImageView
+                android:id="@+id/icon_meeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_facilities"
+                android:layout_marginStart="25dp"
+                app:srcCompat="@drawable/ic_baseline_people_outline_24"
+                app:tint="#A2008000" />
 
-        <ImageView
-            android:id="@+id/icon_work"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_facilities"
-            android:layout_marginStart="50dp"
-            app:tint="#A2582900"
-            android:layout_toEndOf="@+id/icon_certification"
-            app:srcCompat="@drawable/ic_baseline_card_travel_24" />
+            <TextView
+                android:id="@+id/text_meeting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icon_meeting"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Meeting"
+                android:textSize="12sp" />
 
-        <TextView
-            android:id="@+id/text_work"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/icon_work"
-            android:layout_toEndOf="@+id/text_certification"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="12sp"
-            android:text="Work"/>
+            <ImageView
+                android:id="@+id/icon_certification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_facilities"
+                android:layout_marginStart="45dp"
+                android:layout_toEndOf="@+id/icon_meeting"
+                app:srcCompat="@drawable/ic_baseline_cast_for_education_24"
+                app:tint="#A20A75D8" />
 
-        <ImageView
-            android:id="@id/icon_projet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/title_facilities"
-            android:layout_marginStart="40dp"
-            app:tint="#A2FFFF00"
-            android:layout_toEndOf="@+id/icon_work"
-            app:srcCompat="@drawable/ic_baseline_emoji_objects_24" />
-        <TextView
-            android:id="@+id/text_projet"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/icon_projet"
-            android:layout_toEndOf="@+id/text_work"
-            android:layout_marginStart="30dp"
-            android:fontFamily="@font/poppins_regular"
-            android:textSize="12sp"
-            android:text="Projet"/>
+            <TextView
+                android:id="@+id/text_certification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/icon_meeting"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/icon_meeting"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Certification"
+                android:textSize="12sp" />
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/text_work"
-            android:fontFamily="@font/poppins_regular"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
-            android:textSize="12sp"
-            android:text="Acheter Maintenant"/>
+            <ImageView
+                android:id="@+id/icon_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_facilities"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@+id/icon_certification"
+                app:srcCompat="@drawable/ic_baseline_card_travel_24"
+                app:tint="#A2582900" />
 
-    </RelativeLayout>
+            <TextView
+                android:id="@+id/text_work"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon_work"
+                android:layout_marginStart="20dp"
+                android:layout_toEndOf="@+id/text_certification"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Work"
+                android:textSize="12sp" />
+
+            <ImageView
+                android:id="@id/icon_projet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/title_facilities"
+                android:layout_marginStart="40dp"
+                android:layout_toEndOf="@+id/icon_work"
+                app:srcCompat="@drawable/ic_baseline_emoji_objects_24"
+                app:tint="#A2FFFF00" />
+
+            <TextView
+                android:id="@+id/text_projet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/icon_projet"
+                android:layout_marginStart="30dp"
+                android:layout_toEndOf="@+id/text_work"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Projet"
+                android:textSize="12sp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_work"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/poppins_regular"
+                android:text="Acheter Maintenant"
+                android:textSize="12sp" />
+
+        </RelativeLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
