@@ -48,8 +48,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/text_cours"
                 android:layout_marginStart="25dp"
-                app:tint="#A2008000"
-                app:srcCompat="@drawable/ic_baseline_people_outline_24" />
+                app:srcCompat="@drawable/ic_baseline_people_outline_24"
+                app:tint="#A2008000" />
 
             <TextView
                 android:id="@+id/text_meeting"

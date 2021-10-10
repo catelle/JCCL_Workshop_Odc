@@ -99,7 +99,7 @@ public class OTPActivity extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
-                    sendTomain();
+//                    sendTomain();
                 }else{
                     Toast.makeText(OTPActivity.this," verification failed",Toast.LENGTH_LONG).show();
 
@@ -114,18 +114,18 @@ public class OTPActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser=mAuth.getCurrentUser();
         if(currentUser!=null){
-            sendTomain();
+//            sendTomain();
         }
     }
 
 
-    public void sendTomain(){
-        Utilisateur user=new Utilisateur(userid,nom,phoneNum,statut_utilisateur,email,valider);
-        FirebaseUtils.addTask(user);
-        Toast.makeText(OTPActivity.this,"Vous etes desormais utilisateur du systeme",Toast.LENGTH_LONG);
-        startActivity(new Intent(OTPActivity.this,MainActivity.class));
-        finish();
-    }
+//    public void sendTomain(){
+//        Utilisateur user=new Utilisateur(userid,nom,phoneNum,statut_utilisateur,email,valider);
+//        FirebaseUtils.addTask(user);
+//        Toast.makeText(OTPActivity.this,"Vous etes desormais utilisateur du systeme",Toast.LENGTH_LONG);
+//        startActivity(new Intent(OTPActivity.this,MainActivity.class));
+//        finish();
+//    }
 
     public void resendconfirmationemailfunction(View view) {
     }
