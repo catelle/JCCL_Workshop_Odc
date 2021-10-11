@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     android:background="@color/light_gray"
     tools:context=".detail_pages.DetailPublication_doc">
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
@@ -21,6 +20,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
+            android:onClick="backToProducctActivity"
             android:src="@drawable/ic_back"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -208,12 +208,13 @@
                 style="@style/button_text"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/btn_size"
-                android:layout_marginTop="@dimen/margin_top"
                 android:layout_marginLeft="@dimen/margin_right_left"
                 android:layout_marginRight="@dimen/margin_right_left"
+                android:layout_marginTop="@dimen/margin_top"
                 android:background="@drawable/shape_download_btn"
                 android:clickable="true"
                 android:gravity="center"
+                android:onClick="clicOndownloadButton"
                 android:text="@string/text_download" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -224,12 +225,22 @@
                 android:layout_marginTop="@dimen/margin_top">
 
                 <ImageView
+                    android:id="@+id/likedoc"
                     android:layout_width="30dp"
                     android:layout_height="30dp"
+                    android:onClick="newlikeforthisDocument"
                     android:src="@drawable/ic_favoris"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/nblike"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    app:layout_constraintStart_toEndOf="@+id/likedoc"
+                    app:layout_constraintTop_toTopOf="@+id/likedoc" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -280,7 +291,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="10dp"
-                    android:text="30 pages"
+                    android:text="    30 pages"
                     app:layout_constraintStart_toEndOf="@+id/imageView"
                     app:layout_constraintTop_toTopOf="@+id/imageView" />
 
@@ -292,16 +303,18 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="@+id/text_page_count"/>
-<!--                <ImageView-->
-<!--                    android:id="@+id/pdfView_book"-->
-<!--                    android:layout_width="169dp"-->
-<!--                    android:layout_height="209dp"-->
-<!--                    android:layout_marginTop="30dp"-->
-<!--                    android:scaleType="centerCrop"-->
-<!--                    android:src="@mipmap/img_book"-->
-<!--                    app:layout_constraintEnd_toEndOf="parent"-->
-<!--                    app:layout_constraintStart_toStartOf="parent"-->
-<!--                    app:layout_constraintTop_toTopOf="@+id/text_page_count" />-->
+
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/image_book"-->
+                <!--                    android:layout_width="169dp"-->
+                <!--                    android:layout_height="209dp"-->
+                <!--                    android:layout_marginTop="30dp"-->
+                <!--                    android:scaleType="centerCrop"-->
+                <!--                    android:src="@mipmap/img_book"-->
+                <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+                <!--                    app:layout_constraintStart_toStartOf="parent"-->
+                <!--                    app:layout_constraintTop_toTopOf="@+id/text_page_count" />-->
+
 
                 <TextView
                     android:id="@+id/btn_apercu"
@@ -311,6 +324,7 @@
                     android:background="@drawable/shape_btn_apercu"
                     android:clickable="true"
                     android:gravity="center"
+                    android:onClick="ApercuDoc"
                     android:text="@string/text_apercu"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -334,7 +348,8 @@
                     style="@style/title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/commentaires" />
+                    android:text="@string/commentaires"
+                    android:textColor="@color/orange" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/recycler_comments"
@@ -377,16 +392,17 @@
                     android:hint="@string/text_leave_comment"
                     android:padding="5dp"
                     android:layout_weight="2"
-                     />
+                    />
 
                 <ImageButton
                     android:id="@+id/btn_sent_comment"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:background="@color/white"
-                    android:src="@drawable/ic_send"
                     android:layout_weight="1"
+                    android:background="@color/white"
+                    android:onClick="onclictosendCommentaire"
+                    android:src="@drawable/ic_send"
                     app:tint="@color/orange" />
             </LinearLayout>
 

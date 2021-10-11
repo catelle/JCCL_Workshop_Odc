@@ -1,9 +1,11 @@
+
 package com.example.jccl_network_project.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +26,7 @@ public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
     public General_adapter(Context context, List<Object> list, int itemLayout){
 
         this.list = list;
+
         this.activity = activity;
         this.mInflater = LayoutInflater.from(context);
         this.itemLayout = itemLayout;
@@ -40,7 +43,9 @@ public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
     @Override
     public void onBindViewHolder(@NonNull General_viewholder holder, int position) {
         String edit = ((EditActivity.Formation) this.list.get(position)).getIntitule();
+
         holder.getEditFormation().setText(edit);
+
     }
 
     @Override
@@ -49,3 +54,4 @@ public class General_adapter extends RecyclerView.Adapter<General_viewholder> {
     }
 
 }
+

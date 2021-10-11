@@ -3,10 +3,18 @@ package com.example.jccl_network_project;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.example.jccl_network_project.detail_pages.FilDiscussionAdapter;
+import com.example.jccl_network_project.detail_pages.WordCategoryAdapter;
+import com.example.jccl_network_project.models.Fil_discussion;
+
+import java.util.LinkedList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +27,11 @@ public class Forum_fragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+
+    private final LinkedList<String> mWordList = new LinkedList<>();
+    private final LinkedList<Fil_discussion> mForumList = new LinkedList<>();
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -52,6 +65,8 @@ public class Forum_fragment extends Fragment {
         if (getArguments() != null) {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
+
+
         }
     }
 
@@ -59,6 +74,73 @@ public class Forum_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_forum_fragment, container, false);
+       View view= inflater.inflate(R.layout.fragment_forum_fragment, container, false);
+
+        mWordList.addLast("Tous");
+        mWordList.addLast("Cours");
+        mWordList.addLast("Exercices");
+        mWordList.addLast("Corrigés");
+
+
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+        mForumList.addLast(new Fil_discussion("1", "12.22.2021", "je n'arrive " +
+                "pas rendre mon site responsive, Comment faire ?", false, "HTML/CSS"
+                ,R.mipmap.ic_profil_tech,"Mikey McKenney","25" ));
+
+
+        RecyclerView recyclerViewWord = (RecyclerView) view.findViewById(R.id.recyclerview_word);
+        WordCategoryAdapter wordAdapter = new WordCategoryAdapter(getActivity(), mWordList);
+        recyclerViewWord.setAdapter(wordAdapter);
+        recyclerViewWord.setLayoutManager(new LinearLayoutManager(getActivity(),
+                LinearLayoutManager.HORIZONTAL, false));
+
+
+//        RecyclerView recyclerViewDoc = findViewById(R.id.recyclerview_grid);
+//        DocumentAdapter docAdapter = new DocumentAdapter(this, DocumentModel.getObjectList());
+//        recyclerViewDoc.setAdapter(docAdapter);
+//        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(this ,
+//                LinearLayoutManager.VERTICAL, false);
+//        recyclerViewDoc.setLayoutManager(linearLayoutDoc);
+
+        RecyclerView recyclerViewFilDiscussion = (RecyclerView) view.findViewById(R.id.recyclerview_grid);
+        FilDiscussionAdapter fdAdapter = new FilDiscussionAdapter(getActivity(), mForumList);
+        recyclerViewFilDiscussion.setAdapter(fdAdapter);
+        RecyclerView.LayoutManager linearLayoutDoc = new LinearLayoutManager(getActivity() ,
+                LinearLayoutManager.VERTICAL, false);
+        recyclerViewFilDiscussion.setLayoutManager(linearLayoutDoc);
+
+
+
+
+        return view;
     }
 }

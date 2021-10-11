@@ -1,5 +1,6 @@
 package com.example.jccl_network_project;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,14 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
+
+import com.example.jccl_network_project.VirtualClass.ClasseVirtuelleActivity;
+import com.example.jccl_network_project.detail_pages.ProductActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import static com.example.jccl_network_project.MainActivity.ELTTOSHOW;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -23,6 +32,13 @@ public class Home_fragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+
+    Boolean isFabOpen=false;
+
+    Button mAllStudentsButton, mAllTeachersButton,mAllpostsButton;
+    FloatingActionButton mIntroVCButton;
+    private FloatingActionButton mfabNewPost;
 
     public Home_fragment() {
         // Required empty public constructor
@@ -59,6 +75,105 @@ public class Home_fragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_fragment, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_home_fragment, container, false);
+
+        mAllpostsButton = (Button)view.findViewById(R.id.AllPublictions);
+        mfabNewPost=view.findViewById(R.id.fabnewpost);
+        mIntroVCButton = (FloatingActionButton)view.findViewById(R.id.fabCV);
+        mAllStudentsButton = (Button)view.findViewById(R.id.AllStudentProfileButton);
+        mAllTeachersButton = (Button)view.findViewById(R.id.AllTeachersProfilButton);
+       FloatingActionButton mfabintro=(FloatingActionButton)view.findViewById(R.id.fabintro3);
+
+       mfabintro.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               translationfunction();
+
+           }
+       });
+
+
+        mAllpostsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"clic on allposts",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), ProductActivity.class);
+                intent.putExtra(ELTTOSHOW,"publications");
+                startActivity(intent);
+
+
+            }
+        });
+
+        mIntroVCButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(getActivity(), ClasseVirtuelleActivity.class);
+
+                startActivity(intent);
+
+
+            }
+        });
+
+        mAllTeachersButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"clic on allteachers",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), ProductActivity.class);
+                intent.putExtra(ELTTOSHOW,"enseignant");
+                startActivity(intent);
+
+            }
+        });
+
+        mAllStudentsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"clic on allstudents",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), ProductActivity.class);
+                intent.putExtra(ELTTOSHOW,"etudiant");
+                startActivity(intent);
+
+
+            }
+        });
+        mAllpostsButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getActivity(),"clic on all posts",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getActivity(), ProductActivity.class);
+                intent.putExtra(ELTTOSHOW,"publication");
+                startActivity(intent);
+
+
+            }
+        });
+
+
+        return view;
     }
+
+    public void translationfunction(){
+
+        if(!isFabOpen){
+            Toast.makeText(getActivity(),"fab1 clicked",Toast.LENGTH_LONG).show();
+            isFabOpen=true;
+
+            mfabNewPost.animate().translationY(-getResources().getDimension(R.dimen.standard_55));
+            mIntroVCButton.animate().translationY(-getResources().getDimension(R.dimen.standard_105));
+            // agendaFab.animate().translationY(-getResources().getDimension(R.dimen.standard_155));
+            //  fab1.setVisibility(View.INVISIBLE);
+        }else{
+            isFabOpen=false;
+            mfabNewPost.animate().translationY(0);
+
+            mIntroVCButton.animate().translationY(0);
+            //  fab1.setVisibility(View.VISIBLE);
+        }
+
+    }
+
 }

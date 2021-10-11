@@ -1,5 +1,7 @@
 package com.example.jccl_network_project.models;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.List;
 import java.util.Map;
 
@@ -15,20 +17,18 @@ public class Utilisateur {
     private String profession;
     private String telephone;
     private String email;
-    private Boolean validation;
+    private String validation;
     private List<Fil_discussion> fil_discussion;
     private List<Formation> formation;
     private List<Publication> favoris;
     private List<Publication> publication;
-    private List<DocumentsFournis> DocumentsFournis;
 
+    private List<DocumentsFournis> documentsFournis;
 
+// added Documents fournis to this constructor
 
-    //user constructor doesn't take id as a parameter
+    public Utilisateur(String id_user, String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, String validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication,List<DocumentsFournis> documentsFournis) {
 
-    //public Utilisateur(String id_classe_virtuelle, String avatar, String categorie, String description_profil, String nom, String prenom, String profession, int telephone, String email, Boolean validation, List<Fil_discussion> fil_discussion, List<Formation> formation, List<Publication> favoris, List<Publication> publication) {
-
-    public Utilisateur(String id_user, String nom,String phone_number, String profession, String email,Boolean validation) {
 
         this.id_user = id_user;
         this.id_classe_virtuelle = null;
@@ -38,27 +38,59 @@ public class Utilisateur {
         this.nom = nom;
         this.prenom = null;
         this.profession = profession;
-        this.telephone = phone_number;
+        this.telephone = null;
         this.email = email;
         this.validation = validation;
-        this.fil_discussion =null;
+        this.fil_discussion = fil_discussion;
+        this.formation = formation;
+        this.favoris = favoris;
+        this.publication = publication;
+        this.documentsFournis=documentsFournis;
+    }
+
+    //constructor used for user registration
+
+
+
+
+    //add documents fournis getters and setters
+
+    public void setDocumentsFournis(DocumentsFournis doc){
+        this.documentsFournis.add(doc);
+
+    }
+
+    public List<DocumentsFournis> getDocumentFournis(){
+
+        return this.documentsFournis;
+
+    }
+
+    public Utilisateur( String nom,String email, String statut_utilisateur,String userphone,String validation) {
+
+        this.nom=nom;
+        this.id_user=nom+email;
+        this.email=email;
+        this.profession=statut_utilisateur;
+        this.id_classe_virtuelle = null;
+        this.avatar = null;
+        this.categorie = null;
+        this.description_profil = null;
+
+        this.prenom = null;
+
+        this.telephone = userphone;
+
+        this.validation = validation;
+        this.fil_discussion = null;
         this.formation = null;
         this.favoris = null;
         this.publication = null;
-        this.DocumentsFournis=null;
-    }
-
-    public Utilisateur(String id_user, String nom, String statut_utilisateur, String email, Boolean validation) {
+        this.documentsFournis=null;
     }
 
 
-    public  List<DocumentsFournis>  get_documentsFournis() {
-        return DocumentsFournis;
-    }
 
-    public void set_DocumentFournis(DocumentsFournis doc) {
-        this.DocumentsFournis.add(doc);
-    }
 
 
     public String getId_user() {
@@ -141,11 +173,11 @@ public class Utilisateur {
         this.email = email;
     }
 
-    public Boolean getValidation() {
+    public String getValidation() {
         return validation;
     }
 
-    public void setValidation(Boolean validation) {
+    public void setValidation(String validation) {
         this.validation = validation;
     }
 

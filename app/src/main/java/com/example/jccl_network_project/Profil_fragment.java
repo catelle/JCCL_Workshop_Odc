@@ -7,9 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+
+
+import android.widget.EditText;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TableLayout;
@@ -17,6 +22,23 @@ import android.widget.TextView;
 
 import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
 import com.google.android.material.tabs.TabLayout;
+
+import static com.example.jccl_network_project.MainActivity.TAGApropos;
+import static com.example.jccl_network_project.MainActivity.TAGabonnee;
+import static com.example.jccl_network_project.MainActivity.TAGfavoris;
+import static com.example.jccl_network_project.MainActivity.TAGlocalisation;
+import static com.example.jccl_network_project.MainActivity.TAGprofession;
+import static com.example.jccl_network_project.MainActivity.TAGprofile_image;
+import static com.example.jccl_network_project.MainActivity.TAGusername;
+
+
+import android.widget.TableLayout;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
+import com.google.android.material.tabs.TabLayout;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +52,11 @@ public class Profil_fragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
+    private ImageView iconEdit_image,mprofile_image;
+    private TextView username,profession, localisation,maproposTextview, mAbonneeTextView,mFavorisTextView;
+    private String usernametext,professionText, localisationText;
+
+
 
     // TODO: Rename and change types of parameters
     private String mParam1;
@@ -41,7 +68,7 @@ public class Profil_fragment extends Fragment {
 
     //variables used for profile edition
 
-    Button mybutt;
+    Button mybutt,openprofile;
     //********view componnents*****//
 
     TextView mlocalisationTV, nomTV, professionTV, villeTV;
@@ -88,55 +115,111 @@ public class Profil_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
-        tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
-        viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
-//        mybutt=view.findViewById(R.id.button_open_apercu);
+        View view = inflater.inflate(R.layout.fragment_profil_fragment, container, false);
 
-        //liaison avec la vue
+        try{
 
-        mlocalisationTV=view.findViewById(R.id.localisation);
-        professionTV=view.findViewById(R.id.profession);
-        nomTV=view.findViewById(R.id.user_name);
-        photo_profilIV=view.findViewById(R.id.user_picture);
-        iconeditIV=view.findViewById(R.id.icon_edit);
 
-//        mybutt.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(getActivity(),ViewProfileActivity.class));
-//            }
-//        });
-        iconeditIV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity(),EditActivity.class);
-                intent.putExtra(TAGlocalisation,mlocalisationTV.getText().toString()
-                );
-                intent.putExtra(TAGprofession,professionTV.getText().toString());
-                intent.putExtra(TAGnom, nomTV.getText().toString());
+            tabLayout =  (TabLayout) view.findViewById(R.id.tabLayout);
+            viewPager2 = (ViewPager2) view.findViewById(R.id.viewpager2);
+            //mybutt=view.findViewById(R.id.button_open_apercu);
+            // openprofile=view.findViewById(R.id.button_open_apercu);
 
-                startActivity(intent);
+            //liaison avec la vue
 
-            }
-        });
+            mlocalisationTV=(TextView)view.findViewById(R.id.localisation);
+            professionTV=(TextView)view.findViewById(R.id.profession);
+            nomTV=(TextView)view.findViewById(R.id.user_name);
+            photo_profilIV=(ImageView) view.findViewById(R.id.user_picture);
+            iconeditIV=(ImageView) view.findViewById(R.id.icon_edit);
 
-        FragmentManager fm = getActivity().getSupportFragmentManager();
-        Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
-        viewPager2.setAdapter(adapter);
+            //mybutt.setOnClickListener(new View.OnClickListener() {
+            //  @Override
+            //public void onClick(View view) {
+            //  startActivity(new Intent(getActivity(),ViewProfileActivity.class));
+            //}
+            //});
+            iconeditIV.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent=new Intent(getActivity(),EditActivity.class);
+                    intent.putExtra(TAGlocalisation,mlocalisationTV.getText().toString()
+                    );
+                    intent.putExtra(TAGprofession,professionTV.getText().toString());
+                    intent.putExtra(TAGnom, nomTV.getText().toString());
 
-        tabLayout.addTab(tabLayout.newTab().setText("Historique"));
-        tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
-        tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
-        tabLayout.addTab(tabLayout.newTab().setText("A propos"));
-        tabLayout.addOnTabSelectedListener(tabSelectedListener);
-        viewPager2.registerOnPageChangeCallback(pageChangeCallback);
+                    startActivity(intent);
+
+                }
+            });
+
+            // openprofile.setOnClickListener(new View.OnClickListener() {
+            //   @Override
+            // public void onClick(View view) {
+            //   startActivity(new Intent(getActivity(),ViewOtherProfileActivity.class));
+            //}
+            //});
+
+            FragmentManager fm = getActivity().getSupportFragmentManager();
+            Tab_fragment_Adapter adapter = new Tab_fragment_Adapter(fm , getLifecycle());
+            viewPager2.setAdapter(adapter);
+            //getting profil parameters to edit
+            profession = (TextView) view.findViewById(R.id.profession);
+            username=(TextView)view.findViewById(R.id.user_name);
+            localisation=(TextView)view.findViewById(R.id.localisation);
+            iconEdit_image= (ImageView) view.findViewById(R.id.icon_edit);
+            mprofile_image= (ImageView) view.findViewById(R.id.user_picture);
+            // maproposTextview= view.findViewById(R.id.apropos_textview);
+            mAbonneeTextView=(TextView) view.findViewById(R.id.abonnéeTextView);
+
+
+
+
+
+            iconEdit_image.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    usernametext=username.getText().toString();
+                    professionText=profession.getText().toString();
+                    localisationText=localisation.getText().toString();
+
+                    Intent intent = new Intent(getActivity(),EditActivity.class);
+                    intent.putExtra(TAGprofession,profession.getText().toString());
+                    intent.putExtra(TAGusername,username.getText().toString());
+                    intent.putExtra(TAGlocalisation,localisation.getText().toString());
+                    //   intent.putExtra(TAGprofile_image, (Parcelable) mprofile_image);
+                    // intent.putExtra(TAGabonnee,mAbonneeTextView.getText());
+                    // intent.putExtra(TAGfavoris,mFavorisTextView.getText().toString());
+                    // intent.putExtra(TAGApropos,maproposTextview.getText().toString());
+                    startActivity(intent);
+
+
+
+
+
+
+                }
+            });
+
+
+            tabLayout.addTab(tabLayout.newTab().setText("Historique"));
+            tabLayout.addTab(tabLayout.newTab().setText("Favoris"));
+            tabLayout.addTab(tabLayout.newTab().setText("Abonnees"));
+            tabLayout.addTab(tabLayout.newTab().setText("A propos"));
+            tabLayout.addOnTabSelectedListener(tabSelectedListener);
+            viewPager2.registerOnPageChangeCallback(pageChangeCallback);
+        }catch (Exception e){
+            Toast.makeText(getActivity(),e.toString(),Toast.LENGTH_LONG).show();
+        }
         return view ;
     }
 

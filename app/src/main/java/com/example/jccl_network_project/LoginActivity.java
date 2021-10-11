@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -19,11 +20,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.jccl_network_project.models.Utilisateur;
 import com.example.jccl_network_project.utils.FirebaseUtils;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -32,33 +34,44 @@ import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthOptions;
 import com.google.firebase.auth.PhoneAuthProvider;
 
+
 import java.util.concurrent.TimeUnit;
 
-import static com.example.jccl_network_project.InscriptionActivity.TAGemail;
-import static com.example.jccl_network_project.InscriptionActivity.TAGstatus;
-import static com.example.jccl_network_project.InscriptionActivity.TAGuid;
-import static com.example.jccl_network_project.InscriptionActivity.TAGusername;
+import javax.security.auth.callback.Callback;
 
 
 public class LoginActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
+
     EditText phone, mdp;
-    TextView con;
+    Button send_code_button;
+    CardView connectionwithFacebook_button,google_connection_button;
+    TextView Email_connection_button ;
+    EditText mphone_number_EditText;
     private FirebaseAuth mAuth;
-    Spinner spinner;
-    String country_code;
     // ...
-  private  String userid;
-   private String nom;
-   private String statut_utilisateur;
-    private String email;
-    private Boolean valider;
-   private  Intent data;
-   private String phoneNum;
-   public static final String TAGphonenumber="phone_number";
-    // ...
-// Initialize Firebase Auth
+    private String country_code, phone_number;
     private PhoneAuthProvider.OnVerificationStateChangedCallbacks mcallback;
+
+    Spinner spinner;
+    private TextInputLayout emailEditText, usernameEditText;
+    Button suite_inscription;
+    private String memail, muser_name, muser_status;
+    private Spinner spinnerstatus;
+    EditText nomEditText;
+    String nom, email, statut_utilisateur;
+    String validation;
+
+    TextView continue_button;
+    public static final String TAGuid ="uid";
+
+
+    public static final String TAGusername ="username";
+    public static final String TAGstatus ="userstatus";
+    public static final String TAGemail ="email";
+    public static final String TAGphone ="phone";
+    public static final String TAGvalidation ="phone";
+
 
 
     @Override
@@ -66,74 +79,38 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
 
-        act.setBackgroundDrawable(cd);
 
-        getSupportActionBar().hide();
-         data=getIntent();
 
-        mAuth=FirebaseAuth.getInstance();
-        userid=data.getStringExtra(TAGuid);
-         nom=data.getStringExtra(TAGusername);
-         statut_utilisateur=data.getStringExtra(TAGstatus);
-         email=data.getStringExtra(TAGemail);
+        //Views Association
+        Spinner spinner = (Spinner) findViewById(R.id.phone_number_spinner);
+        send_code_button=findViewById(R.id.send_verification_code_button);
+        connectionwithFacebook_button=findViewById(R.id.cardviewfacebook);
+        Email_connection_button=findViewById(R.id.connexion_with_email_button);
+        google_connection_button = findViewById(R.id.cardviewfacebook);
+        mphone_number_EditText=findViewById(R.id.phone_number_editText);
+        spinnerstatus = findViewById(R.id.user_status);
+        emailEditText=findViewById(R.id.email);
+        usernameEditText=findViewById(R.id.user_name);
+        suite_inscription=findViewById(R.id.suite_button);
 
-        phone=(EditText)findViewById(R.id.phone_number);
+        //FirebaseAuth instance
 
-        con=findViewById(R.id.continue_button);
         mAuth = FirebaseAuth.getInstance();
 
-        spinner=findViewById(R.id.spinner_country_code);
-
-
-        //spinner for country codes
-
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.country_codes, android.R.layout.simple_spinner_item);
-
-        adapter.setDropDownViewResource
-                (android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
-
-        mAuth=FirebaseAuth.getInstance();
-
-        con.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String country_code="237";
-                //should be change to take the phone number from the edit text
-                String phoneT=phone.getText().toString();
-                phoneNum="+"+country_code+phoneT;
-
-                if(!country_code.isEmpty()){
-                    if(!phoneT.isEmpty()){
-                        PhoneAuthOptions options= PhoneAuthOptions.newBuilder(mAuth)
-                                .setPhoneNumber("+237657273247")
-                                .setTimeout(60L, TimeUnit.SECONDS)
-                                .setActivity(LoginActivity.this)
-                                .setCallbacks(mcallback)
-                                .build();
-                        PhoneAuthProvider.verifyPhoneNumber(options);
-
-                    }
-                }
-            }
-        });
+        //response to clic on send verification code button
         mcallback=new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
             @Override
             public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
                 signIn(phoneAuthCredential);
 
             }
+
             @Override
             public void onVerificationFailed(@NonNull FirebaseException e) {
                 Toast.makeText(LoginActivity.this,e.getMessage(),Toast.LENGTH_LONG).show();
-            }
 
+            }
 
             @Override
             public void onCodeSent(@NonNull String s, @NonNull PhoneAuthProvider.ForceResendingToken forceResendingToken) {
@@ -144,12 +121,12 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
                         Toast.makeText(LoginActivity.this,"OTP code has been send",Toast.LENGTH_LONG).show();
                         Intent otpIntent =new Intent(LoginActivity.this,OTPActivity.class);
                         otpIntent.putExtra("auth",s);
-                        otpIntent.putExtra(TAGuid,userid);
-                        otpIntent.putExtra(TAGusername,nom);
-                        otpIntent.putExtra(TAGemail,email);
-                        otpIntent.putExtra(TAGstatus,statut_utilisateur);
+                        otpIntent.putExtra(TAGemail,memail);
+                        otpIntent.putExtra(TAGusername,muser_name);
+                        otpIntent.putExtra(TAGstatus,muser_status);
+                        otpIntent.putExtra(TAGphone,phone_number);
+                        otpIntent.putExtra(TAGvalidation,validation);
 
-                        otpIntent.putExtra(TAGphonenumber,phoneNum);
 
                         startActivity(otpIntent);
                     }
@@ -158,27 +135,140 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
 
             }
         };
-
-    }
-
-
-        protected void onStart(){
-        super.onStart();
-        FirebaseUser user=mAuth.getCurrentUser();
-        
+        send_code_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+              String country_code = getCountryCode();
+              String phoneT = mphone_number_EditText.getText().toString();
+              phone_number = country_code+phoneT;
 
 
-        if(user!=null){
-            sendTomain();
+                memail = emailEditText.getEditText().getText().toString();
+                muser_name=usernameEditText.getEditText().getText().toString();
+
+
+
+
+
+
+
+                if(!(country_code.isEmpty())){
+                    if(!(phoneT.isEmpty())){
+                        try{
+                            PhoneAuthOptions options= PhoneAuthOptions.newBuilder(mAuth)
+                                    .setPhoneNumber("+237657273247")
+                                    .setTimeout(60L, TimeUnit.SECONDS)
+                                    .setActivity(LoginActivity.this)
+                                    .setCallbacks( mcallback)
+                                    .build();
+                        PhoneAuthProvider.verifyPhoneNumber(options);
+
+                        }catch(Exception e){
+                            Toast.makeText(LoginActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+                        }
+
+                    }
+                }
+
+
+
             }
+        });
+
+
+// Create an ArrayAdapter using the string array and a default spinner
+        ArrayAdapter<CharSequence> adapterstatus = ArrayAdapter.createFromResource(this,R.array.labels_array, android.R.layout.simple_spinner_item);
+
+        adapterstatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spinnerstatus.setAdapter(adapterstatus);
+
+        spinnerstatus.setOnItemSelectedListener(this);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
+                R.array.country_names, android.R.layout.simple_spinner_item);
+// Specify the layout to use when the list of choices appears
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+// Apply the adapter to the spinner
+        spinner.setAdapter(adapter);
+        spinner.setOnItemSelectedListener(this);
+
         }
 
+        //Country code getters and setters
+            public void setCountry_code(String country_code){
+                this.country_code=country_code;
+            }
+            public String getCountryCode(){
 
-    public void sendTomain(){
-        startActivity(new Intent(LoginActivity.this,MainActivity.class));
-        finish();
+                    return this. country_code;
+            }
+        //spinner item selection listener
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                           int pos, long id) {
+                switch(parent.getId()){
+                    case R.id.phone_number_spinner:
+
+
+                             parent.getItemAtPosition(pos);
+                           if(parent.getSelectedItem().toString().equals("Cameroun")){
+                               setCountry_code("+237");
+
+                           }else if(parent.getSelectedItem().toString().equals("Congo")){
+
+                           }else if(parent.getSelectedItem().toString().equals("Gabon")){
+
+                           }else if(parent.getSelectedItem().toString().equals("Togo")){
+
+                           }
+                           else if(parent.getSelectedItem().toString().equals("France")){
+
+                           }
+                           else if(parent.getSelectedItem().toString().equals("USA")){
+
+                           }
+                           else if(parent.getSelectedItem().toString().equals("Allemagne")){
+
+                           }
+                           else if(parent.getSelectedItem().toString().equals("Suisse")){
+
+                           }
+                           break;
+                    case R.id.user_name:
+                        muser_status=parent.getSelectedItem().toString();
+                        if(muser_status=="Etudiant"||muser_status=="Eleve"){
+                            validation="true";
+                        }else{
+                            validation="false";
+                        }
+                        break;
+                }
+
+
+
+
+
     }
-    private void signIn(PhoneAuthCredential credential){
+
+    public void onNothingSelected(AdapterView<?> parent) {
+        // Another interface callback
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+      //  FirebaseUser user=mAuth.getCurrentUser();
+        
+
+      //  if(user!=null){
+           // sendTomain();
+      //  }
+    }
+
+    public void signIn(PhoneAuthCredential credential){
+        Toast.makeText(LoginActivity.this,"sign in method",Toast.LENGTH_LONG).show();
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -192,27 +282,33 @@ public class LoginActivity extends AppCompatActivity implements AdapterView.OnIt
         });
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        if(adapterView.getSelectedItem().toString().equals("Cameroun")){
-            country_code="+237";
-        }else if(adapterView.getSelectedItem().toString().equals("France")){
-            country_code="+33";
-        }else if(adapterView.getSelectedItem().toString().equals("Allemagne")){
-            country_code="";
-        }else if(adapterView.getSelectedItem().toString().equals("Suisse")){
-            country_code="";
-        }else if(adapterView.getSelectedItem().toString().equals("Congo")){
-            country_code="";
-        }else if(adapterView.getSelectedItem().toString().equals("Gabon")){
-            country_code="";
-        }
+    public void sendTomain(){
+        Toast.makeText(LoginActivity.this,"problem in sendtomain",Toast.LENGTH_LONG).show();
+        startActivity(new Intent(LoginActivity.this,MainActivity.class));
+
     }
 
     @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
+    public void onPointerCaptureChanged(boolean hasCapture) {
+
     }
+
+    public void SendVerificationCode(View view) {
+    }
+
+    public void connexionWithFacebookAccount(View view) {
+    }
+
+    public void connexionWithGoogleAccount(View view) {
+    }
+
+    public void inscriptionbutton(View view) {
+    }
+
+    public void connexionWithEmail(View view) {
+    }
+
+
 }
-
 
 

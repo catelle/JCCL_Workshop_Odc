@@ -7,6 +7,46 @@
     android:background="@color/dark_gray"
     tools:context=".Home_fragment">
 
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabCV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_baseline_emoji_objects_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/bacgroung_text_continuerr"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+
+        android:id="@+id/fabnewpost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:backgroundTint="@color/bacgroung_text_continuerr"
+        android:clickable="true"
+        android:onClick="AddNewPost"
+        android:src="@drawable/ic_baseline_cast_for_education_24"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fabintro3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/bacgroung_text_continuerr"
+        />
+
+
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView3"
         android:layout_width="match_parent"
@@ -21,13 +61,6 @@
             android:layout_gravity="center_horizontal"
             android:orientation="horizontal"
             >
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/ic_back" />
 
             <TextView
                 android:id="@+id/text_appBarTitle"
@@ -65,6 +98,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="270dp"
                 app:cardElevation="8dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 app:cardCornerRadius="8dp"
                 android:layout_marginTop="80dp">
                 <RelativeLayout
@@ -73,7 +108,6 @@
 
 
                     <ImageView
-                        android:id="@+id/img_brand_home"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleX="1.5"
@@ -92,67 +126,21 @@
                         android:textSize="25sp"
                         android:textStyle="bold"
                         android:textColor="@color/orange"
-                        android:text="@string/text_market_encardreur"/>
+                        android:text="Retrouver les meilleurs Encardreurs a votre service"/>
                     <ImageView
-                        android:id="@+id/back_to_img"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginTop="120dp"
-                        android:onClick="previousImage"
                         app:tint="@color/orange"
                         app:srcCompat="@drawable/ic_back" />
 
                     <ImageView
-                        android:id="@+id/next_to_img"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_alignParentEnd="true"
-                        android:onClick="nextImage"
                         android:layout_marginTop="120dp"
                         app:srcCompat="@drawable/ic_baseline_arrow_forward_ios_24"
                         app:tint="@color/orange" />
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="8dp"
-                        android:layout_marginStart="200dp"
-                        android:layout_alignParentBottom="@+id/text_brand"
-                        android:layout_marginTop="250dp">
-                        <TextView
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:id="@+id/bullet_1"
-                            android:background="@color/orange"/>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="8dp"
-                        android:layout_marginStart="215dp"
-                        android:layout_alignParentBottom="@+id/text_brand"
-                        android:layout_marginTop="250dp">
-                        <TextView
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:id="@+id/bullet_2"
-                            android:background="@color/white"/>
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:cardCornerRadius="8dp"
-                        android:layout_marginStart="230dp"
-                        android:layout_alignParentBottom="@+id/text_brand"
-                        android:layout_marginTop="250dp">
-                        <TextView
-                            android:layout_width="10dp"
-                            android:layout_height="10dp"
-                            android:id="@+id/bullet_3"
-                            android:background="@color/white"/>
-                    </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
 
@@ -191,144 +179,158 @@
                 app:cardCornerRadius="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <RelativeLayout
+
+                <HorizontalScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-            <androidx.cardview.widget.CardView
-                android:id="@+id/img_teach1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignParentStart="true"
-                android:layout_marginStart="30dp"
-                app:cardElevation="8dp"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="50dp">
-                <ImageView
-                    android:id="@+id/teach1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@mipmap/ic_prof" />
+                    android:layout_height="match_parent" >
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/AllTeachersProfilButton"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/text_abonne2"
+                            android:layout_marginEnd="100dp"
+                            android:layout_marginStart="100dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Voir plus"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/text_name"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_teach1"
+                            android:layout_marginStart="29dp"
+                            android:layout_marginTop="9dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Andrew McKenney"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/text_abonne"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_name"
+                            android:layout_marginStart="50dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="s'abonner"
+                            android:textColor="@color/orange"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/text_name2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_teach1"
+                            android:layout_marginStart="32dp"
+                            android:layout_toEndOf="@+id/text_name"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Andrew McKenney"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/text_abonne2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_name2"
+                            android:layout_marginStart="75dp"
+                            android:layout_toEndOf="@+id/text_abonne"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="s'abonner"
+                            android:textColor="@color/orange"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/text_name3"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_teach1"
+                            android:layout_marginStart="40dp"
+                            android:layout_toEndOf="@+id/text_name2"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Andrew McKenney"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_name2"
+                            android:layout_marginStart="75dp"
+                            android:layout_toEndOf="@+id/text_abonne2"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="s'abonner"
+                            android:textColor="@color/orange"
+                            android:textSize="12sp" />
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_teach4"
+                            android:layout_toEndOf="@+id/img_teach2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="20dp"
+                            app:cardElevation="8dp"
+                            android:layout_marginTop="20dp"
+                            app:cardCornerRadius="50dp">
+
+                            <ImageView
+                                android:id="@+id/teach"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_teach1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="30dp"
+                            app:cardElevation="8dp"
+                            android:layout_marginTop="20dp"
+                            app:cardCornerRadius="50dp">
+
+                            <ImageView
+                                android:id="@+id/teach1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_teach2"
+                            android:layout_toEndOf="@+id/img_teach1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            app:cardElevation="8dp"
+                            app:cardCornerRadius="50dp">
+
+                            <ImageView
+                                android:id="@+id/teach2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
             </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/text_name"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:layout_below="@+id/img_teach1"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_marginStart="29dp"
-                android:textSize="12sp"
-                android:text="John Boogle"/>
-            <TextView
-                android:id="@+id/text_abonne"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_name"
-                android:layout_marginStart="50dp"
-                android:fontFamily="@font/poppins_regular"
-                android:textSize="12sp"
-                android:textColor="@color/orange"
-                android:text="s'abonner"/>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/img_teach2"
-                android:layout_toEndOf="@+id/img_teach1"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginStart="27dp"
-                android:layout_marginTop="20dp"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="50dp">
-
-                <ImageView
-                    android:id="@+id/teach2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@mipmap/ic_profil_tech" />
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/text_name2"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_teach1"
-                android:gravity="center"
-                android:textColor="@color/black"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_toEndOf="@+id/text_name"
-                android:layout_marginStart="32dp"
-                android:textSize="12sp"
-                android:text="Andrew McKenney"/>
-            <TextView
-                android:id="@+id/text_abonne2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_name2"
-                android:layout_toEndOf="@+id/text_abonne"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_marginStart="75dp"
-                android:textSize="12sp"
-                android:textColor="@color/orange"
-                android:text="s'abonner"/>
-
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/img_teach3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_alignParentEnd="true"
-                app:cardElevation="8dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginTop="20dp"
-                app:cardCornerRadius="50dp">
-
-                <ImageView
-                    android:id="@+id/teach3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:src="@mipmap/ic_prof2" />
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/text_name3"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/img_teach1"
-                android:gravity="center"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_toEndOf="@+id/text_name2"
-                android:textColor="@color/black"
-                android:layout_marginStart="40dp"
-                android:textSize="12sp"
-                android:text="Georges Fongan"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/text_name2"
-                android:layout_toEndOf="@+id/text_abonne2"
-                android:fontFamily="@font/poppins_regular"
-                android:layout_marginStart="75dp"
-                android:textSize="12sp"
-                android:textColor="@color/orange"
-                android:text="s'abonner"/>
-                    <Button
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_abonne2"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginEnd="100dp"
-                        android:textStyle="bold"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentStart="true"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textSize="12sp"
-                        android:text="Voir plus"/>
-        </RelativeLayout>
-    </androidx.cardview.widget.CardView>
             <TextView
                 android:id="@+id/text_student"
                 android:layout_below="@+id/card_encardreur"
@@ -352,7 +354,7 @@
                 android:layout_marginEnd="120dp"
                 android:layout_below="@+id/text_student"
                 android:background="@color/orange"/>
-             <androidx.cardview.widget.CardView
+            <androidx.cardview.widget.CardView
                 android:id="@+id/card_student"
                 android:layout_below="@+id/text_student"
                 android:layout_marginTop="20dp"
@@ -361,114 +363,124 @@
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp"
                 android:layout_width="match_parent"
-                 android:layout_height="wrap_content">
-                <RelativeLayout
+                android:layout_height="wrap_content">
+
+                <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/img_student1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="30dp"
-                        app:cardElevation="8dp"
-                        android:layout_marginTop="20dp"
-                        app:cardCornerRadius="50dp">
-                        <ImageView
-                            android:id="@+id/student1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_student" />
-                    </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/text_name_student1"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_below="@+id/img_student1"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_marginStart="30dp"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        android:text="Andrew Kenfack"/>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
 
+                        <Button
+                            android:id="@+id/AllStudentProfileButton"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/text_name_student1"
+                            android:layout_marginEnd="100dp"
+                            android:layout_marginStart="100dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Voir plus"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/img_student2"
-                        android:layout_toEndOf="@+id/img_student1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        app:cardElevation="8dp"
-                        app:cardCornerRadius="50dp">
-
-                        <ImageView
-                            android:id="@+id/student2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_student3" />
-
-                    </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/text_name_student2"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/img_student1"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_toEndOf="@+id/text_name_student1"
-                        android:layout_marginStart="20dp"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        android:text="Rose Ninga"/>
+                        <TextView
+                            android:id="@+id/text_name_student2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_student1"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/text_name_student1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Andrew McKenney"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
 
 
-                    <androidx.cardview.widget.CardView
-                        android:layout_toEndOf="@+id/img_student2"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="20dp"
-                        app:cardElevation="8dp"
-                        android:layout_marginTop="20dp"
-                        app:cardCornerRadius="50dp">
+                        <TextView
+                            android:id="@+id/text_name_student3"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_student1"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/text_name_student2"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Andrew McKenney"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
 
-                        <ImageView
-                            android:id="@+id/student3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_student2" />
+                        <TextView
+                            android:id="@+id/text_name_student1"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_student1"
+                            android:layout_marginStart="30dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Andrew McKenney"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
 
-                    </androidx.cardview.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/text_name_student3"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/img_student1"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_toEndOf="@+id/text_name_student2"
-                        android:layout_marginStart="30dp"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        android:text="Julie Kenta"/>
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toEndOf="@+id/img_student2"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp">
 
-                    <Button
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_name_student1"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginEnd="100dp"
-                        android:textStyle="bold"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textSize="12sp"
-                        android:text="Voir plus"/>
-                </RelativeLayout>
-             </androidx.cardview.widget.CardView>
+                            <ImageView
+                                android:id="@+id/student3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_student2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toEndOf="@+id/img_student1"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp">
+
+                            <ImageView
+                                android:id="@+id/student2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_student1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="20dp"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp">
+
+                            <ImageView
+                                android:id="@+id/student1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/text_doc"
@@ -483,7 +495,7 @@
                 android:textStyle="bold"
                 android:layout_marginTop="15dp"
                 android:textSize="20sp"
-                android:text="Documents"/>
+                android:text="Publications"/>
             <View
                 android:layout_width="50dp"
                 android:layout_height="2dp"
@@ -504,150 +516,168 @@
                 app:cardCornerRadius="8dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <RelativeLayout
+
+                <HorizontalScrollView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/img_doc1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="30dp"
-                        app:cardElevation="8dp"
-                        android:layout_marginTop="20dp">
-                        <ImageView
-                            android:id="@+id/doc1"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_livre_mathpc" />
 
-                    </androidx.cardview.widget.CardView>
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
 
-                    <TextView
-                        android:id="@+id/text_name_doc1"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:layout_below="@+id/img_doc1"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_marginStart="30dp"
-                        android:textSize="12sp"
-                        android:textColor="@color/black"
-                        android:text="Livre de Mathematique"/>
-                    <TextView
-                        android:id="@+id/text_telecharger3"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_name_doc1"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_marginStart="30dp"
-                        android:textSize="12sp"
-                        android:textColor="@color/orange"
-                        android:text="Telecharger"/>
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/img_doc2"
-                        android:layout_toEndOf="@+id/img_doc1"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="20dp"
-                        android:layout_marginTop="20dp"
-                        app:cardElevation="8dp">
+                        <Button
+                            android:id="@+id/AllPublictions"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_below="@+id/text_telecharger2"
+                            android:layout_marginEnd="100dp"
+                            android:layout_marginStart="100dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:text="Voir plus"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
 
-                        <ImageView
-                            android:id="@+id/doc2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_physique_book"/>
+                        <TextView
+                            android:id="@+id/text_name_doc1"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_doc1"
+                            android:layout_marginStart="30dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Livre de Mathematique"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
 
-                    </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/text_telecharger3"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_name_doc1"
+                            android:layout_marginStart="30dp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Telecharger"
+                            android:textColor="@color/orange"
+                            android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/text_name_doc2"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/img_doc1"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_toEndOf="@+id/text_name_doc1"
-                        android:layout_marginStart="20dp"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        android:text="Livre de physique"/>
-                    <TextView
-                        android:id="@+id/text_telecharger2"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_name_doc2"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_toEndOf="@+id/text_name_doc1"
-                        android:layout_marginStart="30dp"
-                        android:textSize="12sp"
-                        android:textColor="@color/orange"
-                        android:text="Telecharger"/>
-                    <androidx.cardview.widget.CardView
-                        android:layout_toEndOf="@+id/img_doc2"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_marginStart="20dp"
-                        app:cardElevation="8dp"
-                        android:layout_marginTop="20dp">
+                        <TextView
+                            android:id="@+id/text_name_doc2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_doc1"
+                            android:layout_marginStart="20dp"
+                            android:layout_toEndOf="@+id/text_name_doc1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Livre de physique"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
 
-                        <ImageView
-                            android:id="@+id/doc3"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:src="@mipmap/ic_informatique_book" />
+                        <TextView
+                            android:id="@+id/text_telecharger2"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_name_doc2"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/text_name_doc1"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Telecharger"
+                            android:textColor="@color/orange"
+                            android:textSize="12sp" />
 
-                    </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:id="@+id/text_name_doc3"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/img_doc1"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/text_name_doc2"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Livre d'informatique"
+                            android:textColor="@color/black"
+                            android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/text_name_doc3"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/img_doc1"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_toEndOf="@+id/text_name_doc2"
-                        android:layout_marginStart="30dp"
-                        android:textColor="@color/black"
-                        android:textSize="12sp"
-                        android:text="Livre d'informatique"/>
+                        <TextView
+                            android:id="@+id/text_telecharger"
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/text_name_doc3"
+                            android:layout_marginStart="30dp"
+                            android:layout_toEndOf="@+id/text_name_doc2"
+                            android:fontFamily="@font/poppins_regular"
+                            android:gravity="center"
+                            android:text="Telecharger"
+                            android:textColor="@color/orange"
+                            android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/text_telecharger"
-                        android:layout_width="100dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_name_doc3"
-                        android:gravity="center"
-                        android:fontFamily="@font/poppins_regular"
-                        android:layout_toEndOf="@+id/text_name_doc2"
-                        android:layout_marginStart="30dp"
-                        android:textSize="12sp"
-                        android:textColor="@color/orange"
-                        android:text="Telecharger"/>
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_doc1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="30dp"
+                            android:layout_marginTop="20dp"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp">
 
-                    <Button
-                        android:layout_width="200dp"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/text_telecharger2"
-                        android:layout_marginStart="100dp"
-                        android:layout_marginEnd="100dp"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentEnd="true"
-                        android:fontFamily="@font/poppins_regular"
-                        android:textSize="12sp"
-                        android:textStyle="bold"
-                        android:text="Voir plus"/>
-                </RelativeLayout>
+                            <ImageView
+                                android:id="@+id/doc1"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/img_doc2"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toEndOf="@+id/img_doc1"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp">
+
+                            <ImageView
+                                android:id="@+id/doc2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginStart="20dp"
+                            android:layout_marginTop="20dp"
+                            android:layout_toEndOf="@+id/img_doc2"
+                            app:cardCornerRadius="50dp"
+                            app:cardElevation="8dp">
+
+                            <ImageView
+                                android:id="@+id/doc3"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:src="@mipmap/ic_profil_tech" />
+
+                        </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+                </HorizontalScrollView>
+
             </androidx.cardview.widget.CardView>
 
 
-</RelativeLayout>
+        </RelativeLayout>
 
 
 
 
     </ScrollView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

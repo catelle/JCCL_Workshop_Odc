@@ -24,7 +24,9 @@ public class General_viewholder extends RecyclerView.ViewHolder {
 
 
 
+
     public EditText getEditFormation(){ return editFormation; };
 }
+
 
 

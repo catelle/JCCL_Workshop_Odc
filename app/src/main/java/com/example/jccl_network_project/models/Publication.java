@@ -14,13 +14,17 @@ public class Publication {
     private String categorie;
     private String description;
     private String destination;
+    private String domaine;
     private int duree;
     private ArrayList<Integer> note;
     private String emplacement_piece ;
     private String lien;
-    private String titre;
+    private String titre=null;
+    private String date_ajout ;
+    private List<String> mot_cles;
+
     private String date_creation ;
-    private ArrayList<String> mot_cles;
+
     private String niveau_scolaire;
     private List<Commentaire> commentaires;
 
@@ -42,6 +46,24 @@ public class Publication {
         this.mot_cles = mot_cles;
         this.niveau_scolaire = niveau_scolaire;
         this.commentaires = commentaires;
+    }
+
+    public Publication(String publication_id, String categorie, String description, String destination,  String lien, String titre, List<String> mot_cles, String niveau_scolaire) {
+        this.publication_id = publication_id;
+        this.poster_id = null;
+        this.categorie = categorie;
+        this.description = description;
+        this.destination = destination;
+        this.duree = 0;
+        this.domaine=domaine;
+        this.note = null;
+        this.emplacement_piece = null;
+        this.date_ajout=null;
+        this.lien = lien;
+        this.titre = titre;
+        this.mot_cles = mot_cles;
+        this.niveau_scolaire = niveau_scolaire;
+        this.commentaires = null;
     }
 
     public String getPublication_id() {
@@ -132,7 +154,7 @@ public class Publication {
         this.date_creation = date_creation;
     }
 
-    public ArrayList<String> getMot_cles() {
+    public List<String> getMot_cles() {
         return mot_cles;
     }
 

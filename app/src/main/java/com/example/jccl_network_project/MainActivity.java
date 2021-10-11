@@ -7,52 +7,87 @@ import androidx.fragment.app.FragmentContainer;
 import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
-import android.annotation.SuppressLint;
+import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TableLayout;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.jccl_network_project.adapters.Tab_fragment_Adapter;
+import com.example.jccl_network_project.detail_pages.DetailPublication_doc;
+import com.example.jccl_network_project.detail_pages.ForumActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.tabs.TabLayout;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity  {
 
-    private int mCpt;
-    private ImageView mButtonToNext;
-    private ImageView mButtonToPrevouis;
-    private ImageView mImageBrand;
-    private TextView mBulletBrandThree;
-    private TextView mBulletBrandOne;
-    private TextView mBulletBrandTwo;
-    private TextView mTextMarketBrand;
-    //********** Declaration des variables *************//
+    EditText nomUtilisateurEditText;
+    EditText emailEditText ;
+    Spinner spinner ;
+    TextView continuer_button;
+
+
+
     private BottomNavigationView bottomNavigation;
+    private ActionBar tabLayout;
+    private Spinner viewPager2, viewPager1;
+    private String email,nomUtilisateur, status;
+
+
+
+
+
+
+    //********** Declaration des variables *************//
+
+
+    //edit profile variables
+
+    public static final String TAGprofession="profession";
+    public static final String TAGusername="username";
+    public static final String TAGlocalisation="localisation";
+    public static final String TAGprofile_image="profile_image";
+    public static final String TAGabonnee="abonnees";
+    public static final String TAGfavoris="favoris";
+    public static final String TAGApropos="Apropos";
+    public static final String ELTTOSHOW="ElementsAAfficher";
+
+
+
+    //********** Declaration des variables *************//
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        try {
 
-        bottomNavigation = findViewById(R.id.bottom_navigation);
-        bottomNavigation.setOnNavigationItemSelectedListener( navigationItemSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container , new Home_fragment()).commit();
 
-        mButtonToNext = findViewById(R.id.next_to_img);
-        mButtonToPrevouis = findViewById(R.id.back_to_img);
-        mImageBrand = findViewById(R.id.img_brand_home);
-        mBulletBrandThree = findViewById(R.id.bullet_3);
-        mBulletBrandTwo = findViewById(R.id.bullet_2);
-        mBulletBrandOne = findViewById(R.id.bullet_1);
-        mTextMarketBrand = findViewById(R.id.text_brand);
+
+            bottomNavigation = findViewById(R.id.bottom_navigation);
+            bottomNavigation.setOnNavigationItemSelectedListener(navigationItemSelectedListener);
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,new Home_fragment()).commit();
+
+        }catch (Exception e){
+            Toast.makeText(MainActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+        }
 
     }
+
+
+
 
     // Declaration du navigationItemSelectedListener pour la gestion des click
     // des click sur la bottom navigation
     private BottomNavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
         @Override
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
@@ -78,53 +113,25 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    // Gestion des clicks sur la bannière home page
 
-    @SuppressLint("ResourceAsColor")
-    public void nextImage(View view) {
-        mCpt++;
-        if (mCpt == 1){
-            mImageBrand.setImageResource(R.mipmap.ic_commaunity);
-            mBulletBrandOne.setBackgroundColor(R.color.white);
-            mBulletBrandTwo.setBackgroundColor(R.color.orange);
-            mTextMarketBrand.setText(R.string.text_market_forum);
-        }else if(mCpt == 2){
-            mImageBrand.setImageResource(R.mipmap.ic_book);
-            mBulletBrandTwo.setBackgroundColor(R.color.white);
-            mBulletBrandThree.setBackgroundColor(R.color.orange);
-            mTextMarketBrand.setText(R.string.text_market_contenu);
-        }else{
-            mCpt = 0;
-            mImageBrand.setImageResource(R.mipmap.ic_office_work);
-            mTextMarketBrand.setText(R.string.text_market_encardreur);
-            mBulletBrandOne.setBackgroundColor(R.color.orange);
-            mBulletBrandTwo.setBackgroundColor(R.color.white);
-            mBulletBrandThree.setBackgroundColor(R.color.white);
-        }
-
-
+    public void AddNewPost(View view) {
+        Intent intent=new Intent(MainActivity.this,CreatePublicationActivity.class);
+        startActivity(intent);
     }
 
-    public void previousImage(View view) {
+    public void addingNewdiscussion(View view) {
+        Intent intent=new Intent(MainActivity.this,CreateFillDiscussion.class);
+        startActivity(intent);
+    }
 
-        if (mCpt == 1){
-            mImageBrand.setImageResource(R.mipmap.ic_office_work);
-            mTextMarketBrand.setText(R.string.text_market_encardreur);
-            mBulletBrandOne.setBackgroundColor(getResources().getColor(R.color.orange));
-            mBulletBrandTwo.setBackgroundColor(getResources().getColor(R.color.white));
-            mBulletBrandThree.setBackgroundColor(getResources().getColor(R.color.white));
 
-        }else if(mCpt == 2){
-            mImageBrand.setImageResource(R.mipmap.ic_commaunity);
-            mBulletBrandOne.setBackgroundColor(getResources().getColor(R.color.white));
-            mBulletBrandTwo.setBackgroundColor(getResources().getColor(R.color.orange));
-            mTextMarketBrand.setText(R.string.text_market_forum);
-        }else{
-            mImageBrand.setImageResource(R.mipmap.ic_book);
-            mBulletBrandTwo.setBackgroundColor(getResources().getColor(R.color.white));
-            mBulletBrandThree.setBackgroundColor(getResources().getColor(R.color.orange));
-            mTextMarketBrand.setText(R.string.text_market_contenu);
+    public void ouvrirDetailFil(View view) {
+        Intent intent=new Intent(MainActivity.this, ForumActivity.class);
+        startActivity(intent);
+    }
 
-        }
+    public void opendocument(View view) {
+        Intent intent=new Intent(MainActivity.this, DetailPublication_doc.class);
+        startActivity(intent);
     }
 }

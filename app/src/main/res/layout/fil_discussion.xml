@@ -26,7 +26,6 @@
             android:layout_gravity="bottom|center"
             android:fontFamily="@font/poppins_regular"
             android:text="@string/app_Discussion"
-            android:textStyle="bold"
             android:textSize="20sp" />
 
         <ImageView
@@ -83,7 +82,7 @@
                 app:cardCornerRadius="8dp">
 
                 <EditText
-                    android:id="@+id/editTextTextPersonName"
+                    android:id="@+id/titreEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/dark_gray"
@@ -152,7 +151,7 @@
                     android:background="@color/dark_gray"
                     android:orientation="vertical">
                     <EditText
-                        android:id="@+id/editTextTextPersonName2"
+                        android:id="@+id/problemedescription"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:inputType="textPersonName"
@@ -173,7 +172,7 @@
                 android:layout_marginBottom="10dp">
 
                 <ImageView
-                    android:id="@+id/logo_put_img"
+                    android:id="@+id/uploadedImageFill"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
@@ -186,7 +185,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
-                    android:layout_toEndOf="@+id/logo_put_img"
+                    android:layout_toEndOf="@+id/uploadedImageFill"
                     android:fontFamily="@font/poppins_regular"
                     android:text="Ajoutez une image"
                     android:textColor="@color/black" />
@@ -272,6 +271,7 @@
 
 
     <Button
+        android:id="@+id/postNewFill"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/bacgroung_text_continuerr"

@@ -18,17 +18,18 @@ import com.example.jccl_network_project.viewholders.General_viewholder;
 
 
 import java.util.LinkedList;
+import java.util.List;
 
 
 public class WordCategoryAdapter  extends RecyclerView.Adapter<WordCategoryAdapter.Word_viewholder>  {
 
 
-    private  List<String> mCategorie;
+    private List<String> mCategorie;
     private LayoutInflater mInflater;
     private Context context;
     private OnItemClickListener onItemClickListener;
 
-    public WordCategoryAdapter(Context context , List<String> mCategorie , OnItemClickListener onItemClickListener) {
+    public WordCategoryAdapter(Context context, List<String> mCategorie) {
         this.mCategorie = mCategorie;
         this.onItemClickListener = onItemClickListener;
         this.context = context;

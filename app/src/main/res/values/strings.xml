@@ -10,13 +10,20 @@
     <string name="home_page_message_no_contain">Douala</string>
     <string name="home_page_follow">s\'abonner</string>
     <string name="home_page_follow_count">(1300 abonnees)</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name_inscription">Inscription</string>
 
-    <!-- page de connexion  -->
 
+    *
+    <!-- page de connexion  -->
+    <string name="Entrer_country_code_phone">Selectionner country code et entrez \n votre numero de telephone</string>
+    <string name="bienvenu_sur_appname">Bienvenu sur appName</string>
+    <string name="connexion_page_title">Connexion</string>
+    <string name="Facebook">Facebook</string>
     <string name="required">Veuillez remplir tous les champs</string>
+
     <!-- page d\'inscription -->
     <string name="hint_name">Nom d\'utilisateur</string>
     <string name="hint_email">Email</string>
@@ -39,14 +46,16 @@
     <string name="edit_page_description">Description</string>
     <string name="edit_page_valider">Valider</string>
     <string name="favaris_tab_item_title">"Livre de cuisine "</string>
-
     <string name="favaris_tab_item_categorie">Cours</string>
     <string name="favaris_tab_item_poster_name">Junior Temgoua</string>
     <string name="detail_page_doc_title">Livre de mathematique</string>
     <string name="detail_page_doc_description">Modelisation des bases de donnees NoSql , en  plusieurs collection</string>
 
-
+    <!-- Strings used for fragments for navigation -->
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="detail_page_doc_poster_name">Junior Temgoua</string>
+
     <string name="detail_page_doc_profession">Enseignant de mathematique</string>
     <string name="text_download">Telecharger</string>
     <string name="signale_doc">signaler</string>
@@ -55,10 +64,10 @@
     <string name="comment_date">il y\'a 6 jours</string>
     <string name="text_leave_comment">Laisser un commentaire</string>
     <string name="text_popup_note">Combien d\'etoiles donner vous a ce document</string>
-
     <string name="edit_page_ville">Ville</string>
 
     <string name="edit_page_email">Email</string>
+
     <string name="connexion_title">Connexion</string>
     <string name="numero_de_telephone">numero de telephone</string>
     <string name="s_inscrire">S\'inscrire</string>
@@ -66,6 +75,16 @@
 
     <string name="app_Discussion">Discussion</string>
 
+    <string-array name="country_names">
+        <item>Cameroun</item>
+        <item>Congo</item>
+        <item>Gabon</item>
+        <item>Togo</item>
+        <item>France</item>
+        <item>USA</item>
+        <item>Allemagne</item>
+        <item>Suisse</item>
+    </string-array>
     <string-array name="country_codes">
         <item>Cameroun</item>
         <item>France</item>
@@ -80,8 +99,6 @@
         <item>Etudiant</item>
         <item>Elève</item>
     </string-array>
-
-
     <string-array name="spinner_formation">
         <item>2020</item>
         <item>2019</item>
@@ -125,7 +142,6 @@
 
     <string name="PdfFretocam">fretocam.pdf</string>
     <string name="recherche">Recherche....</string>
-
 
 
     <!-- page de forum  -->

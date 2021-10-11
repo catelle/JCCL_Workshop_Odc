@@ -17,10 +17,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/textView9">
+
+            <EditText
+                android:id="@+id/phone_number_editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="phone" />
+
+            <Spinner
+                android:id="@+id/phone_number_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+        </LinearLayout>
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/light_gray">
+
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView5"
@@ -54,6 +80,13 @@
                     android:layout_marginEnd="@dimen/margin_end_iconclear"
                     android:contentDescription="@string/description_content_banner"
                     app:srcCompat="@drawable/ic_baseline_clear_24" />
+
+                <EditText
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone" />
             </androidx.cardview.widget.CardView>
 
 
@@ -71,7 +104,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="90dp"
                     android:contentDescription="@string/img_banner"
-                    app:srcCompat="@drawable/ic_img_signup" />
+                    app:srcCompat="@drawable/img_connxion" />
 
                 <TextView
                     android:id="@+id/requirement_field"
@@ -84,9 +117,11 @@
                     android:textSize="@dimen/text_size_required" />
 
 
+
                 <!--   ***************   Full field inscription  ***********                -->
 
                 <!--  ************   Nom d'utilisateur   *******************-->
+
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/user_name"
@@ -114,12 +149,13 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginStart="30dp"
                     android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp"
                     android:background="@color/dark_gray"
                     android:fontFamily="@font/poppins_regular"
                     android:hint="@string/hint_email">
+
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -130,6 +166,7 @@
                         android:fontFamily="@font/poppins_regular" />
 
                 </com.google.android.material.textfield.TextInputLayout>
+
 
                 <!--  ************   Staut d'utilisateur   *******************-->
 
@@ -142,6 +179,17 @@
                     android:layout_marginRight="@dimen/marginLeft"
                     app:cardCornerRadius="@dimen/card_corner_radius"
                     app:cardElevation="@dimen/card_elevation_value">
+
+
+            <!--  ************   Confirmation continuer l'inscription   *******************-->
+
+                    <!--  ************   Nom d'utilisateur   *******************-->
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"></LinearLayout>
 
                     <TextView
                         android:id="@+id/continue_button"
@@ -159,7 +207,7 @@
                         android:orientation="horizontal">
 
                         <Spinner
-                            android:id="@+id/label_spinner"
+                            android:id="@+id/user_status"
                             android:layout_width="wrap_content"
                             android:layout_height="40dp"
                             android:layout_gravity="end|center"
@@ -168,6 +216,7 @@
                             android:layout_weight="2"
                             android:ems="6"
                             android:fontFamily="@font/poppins_regular" />
+
 
                     </LinearLayout>
 
@@ -189,24 +238,29 @@
                     android:background="@color/orange">
 
 
-                    <TextView
-                        android:id="@+id/textView2"
+                    <Button
+                        android:id="@+id/suite_button"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/bacgroung_text_continuerr"
+                        android:text="Enregistrer"
                         android:fontFamily="@font/poppins_regular"
                         android:gravity="center"
                         android:paddingTop="@dimen/marginTop_required_text"
                         android:paddingBottom="@dimen/marginTop_required_text"
-                        android:text="@string/continuer"
                         android:textColor="@color/white"
                         android:textSize="@dimen/text_size_continuer"
                         android:textStyle="bold" />
 
 
+
                 </androidx.cardview.widget.CardView>
 
                 <!--  ************   Autres moyens d'inscription   *******************-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"></LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -248,10 +302,6 @@
 
                 <!--  ************   Les inscriptions par google et facebook   *******************-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
 
                     <!--  ************   inscription par facebook  *******************-->
 
@@ -372,7 +422,7 @@
 
                 <!--  ************   Se connecter *******************-->
 
-            </LinearLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

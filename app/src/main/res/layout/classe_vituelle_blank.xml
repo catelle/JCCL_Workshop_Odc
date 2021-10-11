@@ -12,13 +12,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img_brand"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/ic_undraw_dreamer_gxxi_1" />
+        android:layout_height="match_parent"/>
+
+        <ImageView
+            android:id="@+id/img_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_undraw_dreamer_gxxi_1" />
     <TextView
         android:id="@+id/text_not_available"
         android:layout_width="match_parent"
@@ -87,5 +91,6 @@
     </androidx.cardview.widget.CardView>
     </RelativeLayout>
         </ScrollView>
+
 
 </RelativeLayout>

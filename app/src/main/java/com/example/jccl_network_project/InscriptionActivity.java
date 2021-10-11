@@ -9,9 +9,15 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.util.Log;
 import android.view.View;
+
+import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -31,10 +37,25 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.auth.User;
 
 
+import android.widget.Toast;
+
+import com.example.jccl_network_project.models.Utilisateur;
+import com.example.jccl_network_project.utils.FirebaseUtils;
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import static com.github.vipulasri.timelineview.TimelineView.TAG;
+
 
 public class InscriptionActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    EditText nomEditText,emailEditText;
+
+    private TextInputLayout emailEditText, usernameEditText;
+    Button suite_inscription;
+    private String memail, muser_name, muser_status;
+    private Spinner spinner;
+    EditText nomEditText;
     String nom, email, statut_utilisateur;
     Boolean validation;
 
@@ -48,88 +69,92 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
     public static final String TAGemail ="email";
 
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inscription);
 
-        ActionBar act;
-        act=getSupportActionBar();
-        ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
 
-        act.setBackgroundDrawable(cd);
-        getSupportActionBar().hide();
+        //ActionBar act;
+      //  act=getSupportActionBar();
+       // ColorDrawable cd=new ColorDrawable(Color.parseColor("#993300"));
 
-        Spinner spinner = findViewById(R.id.spinner_country_code);
+       // act.setBackgroundDrawable(cd);
+       // getSupportActionBar().hide();
 
-        nomEditText=findViewById(R.id.phone_number);
-        emailEditText=findViewById(R.id.emaileditText);
-        continue_button=findViewById(R.id.continue_button);
+     //view associations
+try{
 
-        continue_button.setOnClickListener(new View.OnClickListener() {
+    Intent data=getIntent();
+    String e=data.getStringExtra(TAG);
+    Toast.makeText(InscriptionActivity.this,e,Toast.LENGTH_LONG).show();
+
+        spinner = findViewById(R.id.user_status);
+        emailEditText=findViewById(R.id.email);
+        usernameEditText=findViewById(R.id.user_name);
+        suite_inscription=findViewById(R.id.suite_button);
+
+
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.labels_array, android.R.layout.simple_spinner_item);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+            spinner.setAdapter(adapter);
+
+        spinner.setOnItemSelectedListener(this);
+
+
+
+        suite_inscription.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                String nom=nomEditText.getText().toString();
-                String email=emailEditText.getText().toString();
+                Toast.makeText(InscriptionActivity.this,"value has been registered",Toast.LENGTH_LONG).show();
 
-                if (!(email.isEmpty())&&(!(email.contains("@"))||!(email.contains("."))||!(email.contains("com")))){
-                    emailEditText.setError("Entrez une email de la forme toto@gmail.com");
+                memail = emailEditText.getEditText().getText().toString();
+                muser_name=usernameEditText.getEditText().getText().toString();
 
 
-                }else{
+              // Utilisateur user=new Utilisateur(muser_name,memail,muser_status);
+               // FirebaseUtils.addTask(user);
+                Toast.makeText(InscriptionActivity.this, "user added successfully", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(),LoginActivity.class));
 
-                    Toast.makeText(InscriptionActivity.this,"Vous etes desormais utilisateur",Toast.LENGTH_LONG).show();
-                    Toast.makeText(InscriptionActivity.this,"veuillez verifier votre numéro",Toast.LENGTH_LONG).show();
-                    Intent intent=new Intent(InscriptionActivity.this,LoginActivity.class);
-                    intent.putExtra(TAGuid,FirebaseAuth.getInstance().getCurrentUser());
-                    intent.putExtra(TAGusername,nom);
-                    intent.putExtra(TAGstatus,statut_utilisateur);
-                    intent.putExtra(TAGemail,email);
-
-                    startActivity(intent);
-                    finish();
-                }
 
 
             }
         });
-        if (spinner != null) {
-            spinner.setOnItemSelectedListener(this);
-        }
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
-                R.array.labels_array, android.R.layout.simple_spinner_item);
 
-        adapter.setDropDownViewResource
-                (android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setAdapter(adapter);
+}catch (Exception e){
+    Toast.makeText(InscriptionActivity.this,e.toString(),Toast.LENGTH_LONG).show();
+    Log.d("erreur",e.toString());
+}
+
+
+
 
     }
 
 
-    protected void onStart() {
-        super.onStart();
-        mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
 
-        if(user!=null){
 
-        }else{
-            sendTomain();
-        }
 
-    }
 
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
-        statut_utilisateur=adapterView.getSelectedItem().toString();
-        if(statut_utilisateur=="Etudiant"||statut_utilisateur=="Eleve"){
+
+       // String spinnerLabel = adapterView.getItemAtPosition(i).toString();
+        muser_status=adapterView.getSelectedItem().toString();
+        if(muser_status=="Etudiant"||muser_status=="Eleve"){
             validation=true;
         }else{
             validation=false;
         }
+
 
     }
 
@@ -137,8 +162,13 @@ public class InscriptionActivity extends AppCompatActivity implements AdapterVie
     public void onNothingSelected(AdapterView<?> adapterView) {
     }
 
+
+
+
+
     public void sendTomain(){
         startActivity(new Intent(InscriptionActivity.this,MainActivity.class));
-        finish();
+
     }
+
 }
