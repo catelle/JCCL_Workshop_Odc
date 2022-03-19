@@ -3,25 +3,55 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../../../layout/custom_preview.xml" value="0.3484375" />
+        <entry key="../../../../Android/Sdk/platforms/android-29/data/res/layout/simple_spinner_dropdown_item.xml" value="0.278125" />
+        <entry key="../../../../Android/Sdk/platforms/android-29/data/res/layout/simple_spinner_item.xml" value="0.278125" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/ic_camera.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_edit.xml" value="0.19375" />
+        <entry key="app/src/main/res/drawable/ic_flat_google.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/ic_forum.xml" value="0.19375" />
+        <entry key="app/src/main/res/drawable/ic_full_star.xml" value="0.2796296296296296" />
         <entry key="app/src/main/res/drawable/ic_google.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_home.xml" value="0.2916666666666667" />
         <entry key="app/src/main/res/drawable/ic_notification.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.19375" />
+        <entry key="app/src/main/res/drawable/ic_star.xml" value="0.2796296296296296" />
         <entry key="app/src/main/res/drawable/ic_user.xml" value="0.19375" />
         <entry key="app/src/main/res/drawable/ic_wave.xml" value="0.33" />
+        <entry key="app/src/main/res/drawable/img_book.xml" value="0.33611111111111114" />
+        <entry key="app/src/main/res/drawable/img_connxion.xml" value="0.33611111111111114" />
         <entry key="app/src/main/res/drawable/img_inscription.xml" value="0.5" />
         <entry key="app/src/main/res/drawable/img_no_historique.xml" value="0.3255208333333333" />
+        <entry key="app/src/main/res/drawable/riple_category_filter.xml" value="0.18697916666666667" />
+        <entry key="app/src/main/res/drawable/shape_btn_apercu.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/drawable/shape_card_border.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/drawable/shape_download_btn.xml" value="0.2796296296296296" />
+        <entry key="app/src/main/res/drawable/shape_edit_text.xml" value="0.34791666666666665" />
+        <entry key="app/src/main/res/layout/activity_detail_publication_doc.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_edit.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/activity_inscription.xml" value="0.30434782608695654" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_pdf_viewer.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/activity_product.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_test_general_adapter.xml" value="0.19166666666666668" />
+        <entry key="app/src/main/res/layout/comment_item.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/document_item.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/favoris_item.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/formation_item.xml" value="0.278125" />
+        <entry key="app/src/main/res/layout/fragment_favoris.xml" value="0.32760416666666664" />
+        <entry key="app/src/main/res/layout/fragment_forum_fragment.xml" value="0.3020833333333333" />
         <entry key="app/src/main/res/layout/fragment_profil_fragment.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/note_popup.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/star_item.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout/teacher_item.xml" value="0.16145833333333334" />
+        <entry key="app/src/main/res/layout/word_category.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_menu.xml" value="0.2864583333333333" />
+        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.33611111111111114" />
       </map>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
-
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
